@@ -286,10 +286,10 @@
 </header>
 
 <!-- ============================== HERO ============================== -->
-<section class="relative overflow-hidden bg-white">
-  <div class="max-w-[1440px] mx-auto relative lg:min-h-[760px]">
+<section class="relative overflow-hidden bg-white lg:min-h-[760px]">
 
-    <!-- テキスト（モバイル: 通常フロー / デスクトップ: 画像の上にオーバーレイ） -->
+  <!-- テキスト（モバイル: 通常フロー / デスクトップ: 画像の上にオーバーレイ） -->
+  <div class="max-w-[1440px] mx-auto relative">
     <div class="relative z-10 px-5 md:px-10 lg:pl-[60px] pt-10 md:pt-16 lg:pt-28 pb-8 md:pb-12 lg:pb-28 max-w-full lg:max-w-[760px]">
       <h1 class="reveal flex flex-col gap-4 sm:gap-5 md:gap-7">
         <span class="hero-tagline block whitespace-nowrap">
@@ -312,14 +312,16 @@
         プロのクリエイターと一緒に、つくる楽しさを思いきり体験しよう。
       </p>
     </div>
+  </div>
 
-    <!-- 画像（モバイル: 通常フローでテキストの下に / デスクトップ: 右側に絶対配置） -->
-    <div class="relative lg:absolute lg:inset-y-0 lg:right-0 lg:left-[32%] lg:z-0">
-      <img src="assets/hero_right.png" alt="" class="w-full h-auto lg:h-full lg:object-cover lg:object-center" />
-      <!-- 白グラデーションオーバーレイ（左→右に白が透明へ・デスクトップのみ） -->
-      <div class="hidden lg:block absolute inset-0 pointer-events-none"
-           style="background: linear-gradient(to right, #ffffff 0%, #ffffff 18%, rgba(255,255,255,0.85) 32%, rgba(255,255,255,0.45) 48%, rgba(255,255,255,0) 70%);"></div>
-    </div>
+  <!-- 画像（モバイル: 通常フローでテキストの下に / デスクトップ: viewport の右端まで absolute）
+       lg:left の calc は、max-w-[1440px] のコンテナを中央配置した時の "コンテナの左端 + 32%" 位置を算出。
+       ビューポートが 1440px を超えた場合も画像が viewport の右端まで広がる。 -->
+  <div class="relative lg:absolute lg:inset-y-0 lg:right-0 lg:z-0 lg:left-[max(32%,calc(50%_-_720px_+_460.8px))]">
+    <img src="assets/hero_right.png" alt="" class="w-full h-auto lg:h-full lg:object-cover lg:object-center" />
+    <!-- 白グラデーションオーバーレイ（左→右に白が透明へ・デスクトップのみ） -->
+    <div class="hidden lg:block absolute inset-0 pointer-events-none"
+         style="background: linear-gradient(to right, #ffffff 0%, #ffffff 18%, rgba(255,255,255,0.85) 32%, rgba(255,255,255,0.45) 48%, rgba(255,255,255,0) 70%);"></div>
   </div>
 </section>
 

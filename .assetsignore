@@ -1,0 +1,8 @@
+# 静的アセットとして配信したくないファイル/ディレクトリ
+# wrangler.jsonc の assets.directory が "." なので、配信対象から外したいものをここに列挙する
+CLAUDE.md
+wrangler.jsonc
+src/
+.git/
+.gitignore
+.assetsignore

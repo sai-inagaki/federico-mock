@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Federico | ゲームクリエイターズアカデミー - 子ども向けゲーム制作オンラインスクール</title>
+<meta name="description" content="Federico（ゲームクリエイターズアカデミー）は、Scratch・Unity・Robloxを使って本物のゲームづくりを学べる子ども向けオンラインスクールです。" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=Helvetica+Neue:wght@700&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: '#18B293',
+          'brand-dark': '#0E8E76',
+          pink: {
+            DEFAULT: '#FF4F7B',
+            soft: 'rgba(255, 79, 123, 0.97)',
+          },
+          ink: {
+            DEFAULT: '#333333',
+            soft: '#4D4D4D',
+            gray: '#737373',
+          },
+          scratch: '#FFAB19',
+          unity: '#4D4D4D',
+          roblox: '#335FFF',
+          'bg-soft': '#EEFBF8',
+          'bg-gray': '#F5F5F5',
+        },
+        fontFamily: {
+          sans: ['"Noto Sans JP"', '"Hiragino Kaku Gothic ProN"', '"Yu Gothic"', 'sans-serif'],
+          en: ['Inter', 'Helvetica Neue', 'sans-serif'],
+        },
+        boxShadow: {
+          header: '0 4px 2px rgba(156, 156, 156, 0.25)',
+          card: '0 4px 16px rgba(0, 0, 0, 0.06)',
+          soft: '0 2px 10px rgba(20, 40, 80, 0.06)',
+        },
+      }
+    }
+  }
+</script>
+
+<style type="text/tailwindcss">
+  @layer base {
+    html { scroll-behavior: smooth; }
+    body {
+      @apply font-sans text-ink antialiased;
+      font-feature-settings: "palt" 1;
+      letter-spacing: 0.02em;
+      line-height: 1.8;
+      text-rendering: optimizeLegibility;
+    }
+    a { @apply transition-opacity; }
+    a:hover { @apply opacity-75; }
+    ul, ol { @apply list-none p-0 m-0; }
+  }
+
+  @layer components {
+    /* セクション見出し（英字 + 日本語 2段組） */
+    .section-eyebrow {
+      @apply font-en text-brand font-bold text-[20px] tracking-wide leading-none;
+    }
+    .section-title {
+      @apply font-bold text-ink text-[28px] md:text-[32px] tracking-[0.05em] leading-[1.2];
+    }
+    .section-lead {
+      @apply text-ink text-[15px] md:text-[16px] leading-[1.8] mt-3;
+    }
+
+    /* ボタン共通 */
+    .btn {
+      @apply inline-flex items-center justify-center gap-2 font-bold whitespace-nowrap cursor-pointer transition-all;
+    }
+    /* Figma: px-[20px] py-[16px] text-[16px] leading-none */
+    .btn-pink {
+      @apply bg-pink text-white px-5 py-4 text-[14px] md:text-[16px] leading-none;
+    }
+    .btn-pink:hover { @apply -translate-y-0.5; opacity: 0.92; }
+    .btn-brand {
+      @apply bg-brand text-white px-5 py-4 text-[14px] md:text-[16px] leading-none;
+    }
+    .btn-brand:hover { @apply -translate-y-0.5; opacity: 0.92; }
+    .btn-outline-brand {
+      @apply bg-white border-2 border-brand text-brand rounded-full px-8 py-3 text-[15px] md:text-[16px];
+    }
+    .btn-outline-brand:hover { @apply -translate-y-0.5 bg-brand text-white; opacity: 1; }
+
+    /* ヘッダー */
+    .nav-link {
+      @apply text-ink text-[14px] font-medium hover:opacity-70 transition-opacity;
+    }
+
+    /* HEROのキーワードティールハイライト（Figma: 96px箱に58px文字 = 上下padding 0.32em） */
+    .hero-key {
+      @apply inline-block bg-brand text-white font-bold align-middle;
+      padding: 0.30em 0.32em 0.34em;
+      line-height: 1;
+      letter-spacing: 0.08em;
+      font-size: clamp(42px, 6vw, 60px);
+    }
+    /* タグライン「好きが未来をつくる。」用 — Figmaでは「好き」「未来」が58px、つなぎが54pxの混在 */
+    .hero-tagline {
+      @apply text-ink font-bold;
+      line-height: 1.1;
+      letter-spacing: 0.04em;
+    }
+    .hero-tagline-em {
+      font-size: clamp(40px, 5.8vw, 58px);
+      letter-spacing: 0.08em;
+    }
+    .hero-tagline-sub {
+      font-size: clamp(36px, 5.4vw, 54px);
+      letter-spacing: 0.02em;
+    }
+    /* ボックスとボックスの間のつなぎ文字（が、と、につながる。） */
+    .hero-conn {
+      @apply text-ink font-bold align-middle;
+      font-size: clamp(36px, 5.4vw, 54px);
+      letter-spacing: 0.02em;
+      line-height: 1;
+    }
+
+    /* Course カード */
+    .course-card {
+      @apply relative bg-white rounded-[15px] border-2 px-6 py-7 md:px-10;
+    }
+    .course-badge {
+      @apply absolute left-1/2 -translate-x-1/2 -top-4 inline-flex items-center justify-center rounded-full px-5 py-1.5 text-white text-[14px] md:text-[15px] font-bold whitespace-nowrap;
+    }
+    .course-bullet {
+      @apply inline-block size-[10px] rounded-full shrink-0;
+    }
+
+    /* レッスンスタイル カード */
+    .style-card {
+      @apply bg-white border border-brand rounded-[10px] px-4 pt-4 pb-7 flex flex-col items-center gap-5 text-center;
+    }
+
+    /* News カード */
+    .news-row {
+      @apply flex flex-col md:flex-row gap-5 md:gap-10 items-start md:items-center;
+    }
+    .news-thumb {
+      @apply w-full md:w-[280px] aspect-[5/3] md:h-[180px] md:aspect-auto rounded-[15px] shrink-0;
+    }
+
+    /* スクロール連動フェードイン */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease-out, transform .7s ease-out;
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* Q&A — Figma: 円60px / 文字36px。
+       Noto Sans JP は Latin 字形のベースラインが下寄り設計のため、Inter（Latin専用）に切替えて中央配置を実現。 */
+    .qa-icon {
+      @apply size-[58px] md:size-[60px] rounded-full inline-flex items-center justify-center text-[32px] md:text-[36px] shrink-0;
+      font-family: Inter, "Helvetica Neue", sans-serif;
+      font-weight: 400;
+      line-height: 1;
+    }
+    .qa-icon > * {
+      display: inline-block;
+      line-height: 1;
+    }
+  }
+</style>
+</head>
+
+<body class="bg-white">
+
+<!-- ============================== HEADER ============================== -->
+<header class="sticky top-0 z-50 bg-white shadow-header">
+  <div class="max-w-[1440px] mx-auto h-[72px] md:h-[82px] px-5 md:px-10 flex items-center">
+    <!-- ロゴ（Figma: ヘッダー82pxに対し画像高さ約108px、上下にはみ出し） -->
+    <a href="#" class="shrink-0 flex items-center" aria-label="Federico">
+      <img src="assets/federico_logo.svg" alt="Federico" class="h-[88px] md:h-[108px] w-auto" />
+    </a>
+
+    <!-- ナビゲーション（右寄せ。Figma: gap-[64px]） -->
+    <nav class="hidden lg:flex items-center gap-16 ml-auto">
+      <a href="#about" class="nav-link">Federicoについて</a>
+      <a href="#course" class="nav-link">受講コース</a>
+      <a href="#lesson-style" class="nav-link">レッスンスタイル</a>
+      <a href="#qa" class="nav-link">よくあるご質問</a>
+    </nav>
+
+    <!-- 右側CTA -->
+    <div class="lg:ml-8 ml-auto flex items-center gap-2 md:gap-3">
+      <a href="#" class="btn btn-pink hidden sm:inline-flex">無料体験お申し込み</a>
+      <a href="#" class="btn btn-brand hidden md:inline-flex">ログイン</a>
+
+      <!-- モバイルメニュー -->
+      <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center size-10 text-ink" aria-label="メニュー">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- モバイルメニュー展開 -->
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-gray-200 bg-white">
+    <div class="px-5 py-4 flex flex-col gap-3">
+      <a href="#about" class="nav-link py-2">Federicoについて</a>
+      <a href="#course" class="nav-link py-2">受講コース</a>
+      <a href="#lesson-style" class="nav-link py-2">レッスンスタイル</a>
+      <a href="#qa" class="nav-link py-2">よくあるご質問</a>
+      <div class="flex gap-2 pt-2">
+        <a href="#" class="btn btn-pink flex-1 sm:hidden">無料体験お申し込み</a>
+        <a href="#" class="btn btn-brand flex-1 md:hidden">ログイン</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== HERO ============================== -->
+<section class="relative overflow-hidden bg-white">
+  <div class="max-w-[1440px] mx-auto relative min-h-[760px]">
+
+    <!-- 背景画像（右側に大きく広がり、左端は白グラデーションでフェード） -->
+    <div class="absolute inset-y-0 right-0 left-0 lg:left-[32%] z-0">
+      <img src="assets/hero_right.png" alt="" class="w-full h-full object-cover object-center" />
+      <!-- 白グラデーションオーバーレイ（左→右に白が透明へ） -->
+      <div class="absolute inset-0 pointer-events-none"
+           style="background: linear-gradient(to right, #ffffff 0%, #ffffff 18%, rgba(255,255,255,0.85) 32%, rgba(255,255,255,0.45) 48%, rgba(255,255,255,0) 70%);"></div>
+      <!-- モバイル用：下からの白フェード -->
+      <div class="absolute inset-x-0 bottom-0 h-32 lg:hidden pointer-events-none"
+           style="background: linear-gradient(to top, #ffffff 0%, rgba(255,255,255,0) 100%);"></div>
+    </div>
+
+    <!-- テキスト（前面） -->
+    <div class="relative z-10 px-5 md:px-10 lg:pl-[60px] py-16 md:py-24 lg:py-28 max-w-[760px]">
+      <h1 class="reveal flex flex-col gap-5 md:gap-7">
+        <span class="hero-tagline block whitespace-nowrap">
+          <span class="hero-tagline-em">好き</span><span class="hero-tagline-sub">が</span><span class="hero-tagline-em">未来</span><span class="hero-tagline-sub">をつくる。</span>
+        </span>
+        <span class="flex items-center gap-3 whitespace-nowrap">
+          <span class="hero-key">ゲームをつくる力</span>
+          <span class="hero-conn">が、</span>
+        </span>
+        <span class="flex items-center gap-2 md:gap-3 whitespace-nowrap">
+          <span class="hero-key">自信</span>
+          <span class="hero-conn">と</span>
+          <span class="hero-key">成長</span>
+          <span class="hero-conn">につながる。</span>
+        </span>
+      </h1>
+      <p class="reveal mt-8 md:mt-10 text-ink text-[15px] md:text-[18px] leading-[1.9] max-w-[640px]">
+        ScratchやUnityを使って本物のゲームづくりを学べる<br />
+        子ども向けオンラインスクール。<br />
+        プロのクリエイターと一緒に、つくる楽しさを思いきり体験しよう。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== NEWS ============================== -->
+<section id="news" class="py-16 md:py-24 bg-white">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10">
+    <header class="reveal mb-10 md:mb-14">
+      <p class="section-eyebrow">News</p>
+      <h2 class="section-title mt-1">お知らせ・キャンペーン</h2>
+    </header>
+
+    <ul class="flex flex-col gap-10 md:gap-12">
+      <li class="news-row reveal">
+        <img src="assets/news_campaign.png" alt="オープン記念キャンペーン" class="news-thumb object-cover" />
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="font-en text-ink-soft text-[14px] tracking-wider">2026.05.25</span>
+            <span class="inline-flex items-center justify-center min-w-[88px] h-[25px] rounded-full border border-ink-gray bg-white text-ink-soft text-[12px]">ニュース</span>
+          </div>
+          <h3 class="text-ink-soft text-[18px] md:text-[24px] font-bold leading-[1.6]">オープン記念キャンペーン実施中！</h3>
+          <hr class="my-3 border-gray-200" />
+          <p class="text-ink-soft text-[14px] md:text-[16px] leading-[1.8]">
+            オープンを記念し、初月の受講料が割引となるキャンペーンを実施中です！<br />
+            ぜひこの機会にオンライン無料体験に参加してみませんか？
+          </p>
+        </div>
+      </li>
+
+      <li class="news-row reveal">
+        <img src="assets/news_open.png" alt="Federicoオープン" class="news-thumb object-cover" />
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="font-en text-ink-soft text-[14px] tracking-wider">2026.05.25</span>
+            <span class="inline-flex items-center justify-center min-w-[88px] h-[25px] rounded-full border border-ink-gray bg-white text-ink-soft text-[12px]">ニュース</span>
+          </div>
+          <h3 class="text-ink-soft text-[18px] md:text-[24px] font-bold leading-[1.6]">ゲームクリエイターズアカデミー「Federico」オープン！</h3>
+          <hr class="my-3 border-gray-200" />
+          <p class="text-ink-soft text-[14px] md:text-[16px] leading-[1.8]">
+            ゲームクリエイターズアカデミー「Federico」がオープンしました！<br />
+            Federicoは、子どもたちが大好きな「ゲーム」をつくりながら、プログラミングやデザイン…
+          </p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="reveal mt-12 md:mt-14 flex justify-center">
+      <a href="#" class="btn btn-outline-brand font-bold inline-flex items-center gap-2">
+        すべてのお知らせを見る
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ABOUT ============================== -->
+<section id="about" class="py-16 md:py-24 bg-bg-soft">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-10 lg:gap-12 items-center">
+      <div class="reveal">
+        <p class="section-eyebrow">About</p>
+        <h2 class="mt-1 font-bold text-ink tracking-[0.05em] leading-[1.2]">
+          <span class="text-[32px] md:text-[36px] font-en">Federico</span><span class="text-[22px] md:text-[24px]">について</span>
+        </h2>
+        <p class="mt-6 text-ink text-[18px] md:text-[20px] font-semibold leading-[1.8]">
+          ゲーム制作で「創造力」と「論理的思考力」を育てる
+        </p>
+        <div class="mt-4 text-ink text-[14px] md:text-[16px] leading-[1.9]">
+          <p>ゲームクリエイターズアカデミー「Federico」は、</p>
+          <p>子どもたちが大好きな「ゲーム」をつくりながら、プログラミングやデザイン、企画力を楽しく学べるオンラインスクールです。</p>
+          <p>初心者から経験者まで、一人ひとりのレベルに合わせてステップアップ。</p>
+          <p>お子様のアイデアがカタチになる喜びを、私たちが全力でサポートします。</p>
+        </div>
+      </div>
+      <div class="order-first lg:order-last reveal">
+        <img src="assets/about_img.png" alt="Federicoで学ぶ様子" class="w-full max-w-[480px] mx-auto h-auto" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== COURSE ============================== -->
+<section id="course" class="py-16 md:py-24 bg-white">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10">
+    <header class="reveal mb-10 md:mb-14">
+      <p class="section-eyebrow">Course</p>
+      <h2 class="section-title mt-1">コース</h2>
+      <p class="section-lead">目的やレベルに合わせてコースをお選びいただけます。</p>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10">
+
+      <!-- Scratch -->
+      <article class="course-card border-scratch reveal">
+        <span class="course-badge bg-scratch">初心者の方におすすめ</span>
+        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-3">
+          <div class="w-[110px] h-[110px] flex items-center justify-center shrink-0">
+            <img src="assets/scratch_cat.png" alt="Scratch" class="max-w-full max-h-full object-contain" />
+          </div>
+          <div class="flex-1 text-center md:text-left">
+            <h3 class="leading-[1.4]">
+              <span class="font-en font-medium text-scratch text-[28px] md:text-[32px]">Scratch</span>
+              <span class="font-bold text-ink text-[18px] md:text-[20px] ml-1">コース</span>
+            </h3>
+            <p class="mt-1 text-ink text-[13px] md:text-[14px] leading-[1.8]">
+              直感的に楽しく学べるビジュアルプログラミング。<br />
+              ゲームづくりの第一歩にぴったり！
+            </p>
+          </div>
+        </div>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-[1fr_165px] gap-4 md:gap-6 items-start">
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-ink text-[14px]"><span class="course-bullet bg-scratch"></span>使用端末 ： タブレット</li>
+            <li class="flex items-center gap-2 text-ink text-[14px]"><span class="course-bullet bg-scratch"></span>対象 ： 小学4年生〜</li>
+            <li class="flex items-start gap-2 text-ink text-[14px] leading-[1.6]"><span class="course-bullet bg-scratch mt-1.5"></span><div class="flex"><span class="shrink-0">学べること ： </span><div><div>プログラミングの基礎</div><div>ゲーム制作の基礎</div></div></div></li>
+          </ul>
+          <div class="border border-gray-200 rounded-[5px] overflow-hidden h-[104px]">
+            <img src="assets/scratch_img.png" alt="Scratch画面" class="w-full h-full object-cover" />
+          </div>
+        </div>
+      </article>
+
+      <!-- Unity -->
+      <article class="course-card border-unity reveal">
+        <span class="course-badge bg-unity">本格的に学びたい方におすすめ</span>
+        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-3">
+          <div class="w-[110px] h-[110px] flex items-center justify-center shrink-0">
+            <img src="assets/unity_logo.svg" alt="Unity" class="size-[84px] object-contain" />
+          </div>
+          <div class="flex-1 text-center md:text-left">
+            <h3 class="leading-[1.4]">
+              <span class="font-en font-medium text-unity text-[28px] md:text-[32px]">Unity</span>
+              <span class="font-bold text-ink text-[18px] md:text-[20px] ml-1">コース</span>
+            </h3>
+            <p class="mt-1 text-ink text-[13px] md:text-[14px] leading-[1.8]">
+              本格的な2D/3Dゲーム制作に挑戦。<br />
+              プロも使うUnityでスキルを磨こう！
+            </p>
+          </div>
+        </div>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-[1fr_165px] gap-4 md:gap-6 items-start">
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-ink text-[14px]"><span class="course-bullet bg-unity"></span>使用端末 ： PC</li>
+            <li class="flex items-center gap-2 text-ink text-[14px]"><span class="course-bullet bg-unity"></span>対象 ： 小学4年生〜（経験者）</li>
+            <li class="flex items-start gap-2 text-ink text-[14px] leading-[1.6]"><span class="course-bullet bg-unity mt-1.5"></span><span class="flex"><span class="shrink-0">学べること ： </span><span class="block"><span class="block">プログラミングの応用</span><span class="block">本格的なゲーム制作</span></span></span></li>
+          </ul>
+          <div class="border border-gray-200 rounded-[5px] overflow-hidden h-[104px]">
+            <img src="assets/unity_img.jpg" alt="Unity画面" class="w-full h-full object-cover" />
+          </div>
+        </div>
+      </article>
+
+      <!-- Roblox -->
+      <article class="course-card border-roblox reveal lg:col-span-2 lg:max-w-[560px] lg:mx-auto lg:w-full">
+        <span class="course-badge bg-roblox z-10">オリジナルゲームを公開したい方におすすめ</span>
+        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-3">
+          <div class="w-[110px] h-[110px] flex items-center justify-center shrink-0">
+            <img src="assets/roblox.png" alt="Roblox" class="size-[84px] object-cover rounded-[10px]" />
+          </div>
+          <div class="flex-1 text-center md:text-left">
+            <h3 class="leading-[1.4]">
+              <span class="font-en font-medium text-roblox text-[28px] md:text-[32px]">Roblox</span>
+              <span class="font-bold text-ink text-[18px] md:text-[20px] ml-1">コース</span>
+            </h3>
+            <p class="mt-1 text-ink text-[13px] md:text-[14px] leading-[1.8]">
+              本格的な2D/3Dゲーム制作に挑戦。<br />
+              プロも使うUnityでスキルを磨こう！
+            </p>
+          </div>
+        </div>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-[1fr_165px] gap-4 md:gap-6 items-start">
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-ink text-[14px]"><span class="course-bullet bg-roblox"></span>使用端末 ： PC</li>
+            <li class="flex items-center gap-2 text-ink text-[14px]"><span class="course-bullet bg-roblox"></span>対象 ： 小学4年生〜（経験者）</li>
+            <li class="flex items-start gap-2 text-ink text-[14px] leading-[1.6]"><span class="course-bullet bg-roblox mt-1.5"></span><span class="flex"><span class="shrink-0">学べること ： </span><span class="block"><span class="block">プログラミングの応用</span><span class="block">公開を意識した開発</span></span></span></li>
+          </ul>
+          <div class="border border-gray-200 rounded-[5px] overflow-hidden h-[104px]">
+            <img src="assets/scratch_img.png" alt="Roblox画面" class="w-full h-full object-cover" />
+          </div>
+        </div>
+
+        <!-- Coming Soon 本体グレーオーバーレイ（バッジは z-10 で上に乗る） -->
+        <div aria-hidden="true" class="absolute -inset-0.5 bg-[rgba(217,217,217,0.76)] rounded-[15px] pointer-events-none"></div>
+
+        <!-- Coming Soon... ラベル（Helvetica・傾き付き） -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <span class="text-white text-[32px] md:text-[44px] font-bold tracking-[0.04em] drop-shadow-[0_2px_4px_rgba(0,0,0,0.25)] -rotate-[15deg]" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">Coming Soon...</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="reveal mt-12 md:mt-14 flex justify-center">
+      <a href="#" class="btn btn-outline-brand font-bold inline-flex items-center gap-2">
+        すべてのコースを見る
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== LESSON STYLE ============================== -->
+<section id="lesson-style" class="py-16 md:py-24 bg-white">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10">
+    <header class="reveal mb-10 md:mb-14">
+      <p class="section-eyebrow">Lesson Style</p>
+      <h2 class="section-title mt-1">レッスンスタイル</h2>
+      <p class="section-lead">続けやすく、しっかり身につく学び方で、無理なく着実にレベルアップできます。</p>
+    </header>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+      <article class="style-card reveal">
+        <img src="assets/lesson_img_1.png" alt="" class="w-[181px] h-[134px] object-contain" />
+        <h3 class="text-brand font-bold text-[18px] md:text-[20px]">オンライン完結</h3>
+        <p class="text-ink text-[13px] md:text-[14px] leading-[1.8]">
+          自宅の端末から受講可能。<br />全国どこからでも学べます。
+        </p>
+      </article>
+
+      <article class="style-card reveal">
+        <img src="assets/lesson_img_2.png" alt="" class="w-[181px] h-[134px] object-contain" />
+        <h3 class="text-brand font-bold text-[18px] md:text-[20px]">少人数制個別指導</h3>
+        <p class="text-ink text-[13px] md:text-[14px] leading-[1.8]">
+          講師が一人ひとりの到達目標を<br />設定して進行します。
+        </p>
+      </article>
+
+      <article class="style-card reveal">
+        <img src="assets/lesson_img_3.png" alt="" class="w-[181px] h-[134px] object-contain" />
+        <h3 class="text-brand font-bold text-[18px] md:text-[20px]">伴走型サポート</h3>
+        <p class="text-ink text-[13px] md:text-[14px] leading-[1.8]">
+          「答えを教える」のではなく、<br />考え方を引き出すコーチング型の指導を行います。
+        </p>
+      </article>
+
+      <article class="style-card reveal">
+        <img src="assets/lesson_img_4.png" alt="" class="w-[181px] h-[134px] object-contain" />
+        <h3 class="text-brand font-bold text-[18px] md:text-[20px]">進捗の可視化</h3>
+        <p class="text-ink text-[13px] md:text-[14px] leading-[1.8]">
+          「できたこと・次にやること」を明確化し、保護者の方にも共有します。
+        </p>
+      </article>
+    </div>
+
+    <div class="reveal mt-12 md:mt-14 flex justify-center">
+      <a href="#" class="btn btn-outline-brand font-bold inline-flex items-center gap-2">
+        レッスンスタイルを詳しく見る
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== Q&A ============================== -->
+<section id="qa" class="py-16 md:py-24 bg-bg-gray">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10">
+    <header class="reveal mb-10 md:mb-14">
+      <p class="section-eyebrow">Q&amp;A</p>
+      <h2 class="section-title mt-1">よくあるご質問</h2>
+    </header>
+
+    <ul class="flex flex-col">
+      <!-- Q1 -->
+      <li class="border-b border-gray-300 py-6 reveal">
+        <button class="qa-toggle w-full flex items-start gap-4 text-left" aria-expanded="true">
+          <span class="qa-icon bg-brand text-white"><span>Q</span></span>
+          <span class="flex-1 pt-4 text-ink text-[15px] md:text-[16px] font-medium leading-[1.7]">対象年齢は何歳ですか？</span>
+          <svg class="qa-chevron mt-5 size-5 text-ink-soft transition-transform rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="qa-body mt-4 flex items-start gap-4">
+          <span class="qa-icon bg-white text-brand border border-brand"><span>A</span></span>
+          <p class="flex-1 pt-4 text-ink text-[14px] md:text-[16px] leading-[1.8]">小学4年生〜高校生を対象としております。</p>
+        </div>
+      </li>
+
+      <!-- Q2 -->
+      <li class="border-b border-gray-300 py-6 reveal">
+        <button class="qa-toggle w-full flex items-start gap-4 text-left" aria-expanded="false">
+          <span class="qa-icon bg-brand text-white"><span>Q</span></span>
+          <span class="flex-1 pt-4 text-ink text-[15px] md:text-[16px] font-medium leading-[1.7]">どのような受講環境を用意すればよいですか？</span>
+          <svg class="qa-chevron mt-5 size-5 text-ink-soft transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="qa-body mt-4 hidden items-start gap-4">
+          <span class="qa-icon bg-white text-brand border border-brand"><span>A</span></span>
+          <p class="flex-1 pt-4 text-ink text-[14px] md:text-[16px] leading-[1.8]">
+            PC（作業・画面共有）+ タブレット（テキスト閲覧）をご準備いただくことを推奨しております。<br />
+            PCは、CPUがIntel Core-i3 / Apple M1 同等品またはそれ以上、かつメモリ8GB以上を推奨いたします。
+          </p>
+        </div>
+      </li>
+
+      <!-- Q3 -->
+      <li class="border-b border-gray-300 py-6 reveal">
+        <button class="qa-toggle w-full flex items-start gap-4 text-left" aria-expanded="false">
+          <span class="qa-icon bg-brand text-white"><span>Q</span></span>
+          <span class="flex-1 pt-4 text-ink text-[15px] md:text-[16px] font-medium leading-[1.7]">予約をキャンセルしたい場合、どのような手続きが必要ですか？</span>
+          <svg class="qa-chevron mt-5 size-5 text-ink-soft transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="qa-body mt-4 hidden items-start gap-4">
+          <span class="qa-icon bg-white text-brand border border-brand"><span>A</span></span>
+          <p class="flex-1 pt-4 text-ink text-[14px] md:text-[16px] leading-[1.8]">マイページから当日の朝8:00までにお手続きをお願いいたします。</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="bg-brand py-7">
+  <p class="text-center text-white text-[12px] font-en">Copyright 2026 Tsuzurhythm Inc.</p>
+</footer>
+
+<!-- ============================== 無料体験 申込CTA（固定） ============================== -->
+<a href="#" id="trialButton" class="fixed bottom-6 right-6 z-40 hidden md:inline-flex items-center gap-[13px] bg-brand text-white rounded-full pl-[13px] pr-3 py-[11px] shadow-[0px_4px_8px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 transition-transform" aria-label="無料体験お申し込みはこちら">
+  <!-- 左: 「カンタン 1分で完了！」白丸 -->
+  <span class="size-[67px] rounded-full bg-white flex flex-col items-center justify-center text-pink shrink-0">
+    <span class="text-[13px] font-medium leading-[1.3] tracking-[-0.04em]">カンタン</span>
+    <span class="text-[11px] font-medium leading-[1.3]">1分で完了！</span>
+  </span>
+
+  <!-- 中央: テキスト -->
+  <span class="flex flex-col items-center text-center w-[270px] leading-[1.5]">
+    <span class="text-[12px] font-medium">お子さまの「やってみたい」を応援します！</span>
+    <span class="text-[20px] font-bold tracking-[0.03em]">
+      <span class="text-[#FBEE50]">無料体験</span>お申し込みはこちら
+    </span>
+  </span>
+
+  <!-- 右: 矢印アイコン白丸 -->
+  <span class="size-[37px] rounded-full bg-white flex items-center justify-center shrink-0">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#18B293" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </span>
+</a>
+
+<!-- ============================== TOPへ戻る ============================== -->
+<a href="#" id="topLink" class="fixed right-6 z-40 bottom-6 md:bottom-[120px] size-14 rounded-full bg-white border border-brand text-brand flex flex-col items-center justify-center shadow-soft hover:bg-brand hover:text-white transition-colors opacity-0 pointer-events-none" aria-label="トップへ戻る">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  <span class="text-[11px] font-bold mt-0.5">TOP</span>
+</a>
+
+<script>
+  // モバイルメニュー
+  document.getElementById('menuBtn')?.addEventListener('click', () => {
+    document.getElementById('mobileMenu')?.classList.toggle('hidden');
+  });
+
+  // Q&Aアコーディオン
+  document.querySelectorAll('.qa-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      const body = btn.nextElementSibling;
+      const chevron = btn.querySelector('.qa-chevron');
+      if (expanded) {
+        body.classList.add('hidden');
+        body.classList.remove('flex');
+        chevron.classList.remove('rotate-180');
+      } else {
+        body.classList.remove('hidden');
+        body.classList.add('flex');
+        chevron.classList.add('rotate-180');
+      }
+    });
+  });
+
+  // TOPボタン表示制御
+  const topLink = document.getElementById('topLink');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      topLink.classList.remove('opacity-0', 'pointer-events-none');
+      topLink.classList.add('opacity-100');
+    } else {
+      topLink.classList.add('opacity-0', 'pointer-events-none');
+      topLink.classList.remove('opacity-100');
+    }
+  });
+
+  // スクロール連動フェードイン（IntersectionObserver）
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  } else {
+    // フォールバック: 古いブラウザは全て表示
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>

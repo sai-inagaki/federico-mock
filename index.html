@@ -150,6 +150,48 @@
       @apply w-full md:w-[280px] aspect-[5/3] md:h-[180px] md:aspect-auto rounded-[15px] shrink-0;
     }
 
+    /* ローディング画面 — federico ロゴが左からカラーで満たされる */
+    body.is-loading { overflow: hidden; }
+    .loader-overlay {
+      position: fixed;
+      inset: 0;
+      background: #ffffff;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity .6s ease, visibility .6s ease;
+    }
+    .loader-overlay.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .loader-logo-wrap {
+      position: relative;
+      width: min(70vw, 280px);
+    }
+    .loader-logo-base,
+    .loader-logo-color {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .loader-logo-base {
+      filter: grayscale(1);
+      opacity: 0.18;
+    }
+    .loader-logo-color {
+      position: absolute;
+      inset: 0;
+      clip-path: inset(0 100% 0 0);
+      animation: loaderFillLogo 1.6s cubic-bezier(.55,.1,.25,1) .1s forwards;
+    }
+    @keyframes loaderFillLogo {
+      from { clip-path: inset(0 100% 0 0); }
+      to   { clip-path: inset(0 0 0 0); }
+    }
+
     /* スクロール連動フェードイン */
     .reveal {
       opacity: 0;
@@ -166,6 +208,10 @@
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
+      }
+      .loader-logo-color {
+        animation: none;
+        clip-path: inset(0 0 0 0);
       }
     }
 
@@ -185,7 +231,15 @@
 </style>
 </head>
 
-<body class="bg-white">
+<body class="bg-white is-loading">
+
+<!-- ============================== ローディング画面 ============================== -->
+<div id="loaderOverlay" class="loader-overlay" aria-label="読み込み中" role="status">
+  <div class="loader-logo-wrap">
+    <img src="assets/federico_logo.svg" class="loader-logo-base" alt="" aria-hidden="true" />
+    <img src="assets/federico_logo.svg" class="loader-logo-color" alt="Federico" />
+  </div>
+</div>
 
 <!-- ============================== HEADER ============================== -->
 <header class="sticky top-0 z-50 bg-white shadow-header">
@@ -607,6 +661,24 @@
 </a>
 
 <script>
+  // ローディング画面 — 読み込み完了 + 最低表示時間（アニメーション完了分）後に非表示
+  (function() {
+    const MIN_DISPLAY_MS = 1800; // アニメ 1.6s + バッファ 0.2s
+    const start = Date.now();
+    const hideLoader = () => {
+      const elapsed = Date.now() - start;
+      const remaining = Math.max(0, MIN_DISPLAY_MS - elapsed);
+      setTimeout(() => {
+        const loader = document.getElementById('loaderOverlay');
+        document.body.classList.remove('is-loading');
+        loader?.classList.add('is-hidden');
+        setTimeout(() => loader?.remove(), 700);
+      }, remaining);
+    };
+    if (document.readyState === 'complete') hideLoader();
+    else window.addEventListener('load', hideLoader);
+  })();
+
   // モバイルメニュー
   document.getElementById('menuBtn')?.addEventListener('click', () => {
     document.getElementById('mobileMenu')?.classList.toggle('hidden');

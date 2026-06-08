@@ -331,7 +331,7 @@
   <!-- 画像（モバイル: 通常フローでテキストの下に / デスクトップ: viewport の右端まで absolute）
        lg:left の calc は、max-w-[1440px] のコンテナを中央配置した時の "コンテナの左端 + 32%" 位置を算出。
        ビューポートが 1440px を超えた場合も画像が viewport の右端まで広がる。 -->
-  <div class="relative lg:absolute lg:inset-y-0 lg:right-0 lg:z-0 lg:left-[max(32%,calc(50%_-_720px_+_460.8px))]">
+  <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:z-0 lg:left-[max(32%,calc(50%_-_720px_+_460.8px))]">
     <img src="assets/hero_right.png" alt="" class="w-full h-auto lg:h-full lg:object-cover lg:object-center" />
     <!-- 白グラデーションオーバーレイ（左→右に白が透明へ・デスクトップのみ） -->
     <div class="hidden lg:block absolute inset-0 pointer-events-none"
@@ -456,7 +456,7 @@
           </div>
         </div>
         <div class="mt-6 flex justify-center">
-          <a href="#" class="inline-flex items-center gap-3 bg-white border-2 border-scratch text-scratch rounded-full px-9 py-2.5 text-[16px] font-bold transition-all hover:-translate-y-0.5 hover:bg-scratch hover:text-white">
+          <a href="course-scratch.html" class="inline-flex items-center gap-3 bg-white border-2 border-scratch text-scratch rounded-full px-9 py-2.5 text-[16px] font-bold transition-all hover:-translate-y-0.5 hover:bg-scratch hover:text-white">
             詳しく見る
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
@@ -492,7 +492,7 @@
           </div>
         </div>
         <div class="mt-6 flex justify-center">
-          <a href="#" class="inline-flex items-center gap-3 bg-white border-2 border-unity text-unity rounded-full px-9 py-2.5 text-[16px] font-bold transition-all hover:-translate-y-0.5 hover:bg-unity hover:text-white">
+          <a href="course-unity.html" class="inline-flex items-center gap-3 bg-white border-2 border-unity text-unity rounded-full px-9 py-2.5 text-[16px] font-bold transition-all hover:-translate-y-0.5 hover:bg-unity hover:text-white">
             詳しく見る
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
@@ -693,7 +693,7 @@
     <!-- 価格比較 -->
     <div class="reveal flex flex-col lg:flex-row items-stretch justify-center gap-6 lg:gap-5">
       <!-- 通常価格カード -->
-      <div class="bg-white border-2 border-gray-300 w-full max-w-[309px] overflow-hidden flex flex-col">
+      <div class="bg-white border-2 border-gray-300 w-full max-w-[309px] overflow-hidden flex flex-col mx-auto lg:mx-0">
         <div class="bg-gray-300 text-ink-gray text-center font-bold py-3 text-[18px] md:text-[20px]">通常価格</div>
         <div class="flex-1 flex items-center justify-center px-4 py-6 text-center text-ink-gray font-bold">
           <span class="leading-none whitespace-nowrap">
@@ -722,11 +722,11 @@
           <span aria-hidden="true" class="absolute left-1/2 -translate-x-1/2 -bottom-[10px] w-0 h-0 border-l-[12px] border-r-[12px] border-t-[12px] border-l-transparent border-r-transparent border-t-pink-soft"></span>
         </div>
         <div class="flex-1 flex items-end justify-center text-center font-bold text-pink-soft pt-6 pb-4 leading-none">
-          <span class="leading-none">
+          <span class="leading-none block w-full sm:inline sm:w-auto">
             <span class="text-ink-gray text-[24px] md:text-[32px]">月額　</span>
             <span class="text-[44px] md:text-[64px]">¥</span>
             <span class="text-[64px] md:text-[96px]">13,200</span>
-            <span class="text-ink-gray text-[24px] md:text-[32px]">（税込）</span>
+            <span class="text-ink-gray text-[24px] md:text-[32px] block text-right pr-2 mt-1 sm:inline sm:mt-0 sm:pr-0 sm:text-center">（税込）</span>
           </span>
         </div>
       </div>
@@ -803,29 +803,29 @@
 </footer>
 
 <!-- ============================== 無料体験 申込CTA（固定） ============================== -->
-<a href="#" id="trialButton" class="fixed bottom-6 right-6 z-40 hidden md:inline-flex items-center gap-[13px] bg-brand text-white rounded-full pl-[13px] pr-3 py-[11px] shadow-[0px_4px_8px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 transition-transform" aria-label="無料体験お申し込みはこちら">
+<a href="#" id="trialButton" class="fixed bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:bottom-6 md:right-6 z-40 inline-flex items-center gap-2 md:gap-[13px] bg-brand text-white rounded-full pl-2 pr-2 md:pl-[13px] md:pr-3 py-2 md:py-[11px] shadow-[0px_4px_8px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 transition-transform" aria-label="無料体験お申し込みはこちら">
   <!-- 左: 「カンタン 1分で完了！」白丸 -->
-  <span class="size-[67px] rounded-full bg-white flex flex-col items-center justify-center text-pink shrink-0">
-    <span class="text-[13px] font-medium leading-[1.3] tracking-[-0.04em]">カンタン</span>
-    <span class="text-[11px] font-medium leading-[1.3]">1分で完了！</span>
+  <span class="size-[52px] md:size-[67px] rounded-full bg-white flex flex-col items-center justify-center text-pink shrink-0">
+    <span class="text-[11px] md:text-[13px] font-medium leading-[1.3] tracking-[-0.04em]">カンタン</span>
+    <span class="text-[9px] md:text-[11px] font-medium leading-[1.3]">1分で完了！</span>
   </span>
 
   <!-- 中央: テキスト -->
-  <span class="flex flex-col items-center text-center w-[270px] leading-[1.5]">
-    <span class="text-[12px] font-medium">お子さまの「やってみたい」を応援します！</span>
-    <span class="text-[20px] font-bold tracking-[0.03em]">
+  <span class="flex flex-col items-center text-center leading-[1.4] md:leading-[1.5]">
+    <span class="text-[9px] md:text-[12px] font-medium leading-tight whitespace-nowrap">お子さまの「やってみたい」を応援します！</span>
+    <span class="text-[14px] md:text-[20px] font-bold tracking-[0.03em] mt-0.5 md:mt-0 whitespace-nowrap">
       <span class="text-[#FBEE50]">無料体験</span>お申し込みはこちら
     </span>
   </span>
 
   <!-- 右: 矢印アイコン白丸 -->
-  <span class="size-[37px] rounded-full bg-white flex items-center justify-center shrink-0">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#18B293" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  <span class="size-[30px] md:size-[37px] rounded-full bg-white flex items-center justify-center shrink-0">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#18B293" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
   </span>
 </a>
 
 <!-- ============================== TOPへ戻る ============================== -->
-<a href="#" id="topLink" class="fixed right-6 z-40 bottom-6 md:bottom-[120px] size-14 rounded-full bg-white border border-brand text-brand flex flex-col items-center justify-center shadow-soft hover:bg-brand hover:text-white transition-colors opacity-0 pointer-events-none" aria-label="トップへ戻る">
+<a href="#" id="topLink" class="hidden md:flex fixed right-6 z-40 bottom-[120px] size-14 rounded-full bg-white border border-brand text-brand flex-col items-center justify-center shadow-soft hover:bg-brand hover:text-white transition-colors opacity-0 pointer-events-none" aria-label="トップへ戻る">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
   <span class="text-[11px] font-bold mt-0.5">TOP</span>
 </a>

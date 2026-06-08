@@ -62,6 +62,20 @@
   }
 
   @layer components {
+    /* ゲーム連想アイコンのライン画タイル背景
+       1行目: 剣・盾・ポーション・ハート・宝石 を 132px 間隔
+       2行目: メダル・星 を半ピッチでオフセット配置 */
+    body {
+      background-color: #ffffff;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='660' height='232' viewBox='0 0 660 232'><g fill='none' stroke='%2318B293' stroke-opacity='0.16' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><g transform='translate(12 32)'><path d='M14.5 17.5 3 6V3h3l11.5 11.5'/><path d='m13 19 6-6'/><path d='m16 16 4 4'/><path d='m19 21 2-2'/></g><g transform='translate(144 32)'><path d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z'/></g><g transform='translate(276 32)'><path d='M14 2v6.343a1 1 0 0 0 .293 .707l5.414 5.414A2 2 0 0 1 18.293 18H5.707a2 2 0 0 1-1.414-3.536l5.414-5.414A1 1 0 0 0 10 8.343V2'/><path d='M8.5 2h7'/><path d='M7 16h10'/></g><g transform='translate(408 32)'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/></g><g transform='translate(540 32)'><path d='M6 3h12l4 6-10 13L2 9Z'/><path d='M11 3 8 9l4 13 4-13-3-6'/><path d='M2 9h20'/></g><g transform='translate(78 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g><g transform='translate(210 148)'><path d='M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294 .904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771 .56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'/></g><g transform='translate(342 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g><g transform='translate(474 148)'><path d='M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294 .904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771 .56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'/></g><g transform='translate(606 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g></g></svg>");
+      background-repeat: repeat;
+      background-attachment: fixed;
+    }
+    /* セクション側の不透明白を抜き、本文エリアにも模様をほんのり透かす */
+    main, section, header, footer { position: relative; }
+  }
+
+  @layer components {
     /* セクション見出し（英字 + 日本語 2段組） */
     .section-eyebrow {
       @apply font-en text-brand font-bold text-[20px] tracking-wide leading-none;
@@ -247,7 +261,7 @@
   <div class="max-w-[1440px] mx-auto h-[72px] md:h-[82px] px-5 md:px-10 flex items-center">
     <!-- ロゴ（Figma: ヘッダー82pxに対し画像高さ約108px、上下にはみ出し） -->
     <a href="#" class="shrink-0 flex items-center" aria-label="Federico">
-      <img src="assets/logo_new.svg" alt="Federico" class="h-[108px] md:h-[132px] w-auto" />
+      <img src="assets/logo_new.svg" alt="Federico" class="h-[144px] md:h-[176px] w-auto" />
     </a>
 
     <!-- ナビゲーション（右寄せ。Figma: gap-[64px]） -->
@@ -286,7 +300,7 @@
 </header>
 
 <!-- ============================== HERO ============================== -->
-<section class="relative overflow-hidden bg-white lg:min-h-[760px]">
+<section class="relative overflow-hidden lg:min-h-[760px]">
 
   <!-- テキスト（モバイル: 通常フロー / デスクトップ: 画像の上にオーバーレイ） -->
   <div class="max-w-[1440px] mx-auto relative">
@@ -326,7 +340,7 @@
 </section>
 
 <!-- ============================== NEWS ============================== -->
-<section id="news" class="py-16 md:py-24 bg-white">
+<section id="news" class="py-16 md:py-24">
   <div class="max-w-[1180px] mx-auto px-5 md:px-10">
     <header class="reveal mb-10 md:mb-14">
       <p class="section-eyebrow">News</p>
@@ -403,7 +417,7 @@
 </section>
 
 <!-- ============================== COURSE ============================== -->
-<section id="course" class="py-16 md:py-24 bg-white">
+<section id="course" class="py-16 md:py-24">
   <div class="max-w-[1180px] mx-auto px-5 md:px-10">
     <header class="reveal mb-10 md:mb-14">
       <p class="section-eyebrow">Course</p>
@@ -441,6 +455,12 @@
             <img src="assets/scratch_img.png" alt="Scratch画面" class="w-full h-full object-cover" />
           </div>
         </div>
+        <div class="mt-6 flex justify-center">
+          <a href="#" class="inline-flex items-center gap-3 bg-white border-2 border-scratch text-scratch rounded-full px-9 py-2.5 text-[16px] font-bold transition-all hover:-translate-y-0.5 hover:bg-scratch hover:text-white">
+            詳しく見る
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
       </article>
 
       <!-- Unity -->
@@ -471,9 +491,16 @@
             <img src="assets/unity_img.jpg" alt="Unity画面" class="w-full h-full object-cover" />
           </div>
         </div>
+        <div class="mt-6 flex justify-center">
+          <a href="#" class="inline-flex items-center gap-3 bg-white border-2 border-unity text-unity rounded-full px-9 py-2.5 text-[16px] font-bold transition-all hover:-translate-y-0.5 hover:bg-unity hover:text-white">
+            詳しく見る
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
       </article>
 
-      <!-- Roblox -->
+      <!-- Roblox（Coming Soon — 後で復活させる可能性があるためコメントアウト保持） -->
+      <!--
       <article class="course-card border-roblox reveal lg:col-span-2 lg:max-w-[560px] lg:mx-auto lg:w-full">
         <span class="course-badge bg-roblox z-10">オリジナルゲームを公開したい方におすすめ</span>
         <div class="flex flex-col md:flex-row items-center gap-4 md:gap-3">
@@ -502,27 +529,20 @@
           </div>
         </div>
 
-        <!-- Coming Soon 本体グレーオーバーレイ（バッジは z-10 で上に乗る） -->
         <div aria-hidden="true" class="absolute -inset-0.5 bg-[rgba(217,217,217,0.76)] rounded-[15px] pointer-events-none"></div>
 
-        <!-- Coming Soon... ラベル（Helvetica・傾き付き） -->
         <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
           <span class="text-white text-[32px] md:text-[44px] font-bold tracking-[0.04em] drop-shadow-[0_2px_4px_rgba(0,0,0,0.25)] -rotate-[15deg]" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">Coming Soon...</span>
         </div>
       </article>
+      -->
     </div>
 
-    <div class="reveal mt-12 md:mt-14 flex justify-center">
-      <a href="#" class="btn btn-outline-brand font-bold inline-flex items-center gap-2">
-        すべてのコースを見る
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-      </a>
-    </div>
   </div>
 </section>
 
 <!-- ============================== LESSON STYLE ============================== -->
-<section id="lesson-style" class="py-16 md:py-24 bg-white">
+<section id="lesson-style" class="py-16 md:py-24">
   <div class="max-w-[1180px] mx-auto px-5 md:px-10">
     <header class="reveal mb-10 md:mb-14">
       <p class="section-eyebrow">Lesson Style</p>
@@ -567,6 +587,156 @@
     <div class="reveal mt-12 md:mt-14 flex justify-center">
       <a href="#" class="btn btn-outline-brand font-bold inline-flex items-center gap-2">
         レッスンスタイルを詳しく見る
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SCHEDULE ============================== -->
+<section id="schedule" class="py-16 md:py-24">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10">
+    <header class="reveal mb-10 md:mb-14">
+      <p class="section-eyebrow">Schedule</p>
+      <h2 class="section-title mt-1">開講曜日・時間</h2>
+      <p class="section-lead">ご都合に合わせて通いやすい曜日・お時間をお選びいただけます。</p>
+    </header>
+
+    <!-- 表（中央寄せ・ちょうどよく拡大） -->
+    <div class="reveal flex justify-center">
+      <div class="w-full max-w-[920px] border-2 border-brand overflow-hidden">
+        <table class="w-full border-collapse text-center [&_th]:border-r [&_th]:border-b [&_th]:border-gray-300 [&_td]:border-r [&_td]:border-b [&_td]:border-gray-300 [&_tr_:last-child]:border-r-0 [&_tbody_tr:last-child_td]:border-b-0">
+          <thead>
+            <tr class="bg-brand text-white">
+              <th class="px-2 py-3 text-[14px] md:text-[16px] font-bold w-[26%]">開講時間</th>
+              <th class="px-2 py-3 text-[14px] md:text-[16px] font-bold">月</th>
+              <th class="px-2 py-3 text-[14px] md:text-[16px] font-bold">火</th>
+              <th class="px-2 py-3 text-[14px] md:text-[16px] font-bold">水</th>
+              <th class="px-2 py-3 text-[14px] md:text-[16px] font-bold">木</th>
+              <th class="px-2 py-3 text-[14px] md:text-[16px] font-bold">金</th>
+              <th class="px-2 py-3 text-[14px] md:text-[16px] font-bold">土</th>
+              <th class="px-2 py-3 text-[14px] md:text-[16px] font-bold">日</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white">
+              <td class="px-2 py-3 text-ink-soft text-[14px] md:text-[16px]">17:00〜17:50</td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
+              <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
+              <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+            </tr>
+            <tr class="bg-white">
+              <td class="px-2 py-3 text-ink-soft text-[14px] md:text-[16px]">18:00〜18:50</td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
+              <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
+              <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+            </tr>
+            <tr class="bg-white">
+              <td class="px-2 py-3 text-ink-soft text-[14px] md:text-[16px]">19:00〜19:50</td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
+              <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
+              <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 振替レッスンの案内 -->
+    <div class="reveal mt-10 md:mt-12 bg-bg-soft rounded-[10px] px-6 md:px-9 py-6 flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
+      <div class="flex items-center gap-6 md:gap-8 flex-1">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#18B293" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <div>
+          <p class="font-semibold text-ink text-[18px] md:text-[22px] leading-[1.6]">振替レッスンにも対応！</p>
+          <p class="text-ink text-[14px] md:text-[16px] leading-[1.8]">急な予定変更があっても安心！振替制度でしっかりサポートします。</p>
+        </div>
+      </div>
+      <a href="#" class="btn btn-outline-brand font-bold shrink-0 w-full lg:w-auto">
+        振替制度について詳しく見る
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PRICING ============================== -->
+<section id="pricing" class="py-16 md:py-24">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10">
+    <header class="reveal mb-10 md:mb-14">
+      <p class="section-eyebrow">Pricing</p>
+      <h2 class="section-title mt-1">受講料金</h2>
+    </header>
+
+    <!-- 月4回（50分 × 4回） -->
+    <div class="reveal flex items-center justify-center gap-3 mb-8 md:mb-10">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4D4D4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <p class="text-ink-soft font-semibold leading-none">
+        <span class="text-[22px] md:text-[24px] tracking-wide">月</span>
+        <span class="text-[28px] md:text-[32px] tracking-wide">4</span>
+        <span class="text-[22px] md:text-[24px] tracking-wide">回</span>
+        <span class="text-[20px] md:text-[24px] ml-1">（50分 × 4回）</span>
+      </p>
+    </div>
+
+    <!-- 価格比較 -->
+    <div class="reveal flex flex-col lg:flex-row items-stretch justify-center gap-6 lg:gap-5">
+      <!-- 通常価格カード -->
+      <div class="bg-white border-2 border-gray-300 w-full max-w-[309px] overflow-hidden flex flex-col">
+        <div class="bg-gray-300 text-ink-gray text-center font-bold py-3 text-[18px] md:text-[20px]">通常価格</div>
+        <div class="flex-1 flex items-center justify-center px-4 py-6 text-center text-ink-gray font-bold">
+          <span class="leading-none whitespace-nowrap">
+            <span class="text-[18px] md:text-[20px]">月額　</span>
+            <span class="relative inline-block">
+              <span class="text-[28px] md:text-[32px]">¥</span>
+              <span class="text-[36px] md:text-[40px]">17,600</span>
+              <!-- 取り消し線 2 本（ピンク強調・¥17,600 のみに重ねる） -->
+              <span aria-hidden="true" class="absolute left-0 right-0 top-[42%] h-[2px] bg-pink"></span>
+              <span aria-hidden="true" class="absolute left-0 right-0 top-[60%] h-[2px] bg-pink"></span>
+            </span>
+            <span class="text-[18px] md:text-[20px]">（税込）</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- 矢印（強調色：ピンク） -->
+      <div class="text-pink rotate-90 lg:rotate-0 shrink-0 self-center">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><polygon points="4,4 20,12 4,20"/></svg>
+      </div>
+
+      <!-- キャンペーン価格 -->
+      <div class="w-full max-w-[616px] flex flex-col">
+        <div class="bg-pink-soft text-white text-center font-bold py-3 text-[18px] md:text-[20px] relative">
+          今なら特別価格でずーっとおトク！
+          <span aria-hidden="true" class="absolute left-1/2 -translate-x-1/2 -bottom-[10px] w-0 h-0 border-l-[12px] border-r-[12px] border-t-[12px] border-l-transparent border-r-transparent border-t-pink-soft"></span>
+        </div>
+        <div class="flex-1 flex items-end justify-center text-center font-bold text-pink-soft pt-6 pb-4 leading-none">
+          <span class="leading-none">
+            <span class="text-ink-gray text-[24px] md:text-[32px]">月額　</span>
+            <span class="text-[44px] md:text-[64px]">¥</span>
+            <span class="text-[64px] md:text-[96px]">13,200</span>
+            <span class="text-ink-gray text-[24px] md:text-[32px]">（税込）</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <p class="reveal text-center text-ink text-[13px] md:text-[14px] mt-8 md:mt-10">※ 本キャンペーンは予告なく終了する場合がございます。</p>
+
+    <div class="reveal mt-10 md:mt-12 flex justify-center">
+      <a href="#" class="btn btn-outline-brand font-bold inline-flex items-center gap-2">
+        受講料金を詳しく見る
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
     </div>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ja" style="color-scheme: light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#18B293" />
+<title>受講料金 | Federico - 子ども向けゲーム制作オンラインスクール</title>
+<meta name="description" content="Federico の受講料金は月額¥13,200（税込・キャンペーン特別価格）。月4回（50分×4回）の少人数オンラインレッスンで本物のゲームづくりを学べます。" />
+
+<link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+<link href="https://fonts.bunny.net/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: '#18B293',
+          'brand-dark': '#0E8E76',
+          pink: {
+            DEFAULT: '#FF4F7B',
+            soft: 'rgba(255, 79, 123, 0.97)',
+          },
+          ink: {
+            DEFAULT: '#333333',
+            soft: '#4D4D4D',
+            gray: '#737373',
+          },
+          scratch: '#FFAB19',
+          unity: '#4D4D4D',
+          roblox: '#335FFF',
+          'bg-soft': '#EEFBF8',
+          'bg-gray': '#F5F5F5',
+        },
+        fontFamily: {
+          sans: ['"Noto Sans JP"', '"Hiragino Kaku Gothic ProN"', '"Yu Gothic"', 'sans-serif'],
+          en: ['Inter', 'Helvetica Neue', 'sans-serif'],
+        },
+        boxShadow: {
+          header: '0 4px 2px rgba(156, 156, 156, 0.25)',
+          card: '0 4px 16px rgba(0, 0, 0, 0.06)',
+          soft: '0 2px 10px rgba(20, 40, 80, 0.06)',
+          meta: '4px 4px 4px rgba(0, 0, 0, 0.25)',
+        },
+      }
+    }
+  }
+</script>
+
+<style type="text/tailwindcss">
+  @layer base {
+    html { scroll-behavior: smooth; }
+    body {
+      @apply font-sans text-ink antialiased;
+      font-feature-settings: "palt" 1;
+      letter-spacing: 0.02em;
+      line-height: 1.8;
+      text-rendering: optimizeLegibility;
+    }
+    a { @apply transition-opacity; }
+    a:hover { @apply opacity-75; }
+    ul, ol { @apply list-none p-0 m-0; }
+
+    /* WIG: shared a11y/perf utilities */
+    h1, h2, h3 { text-wrap: pretty; }
+    button, a, [role="button"], summary, input, label, select { touch-action: manipulation; }
+    *:focus { outline: none; }
+    *:focus-visible {
+      outline: 2px solid #18B293;
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+    /* iOS の safe-area を考慮した固定要素 */
+    #trialButton { bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); }
+    @media (min-width: 768px) {
+      #trialButton { bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); }
+      #topLink { bottom: calc(7.5rem + env(safe-area-inset-bottom, 0px)); }
+    }
+  }
+
+  @layer components {
+    body {
+      background-color: #ffffff;
+      background-image: url("data:image/svg+xml;utf8,<svg aria-hidden="true" focusable="false" xmlns='http://www.w3.org/2000/svg' width='660' height='232' viewBox='0 0 660 232'><g fill='none' stroke='%2318B293' stroke-opacity='0.16' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><g transform='translate(12 32)'><path d='M14.5 17.5 3 6V3h3l11.5 11.5'/><path d='m13 19 6-6'/><path d='m16 16 4 4'/><path d='m19 21 2-2'/></g><g transform='translate(144 32)'><path d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z'/></g><g transform='translate(276 32)'><path d='M14 2v6.343a1 1 0 0 0 .293 .707l5.414 5.414A2 2 0 0 1 18.293 18H5.707a2 2 0 0 1-1.414-3.536l5.414-5.414A1 1 0 0 0 10 8.343V2'/><path d='M8.5 2h7'/><path d='M7 16h10'/></g><g transform='translate(408 32)'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/></g><g transform='translate(540 32)'><path d='M6 3h12l4 6-10 13L2 9Z'/><path d='M11 3 8 9l4 13 4-13-3-6'/><path d='M2 9h20'/></g><g transform='translate(78 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g><g transform='translate(210 148)'><path d='M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294 .904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771 .56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'/></g><g transform='translate(342 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g><g transform='translate(474 148)'><path d='M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294 .904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771 .56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'/></g><g transform='translate(606 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g></g></svg>");
+      background-repeat: repeat;
+      background-attachment: fixed;
+    }
+    main, section, header, footer { position: relative; }
+  }
+
+  @layer components {
+    .section-eyebrow {
+      @apply font-en text-brand font-bold text-[20px] tracking-wide leading-none;
+    }
+    .section-title {
+      @apply font-bold text-ink text-[28px] md:text-[32px] tracking-[0.05em] leading-[1.2];
+    }
+    .section-lead {
+      @apply text-ink text-[15px] md:text-[16px] leading-[1.8] mt-3;
+    }
+    .center-title {
+      @apply text-center font-bold text-ink text-[26px] md:text-[32px] tracking-[0.05em];
+    }
+    .center-title-underline {
+      @apply block mx-auto mt-3 w-[110px] h-[3px] bg-brand rounded-full;
+    }
+
+    .btn {
+      @apply inline-flex items-center justify-center gap-2 font-bold whitespace-nowrap cursor-pointer transition-all;
+    }
+    .btn-pink {
+      @apply bg-pink text-white px-5 py-4 text-[14px] md:text-[16px] leading-none;
+    }
+    .btn-pink:hover { @apply -translate-y-0.5; opacity: 0.92; }
+    .btn-brand {
+      @apply bg-brand text-white px-5 py-4 text-[14px] md:text-[16px] leading-none;
+    }
+    .btn-brand:hover { @apply -translate-y-0.5; opacity: 0.92; }
+    .btn-outline-brand {
+      @apply bg-white border-2 border-brand text-brand rounded-full px-8 py-3 text-[15px] md:text-[16px];
+    }
+    .btn-outline-brand:hover { @apply -translate-y-0.5 bg-brand text-white; opacity: 1; }
+
+    .nav-link {
+      @apply text-ink text-[14px] font-medium hover:opacity-70 transition-opacity;
+    }
+
+    /* スクロール連動フェードイン */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease-out, transform .7s ease-out;
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
+  }
+</style>
+</head>
+
+<body class="bg-white">
+
+<!-- ============================== HEADER ============================== -->
+<header class="sticky top-0 z-50 bg-white shadow-header">
+  <div class="max-w-[1440px] mx-auto h-[72px] md:h-[82px] px-5 md:px-10 flex items-center">
+    <a href="index.html" class="shrink-0 flex items-center" aria-label="Federico">
+      <img loading="eager" decoding="async" fetchpriority="high" src="assets/logo_new.svg" alt="Federico" class="h-[144px] md:h-[176px] w-auto" />
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-16 ml-auto">
+      <a href="index.html#about" class="nav-link">Federicoについて</a>
+      <a href="index.html#course" class="nav-link">受講コース</a>
+      <a href="index.html#lesson-style" class="nav-link">レッスンスタイル</a>
+      <a href="faq.html" class="nav-link">よくあるご質問</a>
+    </nav>
+
+    <div class="lg:ml-8 ml-auto flex items-center gap-2 md:gap-3">
+      <a href="#" class="btn btn-pink hidden sm:inline-flex">無料体験お申し込み</a>
+      <a href="#" class="btn btn-brand hidden md:inline-flex">ログイン</a>
+      <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center size-10 text-ink" aria-label="メニュー" aria-controls="mobileMenu" aria-expanded="false">
+        <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-gray-200 bg-white" style="overscroll-behavior: contain;">
+    <div class="px-5 py-4 flex flex-col gap-3">
+      <a href="index.html#about" class="nav-link py-2">Federicoについて</a>
+      <a href="index.html#course" class="nav-link py-2">受講コース</a>
+      <a href="index.html#lesson-style" class="nav-link py-2">レッスンスタイル</a>
+      <a href="faq.html" class="nav-link py-2">よくあるご質問</a>
+      <div class="flex gap-2 pt-2">
+        <a href="#" class="btn btn-pink flex-1 sm:hidden">無料体験お申し込み</a>
+        <a href="#" class="btn btn-brand flex-1 md:hidden">ログイン</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== ページタイトル ============================== -->
+<section class="py-14 md:py-20 bg-bg-soft">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10 text-center">
+    <p class="section-eyebrow reveal">Pricing</p>
+    <h1 class="section-title mt-2 reveal">受講料金</h1>
+    <p class="reveal mt-5 text-ink text-[14px] md:text-[16px] leading-[1.9]">
+      月4回（50分×4回）のオンラインレッスンを、シンプルな月額制でご利用いただけます。<br />
+      入会金・教材費はかかりません。
+    </p>
+  </div>
+</section>
+
+<!-- ============================== PRICING ============================== -->
+<section id="pricing" class="py-16 md:py-24">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10">
+
+    <div class="reveal flex items-center justify-center gap-3 mb-8 md:mb-10">
+      <svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4D4D4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <p class="text-ink-soft font-semibold leading-none">
+        <span class="text-[22px] md:text-[24px] tracking-wide">月</span>
+        <span class="text-[28px] md:text-[32px] tracking-wide">4</span>
+        <span class="text-[22px] md:text-[24px] tracking-wide">回</span>
+        <span class="text-[20px] md:text-[24px] ml-1">（50分 × 4回）</span>
+      </p>
+    </div>
+
+    <div class="reveal flex flex-col lg:flex-row items-stretch justify-center gap-6 lg:gap-5">
+      <!-- 通常価格 -->
+      <div class="bg-white border-2 border-gray-300 w-full max-w-[309px] overflow-hidden flex flex-col mx-auto lg:mx-0">
+        <div class="bg-gray-300 text-ink-gray text-center font-bold py-3 text-[18px] md:text-[20px]">通常価格</div>
+        <div class="flex-1 flex items-center justify-center px-4 py-6 text-center text-ink-gray font-bold">
+          <span class="leading-none whitespace-nowrap">
+            <span class="text-[18px] md:text-[20px]">月額　</span>
+            <span class="relative inline-block">
+              <span class="text-[28px] md:text-[32px]">¥</span>
+              <span class="text-[36px] md:text-[40px]">17,600</span>
+              <span aria-hidden="true" class="absolute left-0 right-0 top-[42%] h-[2px] bg-pink"></span>
+              <span aria-hidden="true" class="absolute left-0 right-0 top-[60%] h-[2px] bg-pink"></span>
+            </span>
+            <span class="text-[18px] md:text-[20px]">（税込）</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- 矢印 -->
+      <div class="text-pink rotate-90 lg:rotate-0 shrink-0 self-center">
+        <svg aria-hidden="true" focusable="false" width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><polygon points="4,4 20,12 4,20"/></svg>
+      </div>
+
+      <!-- キャンペーン価格 -->
+      <div class="w-full max-w-[616px] flex flex-col relative">
+        <!-- 毎月¥4,000 OFF バッジ -->
+        <div class="absolute bottom-full right-2 -mb-2 w-[80px] md:right-4 md:w-[110px] lg:bottom-auto lg:top-1/4 lg:right-0 lg:-translate-y-1/2 lg:translate-x-1/2 lg:mb-0 lg:w-[150px] rotate-[8deg] z-10 pointer-events-none">
+          <img loading="lazy" decoding="async" src="assets/badge_4000off.png" alt="毎月4000円OFF" class="w-full h-auto" />
+          <div class="absolute inset-0 flex flex-col items-center justify-center text-center font-semibold leading-[1.15]">
+            <span class="text-ink text-[10px] md:text-[13px] lg:text-[16px]">毎月</span>
+            <span class="text-pink text-[16px] md:text-[20px] lg:text-[26px]">¥4,000</span>
+            <span class="text-pink text-[10px] md:text-[13px] lg:text-[16px]">OFF！</span>
+          </div>
+        </div>
+
+        <div class="bg-pink-soft text-white text-center font-bold py-3 text-[18px] md:text-[20px] relative">
+          今なら特別価格でずーっとおトク！
+          <span aria-hidden="true" class="absolute left-1/2 -translate-x-1/2 -bottom-[10px] w-0 h-0 border-l-[12px] border-r-[12px] border-t-[12px] border-l-transparent border-r-transparent border-t-pink-soft"></span>
+        </div>
+        <div class="flex-1 flex items-end justify-center text-center font-bold text-pink-soft pt-6 pb-4 leading-none">
+          <span class="leading-none block w-full sm:inline sm:w-auto">
+            <span class="text-ink-gray text-[24px] md:text-[32px]">月額　</span>
+            <span class="text-[44px] md:text-[64px]">¥</span>
+            <span class="text-[64px] md:text-[96px]">13,200</span>
+            <span class="text-ink-gray text-[24px] md:text-[32px] block text-right pr-2 mt-1 sm:inline sm:mt-0 sm:pr-0 sm:text-center">（税込）</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <p class="reveal text-center text-ink text-[13px] md:text-[14px] mt-8 md:mt-10">
+      ※ 本キャンペーンは予告なく終了する場合がございます。
+    </p>
+  </div>
+</section>
+
+<!-- ============================== 料金に含まれるもの ============================== -->
+<section class="py-16 md:py-24 bg-bg-soft">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10">
+    <header class="reveal mb-10 md:mb-14 text-center">
+      <h2 class="center-title">受講料金に含まれるもの</h2>
+      <span class="center-title-underline" aria-hidden="true"></span>
+    </header>
+
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-[920px] mx-auto">
+      <li class="reveal bg-white rounded-[10px] border border-brand/30 p-6 md:p-7 flex items-start gap-4">
+        <span class="shrink-0 size-[44px] rounded-full bg-brand text-white flex items-center justify-center">
+          <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <div>
+          <p class="font-bold text-ink text-[16px] md:text-[18px] leading-[1.6]">月4回（50分×4回）のレッスン</p>
+          <p class="mt-2 text-ink text-[13px] md:text-[14px] leading-[1.85]">専属講師による少人数オンラインレッスン。曜日・時間はご都合にあわせて選べます。</p>
+        </div>
+      </li>
+      <li class="reveal bg-white rounded-[10px] border border-brand/30 p-6 md:p-7 flex items-start gap-4">
+        <span class="shrink-0 size-[44px] rounded-full bg-brand text-white flex items-center justify-center">
+          <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <div>
+          <p class="font-bold text-ink text-[16px] md:text-[18px] leading-[1.6]">オリジナル教材</p>
+          <p class="mt-2 text-ink text-[13px] md:text-[14px] leading-[1.85]">レベル別に用意された Federico オリジナルカリキュラム。追加の教材費は不要です。</p>
+        </div>
+      </li>
+      <li class="reveal bg-white rounded-[10px] border border-brand/30 p-6 md:p-7 flex items-start gap-4">
+        <span class="shrink-0 size-[44px] rounded-full bg-brand text-white flex items-center justify-center">
+          <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <div>
+          <p class="font-bold text-ink text-[16px] md:text-[18px] leading-[1.6]">振替レッスン制度</p>
+          <p class="mt-2 text-ink text-[13px] md:text-[14px] leading-[1.85]">急なご予定変更時もマイページからキャンセル&振替可能。月内の振替に対応しています。</p>
+        </div>
+      </li>
+      <li class="reveal bg-white rounded-[10px] border border-brand/30 p-6 md:p-7 flex items-start gap-4">
+        <span class="shrink-0 size-[44px] rounded-full bg-brand text-white flex items-center justify-center">
+          <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <div>
+          <p class="font-bold text-ink text-[16px] md:text-[18px] leading-[1.6]">進捗の可視化・保護者共有</p>
+          <p class="mt-2 text-ink text-[13px] md:text-[14px] leading-[1.85]">毎回のレッスンで「できたこと・次にやること」を整理。保護者の方にも共有します。</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================== お支払い・キャンペーン詳細 ============================== -->
+<section class="py-16 md:py-24">
+  <div class="max-w-[920px] mx-auto px-5 md:px-10">
+    <header class="reveal mb-10 md:mb-14 text-center">
+      <h2 class="center-title">お支払い・ご利用にあたって</h2>
+      <span class="center-title-underline" aria-hidden="true"></span>
+    </header>
+
+    <dl class="reveal divide-y divide-gray-200 border-y border-gray-200">
+      <div class="py-5 md:py-6 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-2 md:gap-6">
+        <dt class="font-semibold text-brand text-[14px] md:text-[15px]">入会金</dt>
+        <dd class="text-ink text-[14px] md:text-[15px] leading-[1.9]">無料</dd>
+      </div>
+      <div class="py-5 md:py-6 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-2 md:gap-6">
+        <dt class="font-semibold text-brand text-[14px] md:text-[15px]">教材費</dt>
+        <dd class="text-ink text-[14px] md:text-[15px] leading-[1.9]">無料（受講料金に含まれます）</dd>
+      </div>
+      <div class="py-5 md:py-6 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-2 md:gap-6">
+        <dt class="font-semibold text-brand text-[14px] md:text-[15px]">お支払い方法</dt>
+        <dd class="text-ink text-[14px] md:text-[15px] leading-[1.9]">クレジットカード（毎月自動引き落とし）</dd>
+      </div>
+      <div class="py-5 md:py-6 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-2 md:gap-6">
+        <dt class="font-semibold text-brand text-[14px] md:text-[15px]">最低受講期間</dt>
+        <dd class="text-ink text-[14px] md:text-[15px] leading-[1.9]">なし（ご退会はマイページからいつでも可能）</dd>
+      </div>
+      <div class="py-5 md:py-6 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-2 md:gap-6">
+        <dt class="font-semibold text-brand text-[14px] md:text-[15px]">キャンペーン適用条件</dt>
+        <dd class="text-ink text-[14px] md:text-[15px] leading-[1.9]">
+          オープン記念につき、現在お申し込みの方は<strong class="text-pink font-bold">「ずーっと特別価格」</strong>でご受講いただけます。途中で月額が上がることはありません。
+        </dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================== CTA ============================== -->
+<section class="py-16 md:py-24 bg-bg-soft">
+  <div class="max-w-[920px] mx-auto px-5 md:px-10 text-center">
+    <h2 class="reveal section-title">まずは無料体験から</h2>
+    <p class="reveal section-lead">「うちの子に向いてるか確かめたい」そんなお気持ちで大丈夫です。<br class="hidden md:block" />実際のレッスンと同じ環境で、無料でお試しいただけます。</p>
+    <div class="reveal mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#" class="btn btn-pink rounded-full !px-10 !py-4">無料体験お申し込み</a>
+      <a href="index.html#course" class="btn btn-outline-brand">受講コースを見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="bg-brand py-7">
+  <p class="text-center text-white text-[12px] font-en">Copyright 2026 Tsuzurhythm Inc.</p>
+</footer>
+
+<!-- ============================== 無料体験 申込CTA（固定） ============================== -->
+<a href="#" id="trialButton" class="fixed bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:bottom-6 md:right-6 z-40 inline-flex items-center gap-2 md:gap-[13px] bg-brand text-white rounded-full pl-2 pr-2 md:pl-[13px] md:pr-3 py-2 md:py-[11px] shadow-[0px_4px_8px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 transition-transform" aria-label="無料体験お申し込みはこちら">
+  <span class="size-[52px] md:size-[67px] rounded-full bg-white flex flex-col items-center justify-center text-pink shrink-0">
+    <span class="text-[11px] md:text-[13px] font-medium leading-[1.3] tracking-[-0.04em]">カンタン</span>
+    <span class="text-[9px] md:text-[11px] font-medium leading-[1.3]">1分で完了！</span>
+  </span>
+  <span class="flex flex-col items-center text-center leading-[1.4] md:leading-[1.5]">
+    <span class="text-[9px] md:text-[12px] font-medium leading-tight whitespace-nowrap">お子さまの「やってみたい」を応援します！</span>
+    <span class="text-[14px] md:text-[20px] font-bold tracking-[0.03em] mt-0.5 md:mt-0 whitespace-nowrap">
+      <span class="text-[#FBEE50]">無料体験</span>お申し込みはこちら
+    </span>
+  </span>
+  <span class="size-[30px] md:size-[37px] rounded-full bg-white flex items-center justify-center shrink-0">
+    <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#18B293" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </span>
+</a>
+
+<!-- ============================== TOPへ戻る ============================== -->
+<a href="#" id="topLink" class="hidden md:flex fixed right-6 z-40 bottom-[120px] size-14 rounded-full bg-white border border-brand text-brand flex-col items-center justify-center shadow-soft hover:bg-brand hover:text-white transition-colors opacity-0 pointer-events-none" aria-label="トップへ戻る">
+  <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  <span class="text-[11px] font-bold mt-0.5">TOP</span>
+</a>
+
+<script>
+  document.getElementById('menuBtn')?.addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    const menu = document.getElementById('mobileMenu');
+    menu?.classList.toggle('hidden');
+    btn.setAttribute('aria-expanded', String(!menu?.classList.contains('hidden')));
+  });
+
+  const topLink = document.getElementById('topLink');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      topLink.classList.remove('opacity-0', 'pointer-events-none');
+      topLink.classList.add('opacity-100');
+    } else {
+      topLink.classList.add('opacity-0', 'pointer-events-none');
+      topLink.classList.remove('opacity-100');
+    }
+  });
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>

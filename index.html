@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" style="color-scheme: light">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#18B293" />
 <title>Federico | ゲームクリエイターズアカデミー - 子ども向けゲーム制作オンラインスクール</title>
 <meta name="description" content="Federico（ゲームクリエイターズアカデミー）は、Scratch・Unity・Robloxを使って本物のゲームづくりを学べる子ども向けオンラインスクールです。" />
 
@@ -59,6 +60,22 @@
     a { @apply transition-opacity; }
     a:hover { @apply opacity-75; }
     ul, ol { @apply list-none p-0 m-0; }
+
+    /* WIG: shared a11y/perf utilities */
+    h1, h2, h3 { text-wrap: pretty; }
+    button, a, [role="button"], summary, input, label, select { touch-action: manipulation; }
+    *:focus { outline: none; }
+    *:focus-visible {
+      outline: 2px solid #18B293;
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+    /* iOS の safe-area を考慮した固定要素 */
+    #trialButton { bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); }
+    @media (min-width: 768px) {
+      #trialButton { bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); }
+      #topLink { bottom: calc(7.5rem + env(safe-area-inset-bottom, 0px)); }
+    }
   }
 
   @layer components {
@@ -67,7 +84,7 @@
        2行目: メダル・星 を半ピッチでオフセット配置 */
     body {
       background-color: #ffffff;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='660' height='232' viewBox='0 0 660 232'><g fill='none' stroke='%2318B293' stroke-opacity='0.16' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><g transform='translate(12 32)'><path d='M14.5 17.5 3 6V3h3l11.5 11.5'/><path d='m13 19 6-6'/><path d='m16 16 4 4'/><path d='m19 21 2-2'/></g><g transform='translate(144 32)'><path d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z'/></g><g transform='translate(276 32)'><path d='M14 2v6.343a1 1 0 0 0 .293 .707l5.414 5.414A2 2 0 0 1 18.293 18H5.707a2 2 0 0 1-1.414-3.536l5.414-5.414A1 1 0 0 0 10 8.343V2'/><path d='M8.5 2h7'/><path d='M7 16h10'/></g><g transform='translate(408 32)'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/></g><g transform='translate(540 32)'><path d='M6 3h12l4 6-10 13L2 9Z'/><path d='M11 3 8 9l4 13 4-13-3-6'/><path d='M2 9h20'/></g><g transform='translate(78 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g><g transform='translate(210 148)'><path d='M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294 .904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771 .56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'/></g><g transform='translate(342 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g><g transform='translate(474 148)'><path d='M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294 .904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771 .56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'/></g><g transform='translate(606 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g></g></svg>");
+      background-image: url("data:image/svg+xml;utf8,<svg aria-hidden="true" focusable="false" xmlns='http://www.w3.org/2000/svg' width='660' height='232' viewBox='0 0 660 232'><g fill='none' stroke='%2318B293' stroke-opacity='0.16' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><g transform='translate(12 32)'><path d='M14.5 17.5 3 6V3h3l11.5 11.5'/><path d='m13 19 6-6'/><path d='m16 16 4 4'/><path d='m19 21 2-2'/></g><g transform='translate(144 32)'><path d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z'/></g><g transform='translate(276 32)'><path d='M14 2v6.343a1 1 0 0 0 .293 .707l5.414 5.414A2 2 0 0 1 18.293 18H5.707a2 2 0 0 1-1.414-3.536l5.414-5.414A1 1 0 0 0 10 8.343V2'/><path d='M8.5 2h7'/><path d='M7 16h10'/></g><g transform='translate(408 32)'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/></g><g transform='translate(540 32)'><path d='M6 3h12l4 6-10 13L2 9Z'/><path d='M11 3 8 9l4 13 4-13-3-6'/><path d='M2 9h20'/></g><g transform='translate(78 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g><g transform='translate(210 148)'><path d='M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294 .904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771 .56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'/></g><g transform='translate(342 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g><g transform='translate(474 148)'><path d='M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294 .904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771 .56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'/></g><g transform='translate(606 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g></g></svg>");
       background-repeat: repeat;
       background-attachment: fixed;
     }
@@ -251,8 +268,8 @@
 <!-- ============================== ローディング画面 ============================== -->
 <div id="loaderOverlay" class="loader-overlay" aria-label="読み込み中" role="status">
   <div class="loader-logo-wrap">
-    <img src="assets/logo_new.svg" class="loader-logo-base" alt="" aria-hidden="true" />
-    <img src="assets/logo_new.svg" class="loader-logo-color" alt="Federico" />
+    <img loading="eager" decoding="async" fetchpriority="high" src="assets/logo_new.svg" class="loader-logo-base" alt="" aria-hidden="true" />
+    <img loading="lazy" decoding="async" src="assets/logo_new.svg" class="loader-logo-color" alt="Federico" />
   </div>
 </div>
 
@@ -261,7 +278,7 @@
   <div class="max-w-[1440px] mx-auto h-[72px] md:h-[82px] px-5 md:px-10 flex items-center">
     <!-- ロゴ（Figma: ヘッダー82pxに対し画像高さ約108px、上下にはみ出し） -->
     <a href="#" class="shrink-0 flex items-center" aria-label="Federico">
-      <img src="assets/logo_new.svg" alt="Federico" class="h-[144px] md:h-[176px] w-auto" />
+      <img loading="lazy" decoding="async" src="assets/logo_new.svg" alt="Federico" class="h-[144px] md:h-[176px] w-auto" />
     </a>
 
     <!-- ナビゲーション（右寄せ。Figma: gap-[64px]） -->
@@ -278,14 +295,14 @@
       <a href="#" class="btn btn-brand hidden md:inline-flex">ログイン</a>
 
       <!-- モバイルメニュー -->
-      <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center size-10 text-ink" aria-label="メニュー">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center size-10 text-ink" aria-label="メニュー" aria-controls="mobileMenu" aria-expanded="false">
+        <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </div>
 
   <!-- モバイルメニュー展開 -->
-  <div id="mobileMenu" class="lg:hidden hidden border-t border-gray-200 bg-white">
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-gray-200 bg-white" style="overscroll-behavior: contain;">
     <div class="px-5 py-4 flex flex-col gap-3">
       <a href="#about" class="nav-link py-2">Federicoについて</a>
       <a href="#course" class="nav-link py-2">受講コース</a>
@@ -302,25 +319,49 @@
 <!-- ============================== HERO ============================== -->
 <section class="relative overflow-hidden lg:min-h-[760px]">
 
-  <!-- テキスト（モバイル: 通常フロー / デスクトップ: 画像の上にオーバーレイ） -->
-  <div class="max-w-[1440px] mx-auto relative">
-    <div class="relative z-10 px-5 md:px-10 lg:pl-[60px] pt-10 md:pt-16 lg:pt-28 pb-8 md:pb-12 lg:pb-28 max-w-full lg:max-w-[760px]">
-      <h1 class="reveal flex flex-col gap-4 sm:gap-5 md:gap-7">
+  <!-- モバイル用: PCと同じ思想で写真を右寄せ配置し、左→右の白マスクで
+       テキストを読みやすくする。下部にPCと同じ系統の短い説明文も載せる。
+       boy（写真の中央〜右）が白マスクの外（透明側）に来るよう、
+       画像自体を translateX で右側にずらす。 -->
+  <div class="lg:hidden relative overflow-hidden min-h-[420px] sm:min-h-[500px]">
+    <!-- 画像: 右端を viewport 右端に揃え、aspect-ratio を保ったまま左にはみ出させる -->
+    <img loading="eager" decoding="async" fetchpriority="high" src="assets/hero_right.png" alt=""
+         class="absolute inset-y-0 right-0 h-full w-auto max-w-none object-cover object-right block translate-x-[20%] sm:translate-x-[12%]"
+         style="min-width: 100%;" />
+    <!-- 白マスク: 左半分はテキスト読みやすく不透明、右側で boy が見えるように早めに透明へ -->
+    <div class="absolute inset-0 pointer-events-none"
+         style="background: linear-gradient(to right, #ffffff 0%, #ffffff 28%, rgba(255,255,255,0.7) 42%, rgba(255,255,255,0.25) 58%, rgba(255,255,255,0) 78%);"></div>
+    <!-- テキスト: 左寄せ。キャッチコピー＋下部に小さな説明 -->
+    <div class="relative px-5 sm:px-8 pt-12 sm:pt-16 pb-10 sm:pb-12 max-w-[58%] sm:max-w-[55%]">
+      <h1 class="reveal text-ink font-bold tracking-[0.04em] leading-[1.4] text-[22px] sm:text-[28px]">
+        ゲームが<span class="text-brand">学び</span>になる時代へ。
+      </h1>
+      <p class="reveal mt-5 sm:mt-7 text-ink text-[12px] sm:text-[14px] leading-[1.9]">
+        ScratchやUnityを使って本物のゲームづくりを学べる、子ども向けオンラインスクール。<br />
+        プロのクリエイターと一緒に、つくる楽しさを思いきり体験しよう。
+      </p>
+    </div>
+  </div>
+
+  <!-- デスクトップ用: 元のキャッチコピー（テキスト左 / 画像右オーバーレイ） -->
+  <div class="hidden lg:block max-w-[1440px] mx-auto relative">
+    <div class="relative z-10 lg:pl-[60px] lg:pt-28 lg:pb-28 lg:max-w-[760px]">
+      <h1 class="reveal flex flex-col gap-7">
         <span class="hero-tagline block whitespace-nowrap">
           <span class="hero-tagline-em">好き</span><span class="hero-tagline-sub">が</span><span class="hero-tagline-em">未来</span><span class="hero-tagline-sub">をつくる。</span>
         </span>
-        <span class="flex items-center gap-2 sm:gap-3 whitespace-nowrap">
+        <span class="flex items-center gap-3 whitespace-nowrap">
           <span class="hero-key">ゲームをつくる力</span>
           <span class="hero-conn">が、</span>
         </span>
-        <span class="flex items-center gap-2 sm:gap-3 whitespace-nowrap">
+        <span class="flex items-center gap-3 whitespace-nowrap">
           <span class="hero-key">自信</span>
           <span class="hero-conn">と</span>
           <span class="hero-key">成長</span>
           <span class="hero-conn">につながる。</span>
         </span>
       </h1>
-      <p class="reveal mt-6 md:mt-10 text-ink text-[14px] sm:text-[15px] md:text-[18px] leading-[1.9] max-w-[640px]">
+      <p class="reveal mt-10 text-ink text-[18px] leading-[1.9] max-w-[640px]">
         ScratchやUnityを使って本物のゲームづくりを学べる<br />
         子ども向けオンラインスクール。<br />
         プロのクリエイターと一緒に、つくる楽しさを思いきり体験しよう。
@@ -328,11 +369,11 @@
     </div>
   </div>
 
-  <!-- 画像（モバイル: 通常フローでテキストの下に / デスクトップ: viewport の右端まで absolute）
+  <!-- デスクトップ用: 画像（viewport の右端まで absolute）
        lg:left の calc は、max-w-[1440px] のコンテナを中央配置した時の "コンテナの左端 + 32%" 位置を算出。
        ビューポートが 1440px を超えた場合も画像が viewport の右端まで広がる。 -->
   <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:z-0 lg:left-[max(32%,calc(50%_-_720px_+_460.8px))]">
-    <img src="assets/hero_right.png" alt="" class="w-full h-auto lg:h-full lg:object-cover lg:object-center" />
+    <img loading="lazy" decoding="async" src="assets/hero_right.png" alt="" class="w-full h-auto lg:h-full lg:object-cover lg:object-center" />
     <!-- 白グラデーションオーバーレイ（左→右に白が透明へ・デスクトップのみ） -->
     <div class="hidden lg:block absolute inset-0 pointer-events-none"
          style="background: linear-gradient(to right, #ffffff 0%, #ffffff 18%, rgba(255,255,255,0.85) 32%, rgba(255,255,255,0.45) 48%, rgba(255,255,255,0) 70%);"></div>
@@ -349,7 +390,7 @@
 
     <ul class="flex flex-col gap-10 md:gap-12">
       <li class="news-row reveal">
-        <img src="assets/news_campaign.png" alt="オープン記念キャンペーン" class="news-thumb object-cover" />
+        <img loading="lazy" decoding="async" src="assets/news_campaign.png" alt="オープン記念キャンペーン" class="news-thumb object-cover" />
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-3 mb-2">
             <span class="font-en text-ink-soft text-[14px] tracking-wider">2026.05.25</span>
@@ -365,7 +406,7 @@
       </li>
 
       <li class="news-row reveal">
-        <img src="assets/news_open.png" alt="Federicoオープン" class="news-thumb object-cover" />
+        <img loading="lazy" decoding="async" src="assets/news_open.png" alt="Federicoオープン" class="news-thumb object-cover" />
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-3 mb-2">
             <span class="font-en text-ink-soft text-[14px] tracking-wider">2026.05.25</span>
@@ -384,7 +425,7 @@
     <div class="reveal mt-12 md:mt-14 flex justify-center">
       <a href="#" class="btn btn-outline-brand font-bold inline-flex items-center gap-2">
         すべてのお知らせを見る
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
     </div>
   </div>
@@ -410,7 +451,7 @@
         </div>
       </div>
       <div class="order-first lg:order-last reveal">
-        <img src="assets/about_img.png" alt="Federicoで学ぶ様子" class="w-full max-w-[480px] mx-auto h-auto" />
+        <img loading="lazy" decoding="async" src="assets/about_img.png" alt="Federicoで学ぶ様子" class="w-full max-w-[480px] mx-auto h-auto" />
       </div>
     </div>
   </div>
@@ -432,7 +473,7 @@
         <span class="course-badge bg-scratch">初心者の方におすすめ</span>
         <div class="flex flex-col md:flex-row items-center gap-4 md:gap-3">
           <div class="w-[110px] h-[110px] flex items-center justify-center shrink-0">
-            <img src="assets/scratch_cat.png" alt="Scratch" class="max-w-full max-h-full object-contain" />
+            <img loading="lazy" decoding="async" src="assets/scratch_cat.png" alt="Scratch" class="max-w-full max-h-full object-contain" />
           </div>
           <div class="flex-1 text-center md:text-left">
             <h3 class="leading-[1.4]">
@@ -452,13 +493,13 @@
             <li class="flex items-start gap-2 text-ink text-[14px] leading-[1.6]"><span class="course-bullet bg-scratch mt-1.5"></span><div class="flex"><span class="shrink-0">学べること ： </span><div><div>プログラミングの基礎</div><div>ゲーム制作の基礎</div></div></div></li>
           </ul>
           <div class="border border-gray-200 rounded-[5px] overflow-hidden h-[104px]">
-            <img src="assets/scratch_img.png" alt="Scratch画面" class="w-full h-full object-cover" />
+            <img loading="lazy" decoding="async" src="assets/scratch_img.png" alt="Scratch画面" class="w-full h-full object-cover" />
           </div>
         </div>
         <div class="mt-6 flex justify-center">
           <a href="course-scratch.html" class="inline-flex items-center gap-3 bg-white border-2 border-scratch text-scratch rounded-full px-9 py-2.5 text-[16px] font-bold transition-all hover:-translate-y-0.5 hover:bg-scratch hover:text-white">
             詳しく見る
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
         </div>
       </article>
@@ -468,7 +509,7 @@
         <span class="course-badge bg-unity">本格的に学びたい方におすすめ</span>
         <div class="flex flex-col md:flex-row items-center gap-4 md:gap-3">
           <div class="w-[110px] h-[110px] flex items-center justify-center shrink-0">
-            <img src="assets/unity_logo.svg" alt="Unity" class="size-[84px] object-contain" />
+            <img loading="lazy" decoding="async" src="assets/unity_logo.svg" alt="Unity" class="size-[84px] object-contain" />
           </div>
           <div class="flex-1 text-center md:text-left">
             <h3 class="leading-[1.4]">
@@ -488,13 +529,13 @@
             <li class="flex items-start gap-2 text-ink text-[14px] leading-[1.6]"><span class="course-bullet bg-unity mt-1.5"></span><span class="flex"><span class="shrink-0">学べること ： </span><span class="block"><span class="block">プログラミングの応用</span><span class="block">本格的なゲーム制作</span></span></span></li>
           </ul>
           <div class="border border-gray-200 rounded-[5px] overflow-hidden h-[104px]">
-            <img src="assets/unity_img.jpg" alt="Unity画面" class="w-full h-full object-cover" />
+            <img loading="lazy" decoding="async" src="assets/unity_img.jpg" alt="Unity画面" class="w-full h-full object-cover" />
           </div>
         </div>
         <div class="mt-6 flex justify-center">
           <a href="course-unity.html" class="inline-flex items-center gap-3 bg-white border-2 border-unity text-unity rounded-full px-9 py-2.5 text-[16px] font-bold transition-all hover:-translate-y-0.5 hover:bg-unity hover:text-white">
             詳しく見る
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
         </div>
       </article>
@@ -505,7 +546,7 @@
         <span class="course-badge bg-roblox z-10">オリジナルゲームを公開したい方におすすめ</span>
         <div class="flex flex-col md:flex-row items-center gap-4 md:gap-3">
           <div class="w-[110px] h-[110px] flex items-center justify-center shrink-0">
-            <img src="assets/roblox.png" alt="Roblox" class="size-[84px] object-cover rounded-[10px]" />
+            <img loading="lazy" decoding="async" src="assets/roblox.png" alt="Roblox" class="size-[84px] object-cover rounded-[10px]" />
           </div>
           <div class="flex-1 text-center md:text-left">
             <h3 class="leading-[1.4]">
@@ -525,14 +566,14 @@
             <li class="flex items-start gap-2 text-ink text-[14px] leading-[1.6]"><span class="course-bullet bg-roblox mt-1.5"></span><span class="flex"><span class="shrink-0">学べること ： </span><span class="block"><span class="block">プログラミングの応用</span><span class="block">公開を意識した開発</span></span></span></li>
           </ul>
           <div class="border border-gray-200 rounded-[5px] overflow-hidden h-[104px]">
-            <img src="assets/scratch_img.png" alt="Roblox画面" class="w-full h-full object-cover" />
+            <img loading="lazy" decoding="async" src="assets/scratch_img.png" alt="Roblox画面" class="w-full h-full object-cover" />
           </div>
         </div>
 
         <div aria-hidden="true" class="absolute -inset-0.5 bg-[rgba(217,217,217,0.76)] rounded-[15px] pointer-events-none"></div>
 
         <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <span class="text-white text-[32px] md:text-[44px] font-bold tracking-[0.04em] drop-shadow-[0_2px_4px_rgba(0,0,0,0.25)] -rotate-[15deg]" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">Coming Soon...</span>
+          <span class="text-white text-[32px] md:text-[44px] font-bold tracking-[0.04em] drop-shadow-[0_2px_4px_rgba(0,0,0,0.25)] -rotate-[15deg]" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">Coming Soon…</span>
         </div>
       </article>
       -->
@@ -552,7 +593,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
       <article class="style-card reveal">
-        <img src="assets/lesson_img_1.png" alt="" class="w-[181px] h-[134px] object-contain" />
+        <img loading="lazy" decoding="async" src="assets/lesson_img_1.png" alt="" class="w-[181px] h-[134px] object-contain" />
         <h3 class="text-brand font-bold text-[18px] md:text-[20px]">オンライン完結</h3>
         <p class="text-ink text-[13px] md:text-[14px] leading-[1.8]">
           自宅の端末から受講可能。<br />全国どこからでも学べます。
@@ -560,7 +601,7 @@
       </article>
 
       <article class="style-card reveal">
-        <img src="assets/lesson_img_2.png" alt="" class="w-[181px] h-[134px] object-contain" />
+        <img loading="lazy" decoding="async" src="assets/lesson_img_2.png" alt="" class="w-[181px] h-[134px] object-contain" />
         <h3 class="text-brand font-bold text-[18px] md:text-[20px]">少人数制個別指導</h3>
         <p class="text-ink text-[13px] md:text-[14px] leading-[1.8]">
           講師が一人ひとりの到達目標を<br />設定して進行します。
@@ -568,7 +609,7 @@
       </article>
 
       <article class="style-card reveal">
-        <img src="assets/lesson_img_3.png" alt="" class="w-[181px] h-[134px] object-contain" />
+        <img loading="lazy" decoding="async" src="assets/lesson_img_3.png" alt="" class="w-[181px] h-[134px] object-contain" />
         <h3 class="text-brand font-bold text-[18px] md:text-[20px]">伴走型サポート</h3>
         <p class="text-ink text-[13px] md:text-[14px] leading-[1.8]">
           「答えを教える」のではなく、<br />考え方を引き出すコーチング型の指導を行います。
@@ -576,7 +617,7 @@
       </article>
 
       <article class="style-card reveal">
-        <img src="assets/lesson_img_4.png" alt="" class="w-[181px] h-[134px] object-contain" />
+        <img loading="lazy" decoding="async" src="assets/lesson_img_4.png" alt="" class="w-[181px] h-[134px] object-contain" />
         <h3 class="text-brand font-bold text-[18px] md:text-[20px]">進捗の可視化</h3>
         <p class="text-ink text-[13px] md:text-[14px] leading-[1.8]">
           「できたこと・次にやること」を明確化し、保護者の方にも共有します。
@@ -587,7 +628,7 @@
     <div class="reveal mt-12 md:mt-14 flex justify-center">
       <a href="#" class="btn btn-outline-brand font-bold inline-flex items-center gap-2">
         レッスンスタイルを詳しく見る
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
     </div>
   </div>
@@ -621,33 +662,33 @@
           <tbody>
             <tr class="bg-white">
               <td class="px-2 py-3 text-ink-soft text-[14px] md:text-[16px]">17:00〜17:50</td>
-              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg aria-hidden="true" focusable="false" class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
               <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
               <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
               <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
-              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
-              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
-              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg aria-hidden="true" focusable="false" class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg aria-hidden="true" focusable="false" class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg aria-hidden="true" focusable="false" class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
             </tr>
             <tr class="bg-white">
               <td class="px-2 py-3 text-ink-soft text-[14px] md:text-[16px]">18:00〜18:50</td>
-              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg aria-hidden="true" focusable="false" class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
               <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
               <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
               <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
-              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
-              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
-              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg aria-hidden="true" focusable="false" class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg aria-hidden="true" focusable="false" class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg aria-hidden="true" focusable="false" class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
             </tr>
             <tr class="bg-white">
               <td class="px-2 py-3 text-ink-soft text-[14px] md:text-[16px]">19:00〜19:50</td>
-              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg aria-hidden="true" focusable="false" class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
               <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
               <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
               <td class="px-2 py-3 text-[16px] md:text-[18px] text-ink-gray">◯</td>
-              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
-              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
-              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg aria-hidden="true" focusable="false" class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg aria-hidden="true" focusable="false" class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
+              <td class="px-2 py-3 text-[14px] md:text-[16px] text-ink-gray"><svg aria-hidden="true" focusable="false" class="inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></td>
             </tr>
           </tbody>
         </table>
@@ -657,7 +698,7 @@
     <!-- 振替レッスンの案内 -->
     <div class="reveal mt-10 md:mt-12 bg-bg-soft rounded-[10px] px-6 md:px-9 py-6 flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
       <div class="flex items-center gap-6 md:gap-8 flex-1">
-        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#18B293" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <svg aria-hidden="true" focusable="false" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#18B293" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         <div>
           <p class="font-semibold text-ink text-[18px] md:text-[22px] leading-[1.6]">振替レッスンにも対応！</p>
           <p class="text-ink text-[14px] md:text-[16px] leading-[1.8]">急な予定変更があっても安心！振替制度でしっかりサポートします。</p>
@@ -665,7 +706,7 @@
       </div>
       <a href="#" class="btn btn-outline-brand font-bold shrink-0 w-full lg:w-auto">
         振替制度について詳しく見る
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
     </div>
   </div>
@@ -681,7 +722,7 @@
 
     <!-- 月4回（50分 × 4回） -->
     <div class="reveal flex items-center justify-center gap-3 mb-8 md:mb-10">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4D4D4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4D4D4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
       <p class="text-ink-soft font-semibold leading-none">
         <span class="text-[22px] md:text-[24px] tracking-wide">月</span>
         <span class="text-[28px] md:text-[32px] tracking-wide">4</span>
@@ -712,11 +753,23 @@
 
       <!-- 矢印（強調色：ピンク） -->
       <div class="text-pink rotate-90 lg:rotate-0 shrink-0 self-center">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><polygon points="4,4 20,12 4,20"/></svg>
+        <svg aria-hidden="true" focusable="false" width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><polygon points="4,4 20,12 4,20"/></svg>
       </div>
 
       <!-- キャンペーン価格 -->
-      <div class="w-full max-w-[616px] flex flex-col">
+      <div class="w-full max-w-[616px] flex flex-col relative">
+        <!-- 毎月¥4,000 OFF バッジ — カードの右上に「貼り付け」風に配置。
+             画面幅に関わらず「今なら特別価格で…」のテキストに被らないよう、
+             カード上端の外側に大部分を逃がし、ごく僅かだけ overlap させる。 -->
+        <div class="absolute bottom-full right-2 -mb-2 w-[80px] md:right-4 md:w-[110px] lg:bottom-auto lg:top-1/4 lg:right-0 lg:-translate-y-1/2 lg:translate-x-1/2 lg:mb-0 lg:w-[150px] rotate-[8deg] z-10 pointer-events-none">
+          <img loading="lazy" decoding="async" src="assets/badge_4000off.png" alt="毎月4000円OFF" class="w-full h-auto" />
+          <div class="absolute inset-0 flex flex-col items-center justify-center text-center font-semibold leading-[1.15]">
+            <span class="text-ink text-[10px] md:text-[13px] lg:text-[16px]">毎月</span>
+            <span class="text-pink text-[16px] md:text-[20px] lg:text-[26px]">¥4,000</span>
+            <span class="text-pink text-[10px] md:text-[13px] lg:text-[16px]">OFF！</span>
+          </div>
+        </div>
+
         <div class="bg-pink-soft text-white text-center font-bold py-3 text-[18px] md:text-[20px] relative">
           今なら特別価格でずーっとおトク！
           <span aria-hidden="true" class="absolute left-1/2 -translate-x-1/2 -bottom-[10px] w-0 h-0 border-l-[12px] border-r-[12px] border-t-[12px] border-l-transparent border-r-transparent border-t-pink-soft"></span>
@@ -735,9 +788,9 @@
     <p class="reveal text-center text-ink text-[13px] md:text-[14px] mt-8 md:mt-10">※ 本キャンペーンは予告なく終了する場合がございます。</p>
 
     <div class="reveal mt-10 md:mt-12 flex justify-center">
-      <a href="#" class="btn btn-outline-brand font-bold inline-flex items-center gap-2">
+      <a href="pricing.html" class="btn btn-outline-brand font-bold inline-flex items-center gap-2">
         受講料金を詳しく見る
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
     </div>
   </div>
@@ -754,12 +807,12 @@
     <ul class="flex flex-col">
       <!-- Q1 -->
       <li class="border-b border-gray-300 py-6 reveal">
-        <button class="qa-toggle w-full flex items-start gap-4 text-left" aria-expanded="true">
+        <button class="qa-toggle w-full flex items-start gap-4 text-left" id="qaBtn1" aria-controls="qaBody1" aria-expanded="true">
           <span class="qa-icon bg-brand text-white"><span>Q</span></span>
           <span class="flex-1 pt-4 text-ink text-[15px] md:text-[16px] font-medium leading-[1.7]">対象年齢は何歳ですか？</span>
-          <svg class="qa-chevron mt-5 size-5 text-ink-soft transition-transform rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg aria-hidden="true" focusable="false" class="qa-chevron mt-5 size-5 text-ink-soft transition-transform rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="qa-body mt-4 flex items-start gap-4">
+        <div id="qaBody1" role="region" aria-labelledby="qaBtn1" class="qa-body mt-4 flex items-start gap-4">
           <span class="qa-icon bg-white text-brand border border-brand"><span>A</span></span>
           <p class="flex-1 pt-4 text-ink text-[14px] md:text-[16px] leading-[1.8]">小学4年生〜高校生を対象としております。</p>
         </div>
@@ -767,12 +820,12 @@
 
       <!-- Q2 -->
       <li class="border-b border-gray-300 py-6 reveal">
-        <button class="qa-toggle w-full flex items-start gap-4 text-left" aria-expanded="false">
+        <button class="qa-toggle w-full flex items-start gap-4 text-left" id="qaBtn2" aria-controls="qaBody2" aria-expanded="false">
           <span class="qa-icon bg-brand text-white"><span>Q</span></span>
           <span class="flex-1 pt-4 text-ink text-[15px] md:text-[16px] font-medium leading-[1.7]">どのような受講環境を用意すればよいですか？</span>
-          <svg class="qa-chevron mt-5 size-5 text-ink-soft transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg aria-hidden="true" focusable="false" class="qa-chevron mt-5 size-5 text-ink-soft transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="qa-body mt-4 hidden items-start gap-4">
+        <div id="qaBody2" role="region" aria-labelledby="qaBtn2" class="qa-body mt-4 hidden items-start gap-4">
           <span class="qa-icon bg-white text-brand border border-brand"><span>A</span></span>
           <p class="flex-1 pt-4 text-ink text-[14px] md:text-[16px] leading-[1.8]">
             PC（作業・画面共有）+ タブレット（テキスト閲覧）をご準備いただくことを推奨しております。<br />
@@ -783,12 +836,12 @@
 
       <!-- Q3 -->
       <li class="border-b border-gray-300 py-6 reveal">
-        <button class="qa-toggle w-full flex items-start gap-4 text-left" aria-expanded="false">
+        <button class="qa-toggle w-full flex items-start gap-4 text-left" id="qaBtn3" aria-controls="qaBody3" aria-expanded="false">
           <span class="qa-icon bg-brand text-white"><span>Q</span></span>
           <span class="flex-1 pt-4 text-ink text-[15px] md:text-[16px] font-medium leading-[1.7]">予約をキャンセルしたい場合、どのような手続きが必要ですか？</span>
-          <svg class="qa-chevron mt-5 size-5 text-ink-soft transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg aria-hidden="true" focusable="false" class="qa-chevron mt-5 size-5 text-ink-soft transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="qa-body mt-4 hidden items-start gap-4">
+        <div id="qaBody3" role="region" aria-labelledby="qaBtn3" class="qa-body mt-4 hidden items-start gap-4">
           <span class="qa-icon bg-white text-brand border border-brand"><span>A</span></span>
           <p class="flex-1 pt-4 text-ink text-[14px] md:text-[16px] leading-[1.8]">マイページから当日の朝8:00までにお手続きをお願いいたします。</p>
         </div>
@@ -820,13 +873,13 @@
 
   <!-- 右: 矢印アイコン白丸 -->
   <span class="size-[30px] md:size-[37px] rounded-full bg-white flex items-center justify-center shrink-0">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#18B293" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#18B293" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
   </span>
 </a>
 
 <!-- ============================== TOPへ戻る ============================== -->
 <a href="#" id="topLink" class="hidden md:flex fixed right-6 z-40 bottom-[120px] size-14 rounded-full bg-white border border-brand text-brand flex-col items-center justify-center shadow-soft hover:bg-brand hover:text-white transition-colors opacity-0 pointer-events-none" aria-label="トップへ戻る">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
   <span class="text-[11px] font-bold mt-0.5">TOP</span>
 </a>
 
@@ -850,8 +903,11 @@
   })();
 
   // モバイルメニュー
-  document.getElementById('menuBtn')?.addEventListener('click', () => {
-    document.getElementById('mobileMenu')?.classList.toggle('hidden');
+  document.getElementById('menuBtn')?.addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    const menu = document.getElementById('mobileMenu');
+    menu?.classList.toggle('hidden');
+    btn.setAttribute('aria-expanded', String(!menu?.classList.contains('hidden')));
   });
 
   // Q&Aアコーディオン

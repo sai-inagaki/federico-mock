@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja" style="color-scheme: light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#18B293" />
+<title>よくあるご質問 | Federico - 子ども向けゲーム制作オンラインスクール</title>
+<meta name="description" content="Federico へよく寄せられるご質問と回答をまとめました。受講対象、必要な環境、料金、振替、退会など、ご検討に役立つ情報をご紹介します。" />
+
+<link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+<link href="https://fonts.bunny.net/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: '#18B293',
+          'brand-dark': '#0E8E76',
+          pink: {
+            DEFAULT: '#FF4F7B',
+            soft: 'rgba(255, 79, 123, 0.97)',
+          },
+          ink: {
+            DEFAULT: '#333333',
+            soft: '#4D4D4D',
+            gray: '#737373',
+          },
+          scratch: '#FFAB19',
+          unity: '#4D4D4D',
+          roblox: '#335FFF',
+          'bg-soft': '#EEFBF8',
+          'bg-gray': '#F5F5F5',
+        },
+        fontFamily: {
+          sans: ['"Noto Sans JP"', '"Hiragino Kaku Gothic ProN"', '"Yu Gothic"', 'sans-serif'],
+          en: ['Inter', 'Helvetica Neue', 'sans-serif'],
+        },
+        boxShadow: {
+          header: '0 4px 2px rgba(156, 156, 156, 0.25)',
+          card: '0 4px 16px rgba(0, 0, 0, 0.06)',
+          soft: '0 2px 10px rgba(20, 40, 80, 0.06)',
+        },
+      }
+    }
+  }
+</script>
+
+<style type="text/tailwindcss">
+  @layer base {
+    html { scroll-behavior: smooth; }
+    body {
+      @apply font-sans text-ink antialiased;
+      font-feature-settings: "palt" 1;
+      letter-spacing: 0.02em;
+      line-height: 1.8;
+      text-rendering: optimizeLegibility;
+    }
+    a { @apply transition-opacity; }
+    a:hover { @apply opacity-75; }
+    ul, ol { @apply list-none p-0 m-0; }
+
+    /* WIG: shared a11y/perf utilities */
+    h1, h2, h3 { text-wrap: pretty; }
+    button, a, [role="button"], summary, input, label, select { touch-action: manipulation; }
+    *:focus { outline: none; }
+    *:focus-visible {
+      outline: 2px solid #18B293;
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+    /* iOS の safe-area を考慮した固定要素 */
+    #trialButton { bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); }
+    @media (min-width: 768px) {
+      #trialButton { bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); }
+      #topLink { bottom: calc(7.5rem + env(safe-area-inset-bottom, 0px)); }
+    }
+  }
+
+  @layer components {
+    body {
+      background-color: #ffffff;
+      background-image: url("data:image/svg+xml;utf8,<svg aria-hidden="true" focusable="false" xmlns='http://www.w3.org/2000/svg' width='660' height='232' viewBox='0 0 660 232'><g fill='none' stroke='%2318B293' stroke-opacity='0.16' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><g transform='translate(12 32)'><path d='M14.5 17.5 3 6V3h3l11.5 11.5'/><path d='m13 19 6-6'/><path d='m16 16 4 4'/><path d='m19 21 2-2'/></g><g transform='translate(144 32)'><path d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z'/></g><g transform='translate(276 32)'><path d='M14 2v6.343a1 1 0 0 0 .293 .707l5.414 5.414A2 2 0 0 1 18.293 18H5.707a2 2 0 0 1-1.414-3.536l5.414-5.414A1 1 0 0 0 10 8.343V2'/><path d='M8.5 2h7'/><path d='M7 16h10'/></g><g transform='translate(408 32)'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/></g><g transform='translate(540 32)'><path d='M6 3h12l4 6-10 13L2 9Z'/><path d='M11 3 8 9l4 13 4-13-3-6'/><path d='M2 9h20'/></g><g transform='translate(78 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g><g transform='translate(210 148)'><path d='M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294 .904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771 .56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'/></g><g transform='translate(342 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g><g transform='translate(474 148)'><path d='M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294 .904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771 .56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'/></g><g transform='translate(606 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g></g></svg>");
+      background-repeat: repeat;
+      background-attachment: fixed;
+    }
+    main, section, header, footer { position: relative; }
+  }
+
+  @layer components {
+    .section-eyebrow { @apply font-en text-brand font-bold text-[20px] tracking-wide leading-none; }
+    .section-title { @apply font-bold text-ink text-[28px] md:text-[32px] tracking-[0.05em] leading-[1.2]; }
+    .section-lead { @apply text-ink text-[15px] md:text-[16px] leading-[1.8] mt-3; }
+
+    .btn { @apply inline-flex items-center justify-center gap-2 font-bold whitespace-nowrap cursor-pointer transition-all; }
+    .btn-pink { @apply bg-pink text-white px-5 py-4 text-[14px] md:text-[16px] leading-none; }
+    .btn-pink:hover { @apply -translate-y-0.5; opacity: 0.92; }
+    .btn-brand { @apply bg-brand text-white px-5 py-4 text-[14px] md:text-[16px] leading-none; }
+    .btn-brand:hover { @apply -translate-y-0.5; opacity: 0.92; }
+    .btn-outline-brand { @apply bg-white border-2 border-brand text-brand rounded-full px-8 py-3 text-[15px] md:text-[16px]; }
+    .btn-outline-brand:hover { @apply -translate-y-0.5 bg-brand text-white; opacity: 1; }
+
+    .nav-link { @apply text-ink text-[14px] font-medium hover:opacity-70 transition-opacity; }
+
+    /* Q&Aアイコン（トップと同じ） */
+    .qa-icon {
+      @apply size-[58px] md:size-[60px] rounded-full inline-flex items-center justify-center text-[32px] md:text-[36px] shrink-0;
+      font-family: Inter, "Helvetica Neue", sans-serif;
+      font-weight: 400;
+      line-height: 1;
+    }
+    .qa-icon > * { display: inline-block; line-height: 1; }
+
+    /* カテゴリ見出し */
+    .qa-category-title {
+      @apply font-bold text-ink text-[20px] md:text-[24px] tracking-[0.04em] flex items-center gap-3;
+    }
+    .qa-category-title::before {
+      content: "";
+      @apply inline-block w-[8px] h-[24px] bg-brand rounded-sm;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease-out, transform .7s ease-out;
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
+  }
+</style>
+</head>
+
+<body class="bg-white">
+
+<!-- ============================== HEADER ============================== -->
+<header class="sticky top-0 z-50 bg-white shadow-header">
+  <div class="max-w-[1440px] mx-auto h-[72px] md:h-[82px] px-5 md:px-10 flex items-center">
+    <a href="index.html" class="shrink-0 flex items-center" aria-label="Federico">
+      <img loading="eager" decoding="async" fetchpriority="high" src="assets/logo_new.svg" alt="Federico" class="h-[144px] md:h-[176px] w-auto" />
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-16 ml-auto">
+      <a href="index.html#about" class="nav-link">Federicoについて</a>
+      <a href="index.html#course" class="nav-link">受講コース</a>
+      <a href="index.html#lesson-style" class="nav-link">レッスンスタイル</a>
+      <a href="faq.html" class="nav-link">よくあるご質問</a>
+    </nav>
+
+    <div class="lg:ml-8 ml-auto flex items-center gap-2 md:gap-3">
+      <a href="#" class="btn btn-pink hidden sm:inline-flex">無料体験お申し込み</a>
+      <a href="#" class="btn btn-brand hidden md:inline-flex">ログイン</a>
+      <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center size-10 text-ink" aria-label="メニュー" aria-controls="mobileMenu" aria-expanded="false">
+        <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-gray-200 bg-white" style="overscroll-behavior: contain;">
+    <div class="px-5 py-4 flex flex-col gap-3">
+      <a href="index.html#about" class="nav-link py-2">Federicoについて</a>
+      <a href="index.html#course" class="nav-link py-2">受講コース</a>
+      <a href="index.html#lesson-style" class="nav-link py-2">レッスンスタイル</a>
+      <a href="faq.html" class="nav-link py-2">よくあるご質問</a>
+      <div class="flex gap-2 pt-2">
+        <a href="#" class="btn btn-pink flex-1 sm:hidden">無料体験お申し込み</a>
+        <a href="#" class="btn btn-brand flex-1 md:hidden">ログイン</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== ページタイトル ============================== -->
+<section class="py-14 md:py-20 bg-bg-gray">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10 text-center">
+    <p class="section-eyebrow reveal">Q&amp;A</p>
+    <h1 class="section-title mt-2 reveal">よくあるご質問</h1>
+    <p class="reveal mt-5 text-ink text-[14px] md:text-[16px] leading-[1.9]">
+      Federico へよくお寄せいただくご質問と回答をまとめました。<br />
+      解決しない場合は、無料体験お申し込みフォームよりお気軽にご相談ください。
+    </p>
+  </div>
+</section>
+
+<!-- ============================== Q&A 本文 ============================== -->
+<section class="py-16 md:py-24">
+  <div class="max-w-[920px] mx-auto px-5 md:px-10 flex flex-col gap-16 md:gap-20">
+
+    <!-- カテゴリ 1: 受講対象・環境 -->
+    <div class="reveal">
+      <h2 class="qa-category-title">受講対象・受講環境</h2>
+      <ul class="mt-8 flex flex-col">
+        <li class="border-b border-gray-300 py-6">
+          <button class="qa-toggle w-full flex items-start gap-4 text-left" id="qaBtn1" aria-controls="qaBody1" aria-expanded="false">
+            <span class="qa-icon bg-brand text-white"><span>Q</span></span>
+            <span class="flex-1 pt-4 text-ink text-[15px] md:text-[16px] font-medium leading-[1.7]">対象年齢は何歳ですか？</span>
+            <svg aria-hidden="true" focusable="false" class="qa-chevron mt-5 size-5 text-ink-soft transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="qaBody1" role="region" aria-labelledby="qaBtn1" class="qa-body mt-4 hidden items-start gap-4">
+            <span class="qa-icon bg-white text-brand border border-brand"><span>A</span></span>
+            <p class="flex-1 pt-4 text-ink text-[14px] md:text-[16px] leading-[1.8]">
+              小学4年生〜高校生を対象としております。学年やプログラミング経験にあわせ、講師が一人ひとりにレベル感を合わせて指導します。
+            </p>
+          </div>
+        </li>
+
+        <li class="border-b border-gray-300 py-6">
+          <button class="qa-toggle w-full flex items-start gap-4 text-left" id="qaBtn2" aria-controls="qaBody2" aria-expanded="false">
+            <span class="qa-icon bg-brand text-white"><span>Q</span></span>
+            <span class="flex-1 pt-4 text-ink text-[15px] md:text-[16px] font-medium leading-[1.7]">どのような受講環境を用意すればよいですか？</span>
+            <svg aria-hidden="true" focusable="false" class="qa-chevron mt-5 size-5 text-ink-soft transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="qaBody2" role="region" aria-labelledby="qaBtn2" class="qa-body mt-4 hidden items-start gap-4">
+            <span class="qa-icon bg-white text-brand border border-brand"><span>A</span></span>
+            <p class="flex-1 pt-4 text-ink text-[14px] md:text-[16px] leading-[1.8]">
+              PC（作業・画面共有）+ タブレット（テキスト閲覧）をご準備いただくことを推奨しております。<br />
+              PCは、CPUがIntel Core-i3 / Apple M1 同等品またはそれ以上、かつメモリ8GB以上を推奨いたします。
+            </p>
+          </div>
+        </li>
+
+        <li class="border-b border-gray-300 py-6">
+          <button class="qa-toggle w-full flex items-start gap-4 text-left" id="qaBtn3" aria-controls="qaBody3" aria-expanded="false">
+            <span class="qa-icon bg-brand text-white"><span>Q</span></span>
+            <span class="flex-1 pt-4 text-ink text-[15px] md:text-[16px] font-medium leading-[1.7]">プログラミングが全くの未経験でも大丈夫ですか？</span>
+            <svg aria-hidden="true" focusable="false" class="qa-chevron mt-5 size-5 text-ink-soft transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="qaBody3" role="region" aria-labelledby="qaBtn3" class="qa-body mt-4 hidden items-start gap-4">
+            <span class="qa-icon bg-white text-brand border border-brand"><span>A</span></span>
+            <p class="flex-1 pt-4 text-ink text-[14px] md:text-[16px] leading-[1.8]">
+              はい、大丈夫です。Scratch コースはビジュアルプログラミングから始めるため、文字入力やパソコン操作が初めてのお子さまでも楽しく取り組めます。
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- カテゴリ 2: 料金・お支払い -->
+    <div class="reveal">
+      <h2 class="qa-category-title">料金・お支払いについて</h2>
+      <ul class="mt-8 flex flex-col">
+        <li class="border-b border-gray-300 py-6">
+          <button class="qa-toggle w-full flex items-start gap-4 text-left" id="qaBtn4" aria-controls="qaBody4" aria-expanded="false">
+            <span class="qa-icon bg-brand text-white"><span>Q</span></span>
+            <span class="flex-1 pt-4 text-ink text-[15px] md:text-[16px] font-medium leading-[1.7]">入会金や教材費はかかりますか？</span>
+            <svg aria-hidden="true" focusable="false" class="qa-chevron mt-5 size-5 text-ink-soft transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="qaBody4" role="region" aria-labelledby="qaBtn4" class="qa-body mt-4 hidden items-start gap-4">
+            <span class="qa-icon bg-white text-brand border border-brand"><span>A</span></span>
+            <p class="flex-1 pt-4 text-ink text-[14px] md:text-[16px] leading-[1.8]">
+              入会金・教材費は一切いただいておりません。月額料金のみでご受講いただけます。
+            </p>
+          </div>
+        </li>
+
+        <li class="border-b border-gray-300 py-6">
+          <button class="qa-toggle w-full flex items-start gap-4 text-left" id="qaBtn5" aria-controls="qaBody5" aria-expanded="false">
+            <span class="qa-icon bg-brand text-white"><span>Q</span></span>
+            <span class="flex-1 pt-4 text-ink text-[15px] md:text-[16px] font-medium leading-[1.7]">お支払い方法を教えてください。</span>
+            <svg aria-hidden="true" focusable="false" class="qa-chevron mt-5 size-5 text-ink-soft transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="qaBody5" role="region" aria-labelledby="qaBtn5" class="qa-body mt-4 hidden items-start gap-4">
+            <span class="qa-icon bg-white text-brand border border-brand"><span>A</span></span>
+            <p class="flex-1 pt-4 text-ink text-[14px] md:text-[16px] leading-[1.8]">
+              クレジットカードによる毎月の自動引き落としに対応しています。
+            </p>
+          </div>
+        </li>
+
+        <li class="border-b border-gray-300 py-6">
+          <button class="qa-toggle w-full flex items-start gap-4 text-left" id="qaBtn6" aria-controls="qaBody6" aria-expanded="false">
+            <span class="qa-icon bg-brand text-white"><span>Q</span></span>
+            <span class="flex-1 pt-4 text-ink text-[15px] md:text-[16px] font-medium leading-[1.7]">キャンペーン価格はいつまで続きますか？</span>
+            <svg aria-hidden="true" focusable="false" class="qa-chevron mt-5 size-5 text-ink-soft transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="qaBody6" role="region" aria-labelledby="qaBtn6" class="qa-body mt-4 hidden items-start gap-4">
+            <span class="qa-icon bg-white text-brand border border-brand"><span>A</span></span>
+            <p class="flex-1 pt-4 text-ink text-[14px] md:text-[16px] leading-[1.8]">
+              キャンペーン期間中にお申し込みの方は、ご受講を続ける限り「ずーっと特別価格（月額¥13,200・税込）」で継続いただけます。キャンペーン自体は予告なく終了する場合がございますので、ぜひお早めにご検討ください。
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- カテゴリ 3: レッスン・振替 -->
+    <div class="reveal">
+      <h2 class="qa-category-title">レッスン・振替について</h2>
+      <ul class="mt-8 flex flex-col">
+        <li class="border-b border-gray-300 py-6">
+          <button class="qa-toggle w-full flex items-start gap-4 text-left" id="qaBtn7" aria-controls="qaBody7" aria-expanded="false">
+            <span class="qa-icon bg-brand text-white"><span>Q</span></span>
+            <span class="flex-1 pt-4 text-ink text-[15px] md:text-[16px] font-medium leading-[1.7]">予約をキャンセルしたい場合、どのような手続きが必要ですか？</span>
+            <svg aria-hidden="true" focusable="false" class="qa-chevron mt-5 size-5 text-ink-soft transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="qaBody7" role="region" aria-labelledby="qaBtn7" class="qa-body mt-4 hidden items-start gap-4">
+            <span class="qa-icon bg-white text-brand border border-brand"><span>A</span></span>
+            <p class="flex-1 pt-4 text-ink text-[14px] md:text-[16px] leading-[1.8]">
+              マイページから当日の朝8:00までにお手続きをお願いいたします。期限内のキャンセルは振替レッスンの対象となります。
+            </p>
+          </div>
+        </li>
+
+        <li class="border-b border-gray-300 py-6">
+          <button class="qa-toggle w-full flex items-start gap-4 text-left" id="qaBtn8" aria-controls="qaBody8" aria-expanded="false">
+            <span class="qa-icon bg-brand text-white"><span>Q</span></span>
+            <span class="flex-1 pt-4 text-ink text-[15px] md:text-[16px] font-medium leading-[1.7]">レッスンの担当講師は固定されていますか？</span>
+            <svg aria-hidden="true" focusable="false" class="qa-chevron mt-5 size-5 text-ink-soft transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="qaBody8" role="region" aria-labelledby="qaBtn8" class="qa-body mt-4 hidden items-start gap-4">
+            <span class="qa-icon bg-white text-brand border border-brand"><span>A</span></span>
+            <p class="flex-1 pt-4 text-ink text-[14px] md:text-[16px] leading-[1.8]">
+              基本的に同じ講師が継続して担当します。お子さまの進捗を一貫してフォローできる体制を大切にしています。
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- カテゴリ 4: 入会・退会 -->
+    <div class="reveal">
+      <h2 class="qa-category-title">入会・退会について</h2>
+      <ul class="mt-8 flex flex-col">
+        <li class="border-b border-gray-300 py-6">
+          <button class="qa-toggle w-full flex items-start gap-4 text-left" id="qaBtn9" aria-controls="qaBody9" aria-expanded="false">
+            <span class="qa-icon bg-brand text-white"><span>Q</span></span>
+            <span class="flex-1 pt-4 text-ink text-[15px] md:text-[16px] font-medium leading-[1.7]">無料体験を申し込んだ後の流れを教えてください。</span>
+            <svg aria-hidden="true" focusable="false" class="qa-chevron mt-5 size-5 text-ink-soft transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="qaBody9" role="region" aria-labelledby="qaBtn9" class="qa-body mt-4 hidden items-start gap-4">
+            <span class="qa-icon bg-white text-brand border border-brand"><span>A</span></span>
+            <p class="flex-1 pt-4 text-ink text-[14px] md:text-[16px] leading-[1.8]">
+              フォーム送信後、担当者よりご連絡し、ご都合のよい日時で 50 分の無料体験レッスンを実施いたします。体験後にご希望があれば、そのままご入会のお手続きをご案内します。
+            </p>
+          </div>
+        </li>
+
+        <li class="border-b border-gray-300 py-6">
+          <button class="qa-toggle w-full flex items-start gap-4 text-left" id="qaBtn10" aria-controls="qaBody10" aria-expanded="false">
+            <span class="qa-icon bg-brand text-white"><span>Q</span></span>
+            <span class="flex-1 pt-4 text-ink text-[15px] md:text-[16px] font-medium leading-[1.7]">最低受講期間や違約金はありますか？</span>
+            <svg aria-hidden="true" focusable="false" class="qa-chevron mt-5 size-5 text-ink-soft transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="qaBody10" role="region" aria-labelledby="qaBtn10" class="qa-body mt-4 hidden items-start gap-4">
+            <span class="qa-icon bg-white text-brand border border-brand"><span>A</span></span>
+            <p class="flex-1 pt-4 text-ink text-[14px] md:text-[16px] leading-[1.8]">
+              最低受講期間や違約金は設けておりません。ご退会はマイページからいつでもお手続きいただけます（当月末まで継続、翌月から退会）。
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CTA ============================== -->
+<section class="py-16 md:py-24 bg-bg-soft">
+  <div class="max-w-[920px] mx-auto px-5 md:px-10 text-center">
+    <h2 class="reveal section-title">解決しないご質問は<br class="sm:hidden" />お気軽にどうぞ</h2>
+    <p class="reveal section-lead">無料体験お申し込みフォームの「ご質問・ご要望」欄に書いていただければ、<br class="hidden md:block" />担当者より個別にご返信いたします。</p>
+    <div class="reveal mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#" class="btn btn-pink rounded-full !px-10 !py-4">無料体験お申し込み</a>
+      <a href="index.html" class="btn btn-outline-brand">トップへ戻る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="bg-brand py-7">
+  <p class="text-center text-white text-[12px] font-en">Copyright 2026 Tsuzurhythm Inc.</p>
+</footer>
+
+<!-- ============================== 無料体験 申込CTA（固定） ============================== -->
+<a href="#" id="trialButton" class="fixed bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:bottom-6 md:right-6 z-40 inline-flex items-center gap-2 md:gap-[13px] bg-brand text-white rounded-full pl-2 pr-2 md:pl-[13px] md:pr-3 py-2 md:py-[11px] shadow-[0px_4px_8px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 transition-transform" aria-label="無料体験お申し込みはこちら">
+  <span class="size-[52px] md:size-[67px] rounded-full bg-white flex flex-col items-center justify-center text-pink shrink-0">
+    <span class="text-[11px] md:text-[13px] font-medium leading-[1.3] tracking-[-0.04em]">カンタン</span>
+    <span class="text-[9px] md:text-[11px] font-medium leading-[1.3]">1分で完了！</span>
+  </span>
+  <span class="flex flex-col items-center text-center leading-[1.4] md:leading-[1.5]">
+    <span class="text-[9px] md:text-[12px] font-medium leading-tight whitespace-nowrap">お子さまの「やってみたい」を応援します！</span>
+    <span class="text-[14px] md:text-[20px] font-bold tracking-[0.03em] mt-0.5 md:mt-0 whitespace-nowrap">
+      <span class="text-[#FBEE50]">無料体験</span>お申し込みはこちら
+    </span>
+  </span>
+  <span class="size-[30px] md:size-[37px] rounded-full bg-white flex items-center justify-center shrink-0">
+    <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#18B293" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </span>
+</a>
+
+<!-- ============================== TOPへ戻る ============================== -->
+<a href="#" id="topLink" class="hidden md:flex fixed right-6 z-40 bottom-[120px] size-14 rounded-full bg-white border border-brand text-brand flex-col items-center justify-center shadow-soft hover:bg-brand hover:text-white transition-colors opacity-0 pointer-events-none" aria-label="トップへ戻る">
+  <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  <span class="text-[11px] font-bold mt-0.5">TOP</span>
+</a>
+
+<script>
+  document.getElementById('menuBtn')?.addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    const menu = document.getElementById('mobileMenu');
+    menu?.classList.toggle('hidden');
+    btn.setAttribute('aria-expanded', String(!menu?.classList.contains('hidden')));
+  });
+
+  document.querySelectorAll('.qa-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      const body = btn.nextElementSibling;
+      const chevron = btn.querySelector('.qa-chevron');
+      if (expanded) {
+        body.classList.add('hidden');
+        body.classList.remove('flex');
+        chevron.classList.remove('rotate-180');
+      } else {
+        body.classList.remove('hidden');
+        body.classList.add('flex');
+        chevron.classList.add('rotate-180');
+      }
+    });
+  });
+
+  const topLink = document.getElementById('topLink');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      topLink.classList.remove('opacity-0', 'pointer-events-none');
+      topLink.classList.add('opacity-100');
+    } else {
+      topLink.classList.add('opacity-0', 'pointer-events-none');
+      topLink.classList.remove('opacity-100');
+    }
+  });
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>

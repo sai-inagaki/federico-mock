@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ja" style="color-scheme: light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#18B293" />
+<title>レッスンスタイル | Federico - ゲームクリエイターズアカデミー</title>
+<meta name="description" content="Federico のレッスンスタイル詳細。オンライン完結・少人数制個別指導・伴走型サポート・進捗の可視化、レッスンの流れ、振替制度、必要な環境までを紹介します。" />
+
+<link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+<link href="https://fonts.bunny.net/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: '#18B293',
+          'brand-dark': '#0E8E76',
+          pink: { DEFAULT: '#FF4F7B', soft: 'rgba(255, 79, 123, 0.97)' },
+          ink: { DEFAULT: '#333333', soft: '#4D4D4D', gray: '#737373' },
+          scratch: '#FFAB19',
+          unity: '#4D4D4D',
+          roblox: '#335FFF',
+          'bg-soft': '#EEFBF8',
+          'bg-gray': '#F5F5F5',
+        },
+        fontFamily: {
+          sans: ['"M PLUS Rounded 1c"', '"Noto Sans JP"', '"Hiragino Kaku Gothic ProN"', '"Yu Gothic"', 'sans-serif'],
+          en: ['Nunito', 'Helvetica Neue', 'sans-serif'],
+        },
+        boxShadow: {
+          header: '0 4px 2px rgba(156, 156, 156, 0.25)',
+          card: '0 4px 16px rgba(0, 0, 0, 0.06)',
+          soft: '0 2px 10px rgba(20, 40, 80, 0.06)',
+        },
+      }
+    }
+  }
+</script>
+
+<style type="text/tailwindcss">
+  @layer base {
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      @apply font-sans text-ink antialiased;
+      font-feature-settings: "palt" 1;
+      letter-spacing: 0.02em;
+      line-height: 1.8;
+      text-rendering: optimizeLegibility;
+    }
+    a { @apply transition-opacity; }
+    a:hover { @apply opacity-75; }
+    ul, ol { @apply list-none p-0 m-0; }
+    h1, h2, h3 { text-wrap: pretty; }
+    button, a, [role="button"], summary, input, label, select { touch-action: manipulation; }
+    *:focus { outline: none; }
+    *:focus-visible {
+      outline: 2px solid #18B293;
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+    #trialButton { bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); }
+    @media (min-width: 768px) {
+      #trialButton { bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); }
+      #topLink { bottom: calc(7.5rem + env(safe-area-inset-bottom, 0px)); }
+    }
+  }
+
+  @layer components {
+    body { background-color: #ffffff; }
+    main, section, header, footer { position: relative; }
+
+    .section-eyebrow { @apply font-en text-brand font-bold text-[20px] tracking-wide leading-none; }
+    .section-title { @apply font-bold text-ink text-[28px] md:text-[32px] tracking-[0.05em] leading-[1.2]; }
+    .section-lead { @apply text-ink text-[15px] md:text-[16px] leading-[1.8] mt-3; }
+
+    .btn { @apply inline-flex items-center justify-center gap-2 font-bold whitespace-nowrap cursor-pointer transition-all; }
+    .btn-pink { @apply bg-pink text-white px-5 py-4 text-[14px] md:text-[16px] leading-none; }
+    .btn-pink:hover { @apply -translate-y-0.5; opacity: 0.92; }
+    .btn-brand { @apply bg-brand text-white px-5 py-4 text-[14px] md:text-[16px] leading-none; }
+    .btn-brand:hover { @apply -translate-y-0.5; opacity: 0.92; }
+    .btn-outline-brand { @apply bg-white border-2 border-brand text-brand rounded-full px-8 py-3 text-[15px] md:text-[16px]; }
+    .btn-outline-brand:hover { @apply -translate-y-0.5 bg-brand text-white; opacity: 1; }
+
+    .nav-link { @apply text-ink text-[14px] font-medium hover:opacity-70 transition-opacity; }
+
+    /* スタイル詳細カード */
+    .style-detail {
+      @apply grid grid-cols-1 md:grid-cols-[260px_1fr] gap-6 md:gap-10 items-start;
+    }
+    .style-detail__img {
+      @apply w-full max-w-[280px] mx-auto md:mx-0 aspect-square rounded-[12px] bg-bg-soft flex items-center justify-center;
+    }
+    .style-detail__num {
+      @apply font-en text-brand text-[40px] md:text-[48px] font-bold leading-none tracking-wide;
+    }
+    .style-detail__title {
+      @apply font-bold text-ink text-[22px] md:text-[28px] tracking-[0.04em] leading-[1.4] mt-2;
+    }
+    .style-detail__body {
+      @apply text-ink text-[14px] md:text-[16px] leading-[2] mt-4;
+    }
+    .style-detail__list {
+      @apply mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2;
+    }
+    .style-detail__list li {
+      @apply text-ink text-[13px] md:text-[14px] leading-[1.7] flex items-start gap-2;
+    }
+    .style-detail__list li::before {
+      content: "";
+      @apply inline-block w-[14px] h-[14px] mt-1 rounded-full bg-bg-soft shrink-0;
+      background-image: url("data:image/svg+xml;utf8,<svg aria-hidden='true' focusable='false' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2318B293' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+      background-size: 10px 10px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* レッスンの流れ ステップ */
+    .flow-step {
+      @apply relative flex gap-4 md:gap-6 pb-8 md:pb-10 pl-4 md:pl-6 border-l-2 border-brand/30;
+    }
+    .flow-step:last-child { @apply pb-0 border-l-2 border-transparent; }
+    .flow-step__num {
+      @apply absolute -left-[16px] md:-left-[18px] top-0 inline-flex items-center justify-center size-[32px] md:size-[36px] rounded-full bg-brand text-white font-bold font-en text-[14px] md:text-[16px] shrink-0;
+    }
+    .flow-step__time {
+      @apply text-brand font-en font-bold text-[13px] md:text-[14px] tracking-wide;
+    }
+    .flow-step__title {
+      @apply font-bold text-ink text-[16px] md:text-[18px] mt-0.5 leading-[1.5];
+    }
+    .flow-step__body {
+      @apply text-ink text-[13px] md:text-[14px] leading-[1.85] mt-1.5;
+    }
+
+    /* 振替セクション専用 */
+    .makeup-card {
+      @apply bg-bg-soft border border-brand/20 rounded-[10px] p-6 md:p-8;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease-out, transform .7s ease-out;
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
+  }
+</style>
+<style id="bg-single-override">body { background-color: #FDFCFA !important; background-image: none !important; }</style>
+</head>
+
+<body class="bg-white">
+
+<!-- ============================== HEADER ============================== -->
+<header class="sticky top-0 z-50 bg-white shadow-header">
+  <div class="max-w-[1440px] mx-auto h-[72px] md:h-[82px] px-5 md:px-10 flex items-center">
+    <a href="index.html" class="shrink-0 flex items-center" aria-label="Federico">
+      <img loading="eager" decoding="async" fetchpriority="high" src="assets/logo_new.svg" alt="Federico" class="h-[144px] md:h-[176px] w-auto" />
+    </a>
+    <nav class="hidden lg:flex items-center gap-16 ml-auto">
+      <a href="index.html#about" class="nav-link">Federicoについて</a>
+      <a href="index.html#course" class="nav-link">受講コース</a>
+      <a href="lesson-style.html" class="nav-link">レッスンスタイル</a>
+      <a href="faq.html" class="nav-link">よくあるご質問</a>
+    </nav>
+    <div class="lg:ml-8 ml-auto flex items-center gap-2 md:gap-3">
+      <a href="apply.html" class="btn btn-pink hidden sm:inline-flex">無料体験お申し込み</a>
+      <a href="#" class="btn btn-brand hidden md:inline-flex">ログイン</a>
+      <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center size-10 text-ink" aria-label="メニュー" aria-controls="mobileMenu" aria-expanded="false">
+        <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-gray-200 bg-white">
+    <div class="px-5 py-4 flex flex-col gap-3">
+      <a href="index.html#about" class="nav-link py-2">Federicoについて</a>
+      <a href="index.html#course" class="nav-link py-2">受講コース</a>
+      <a href="lesson-style.html" class="nav-link py-2">レッスンスタイル</a>
+      <a href="faq.html" class="nav-link py-2">よくあるご質問</a>
+      <div class="flex gap-2 pt-2">
+        <a href="apply.html" class="btn btn-pink flex-1 sm:hidden">無料体験お申し込み</a>
+        <a href="#" class="btn btn-brand flex-1 md:hidden">ログイン</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== ページタイトル ============================== -->
+<section class="py-14 md:py-20 bg-bg-gray">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10 text-center">
+    <p class="section-eyebrow reveal">Lesson Style</p>
+    <h1 class="section-title mt-2 reveal">レッスンスタイル</h1>
+    <p class="reveal mt-5 text-ink text-[14px] md:text-[16px] leading-[1.9]">
+      続けやすく、しっかり身につく学び方。<br />
+      Federico ならではのレッスンの仕組みをご紹介します。
+    </p>
+  </div>
+</section>
+
+<!-- ============================== 目次 ============================== -->
+<nav aria-label="ページ内目次" class="border-b border-gray-200 bg-white sticky top-[72px] md:top-[82px] z-40">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10 py-3 overflow-x-auto">
+    <ul class="flex items-center gap-4 md:gap-8 whitespace-nowrap text-[13px] md:text-[14px] font-semibold text-ink-soft">
+      <li><a href="#features" class="hover:text-brand">4つの特徴</a></li>
+      <li><a href="#flow" class="hover:text-brand">レッスンの流れ</a></li>
+      <li><a href="#makeup" class="hover:text-brand">振替制度</a></li>
+      <li><a href="#environment" class="hover:text-brand">必要な環境</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- ============================== 4つの特徴 ============================== -->
+  <section id="features" class="py-16 md:py-24">
+    <div class="max-w-[980px] mx-auto px-5 md:px-10">
+      <header class="reveal mb-12 md:mb-16">
+        <p class="section-eyebrow">Features</p>
+        <h2 class="section-title mt-1">Federico の 4 つの特徴</h2>
+        <p class="section-lead">無理なく続けられる工夫と、確実に力がつく学び方を組み合わせています。</p>
+      </header>
+
+      <div class="flex flex-col gap-16 md:gap-20">
+
+        <article class="style-detail reveal">
+          <div class="style-detail__img">
+            <img loading="lazy" decoding="async" src="assets/lesson_img_1.png" alt="" class="w-[80%] max-w-[200px] h-auto" />
+          </div>
+          <div>
+            <span class="style-detail__num">01</span>
+            <h3 class="style-detail__title">オンライン完結</h3>
+            <p class="style-detail__body">
+              ご自宅の PC から受講可能。全国どこからでも、ご家庭の負担なくお通いいただけます。送り迎えも、教室までの移動時間もありません。レッスンはビデオ通話で進めるため、講師の顔・画面・お手元の操作までしっかり共有されます。
+            </p>
+            <ul class="style-detail__list">
+              <li>送り迎えゼロ。スキマ時間に通える</li>
+              <li>全国・海外からの受講も可能</li>
+              <li>感染症の流行時にも安心</li>
+              <li>体験レッスンもオンラインで完結</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="style-detail reveal">
+          <div class="style-detail__img">
+            <img loading="lazy" decoding="async" src="assets/lesson_img_2.png" alt="" class="w-[80%] max-w-[200px] h-auto" />
+          </div>
+          <div>
+            <span class="style-detail__num">02</span>
+            <h3 class="style-detail__title">少人数制 個別指導</h3>
+            <p class="style-detail__body">
+              講師 1 人につき少人数の生徒のみを担当。お子さま一人ひとりの到達目標と進度に合わせて、カリキュラムを柔軟にチューニングします。「みんなと同じスピード」ではなく、「その子に合った最適な伸ばし方」で進められます。
+            </p>
+            <ul class="style-detail__list">
+              <li>個別の理解度に合わせて進度調整</li>
+              <li>初心者から経験者まで対応</li>
+              <li>つまずきにすぐ気づける距離感</li>
+              <li>「やりたいゲーム」も一緒に形に</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="style-detail reveal">
+          <div class="style-detail__img">
+            <img loading="lazy" decoding="async" src="assets/lesson_img_3.png" alt="" class="w-[80%] max-w-[200px] h-auto" />
+          </div>
+          <div>
+            <span class="style-detail__num">03</span>
+            <h3 class="style-detail__title">伴走型サポート</h3>
+            <p class="style-detail__body">
+              答えをすぐに教えるのではなく、お子さま自身が「どうすればうまくいくか」を考えるプロセスを大切にしています。質問の仕方、ヒントの出し方を工夫しながら、自分で解決する力 — つまり「学ぶ力」そのものを育てます。
+            </p>
+            <ul class="style-detail__list">
+              <li>コーチング型の声かけ</li>
+              <li>「考える力」を育てる関わり方</li>
+              <li>失敗を歓迎する雰囲気</li>
+              <li>作品づくりを軸にした学び</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="style-detail reveal">
+          <div class="style-detail__img">
+            <img loading="lazy" decoding="async" src="assets/lesson_img_4.png" alt="" class="w-[80%] max-w-[200px] h-auto" />
+          </div>
+          <div>
+            <span class="style-detail__num">04</span>
+            <h3 class="style-detail__title">進捗の可視化</h3>
+            <p class="style-detail__body">
+              「今日できたこと」「次にやること」を毎回まとめ、保護者の方にも共有します。家庭での声かけがしやすくなり、お子さま自身も「自分の成長が見える」ことでモチベーションが続きます。長期的なロードマップも保護者面談で共有します。
+            </p>
+            <ul class="style-detail__list">
+              <li>毎レッスンの進捗を保護者へ共有</li>
+              <li>定期的な保護者面談を実施</li>
+              <li>長期ロードマップで先が見える</li>
+              <li>作品はポートフォリオとして残る</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== レッスンの流れ ============================== -->
+  <section id="flow" class="py-16 md:py-24 bg-bg-gray">
+    <div class="max-w-[820px] mx-auto px-5 md:px-10">
+      <header class="reveal mb-12 md:mb-16">
+        <p class="section-eyebrow">Lesson Flow</p>
+        <h2 class="section-title mt-1">1 回 50 分のレッスンの流れ</h2>
+        <p class="section-lead">毎回のレッスンは、お子さまの集中力が無理なく続くようテンポよく構成されています。</p>
+      </header>
+
+      <div class="reveal">
+        <div class="flow-step">
+          <div class="flow-step__num">1</div>
+          <div class="flex-1 -mt-1">
+            <p class="flow-step__time">0〜5 分</p>
+            <h3 class="flow-step__title">入室・ごあいさつ</h3>
+            <p class="flow-step__body">ルームに入室し、講師と挨拶。前回のおさらいを軽く確認し、今日のゴールを共有します。</p>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-step__num">2</div>
+          <div class="flex-1 -mt-1">
+            <p class="flow-step__time">5〜15 分</p>
+            <h3 class="flow-step__title">今日のテーマの紹介・デモ</h3>
+            <p class="flow-step__body">今日新しく学ぶ内容を、サンプルゲームを使ってデモ。手を動かす前に「なるほど、これを作るんだ」とイメージを掴んでいただきます。</p>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-step__num">3</div>
+          <div class="flex-1 -mt-1">
+            <p class="flow-step__time">15〜40 分</p>
+            <h3 class="flow-step__title">制作タイム</h3>
+            <p class="flow-step__body">自分で手を動かしてゲームを制作。講師は画面を見ながら、つまずいているところに声をかけ、考え方をサポートします。</p>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-step__num">4</div>
+          <div class="flex-1 -mt-1">
+            <p class="flow-step__time">40〜47 分</p>
+            <h3 class="flow-step__title">作品の発表・共有</h3>
+            <p class="flow-step__body">完成した・進めた作品を講師に見せて、工夫したポイントを言葉にしてもらいます。「人に伝える」ことで理解がぐっと深まります。</p>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-step__num">5</div>
+          <div class="flex-1 -mt-1">
+            <p class="flow-step__time">47〜50 分</p>
+            <h3 class="flow-step__title">次回予告・進捗の共有</h3>
+            <p class="flow-step__body">「今日できたこと」「次にやること」をまとめ、保護者の方への共有メモも作成します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== 振替制度 ============================== -->
+  <section id="makeup" class="py-16 md:py-24">
+    <div class="max-w-[920px] mx-auto px-5 md:px-10">
+      <header class="reveal mb-10 md:mb-14">
+        <p class="section-eyebrow">Make-up Lesson</p>
+        <h2 class="section-title mt-1">振替制度について</h2>
+        <p class="section-lead">急なご予定の変更や体調不良があっても、月内の別日にレッスンを振り替えていただけます。</p>
+      </header>
+
+      <div class="reveal makeup-card">
+        <h3 class="font-bold text-ink text-[18px] md:text-[20px] mb-4">振替の仕組み</h3>
+        <ul class="space-y-3 text-ink text-[14px] md:text-[15px] leading-[1.9]">
+          <li class="flex items-start gap-3">
+            <span class="inline-flex items-center justify-center size-6 rounded-full bg-brand text-white text-[12px] font-bold shrink-0 mt-1">A</span>
+            <span><strong class="font-semibold">レッスン開始 24 時間前まで</strong>のキャンセルで、当月内の別日に振替が可能です。</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="inline-flex items-center justify-center size-6 rounded-full bg-brand text-white text-[12px] font-bold shrink-0 mt-1">B</span>
+            <span>マイページから空き枠をご確認いただき、ワンクリックで振替予約ができます。</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="inline-flex items-center justify-center size-6 rounded-full bg-brand text-white text-[12px] font-bold shrink-0 mt-1">C</span>
+            <span>体調不良など当日のご事情にも、できる限り柔軟に対応します（お申し出ください）。</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="inline-flex items-center justify-center size-6 rounded-full bg-brand text-white text-[12px] font-bold shrink-0 mt-1">D</span>
+            <span>振替に追加料金はかかりません。</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="reveal mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div class="rounded-[10px] border border-gray-200 p-6">
+          <h4 class="font-bold text-ink text-[16px] md:text-[18px]">振替できるケース（例）</h4>
+          <ul class="mt-3 text-ink text-[13px] md:text-[14px] leading-[1.85] space-y-1.5">
+            <li>・学校行事や習い事の振替</li>
+            <li>・ご家族のご予定や旅行</li>
+            <li>・体調不良・通院</li>
+            <li>・天候による通信トラブル</li>
+          </ul>
+        </div>
+        <div class="rounded-[10px] border border-gray-200 p-6">
+          <h4 class="font-bold text-ink text-[16px] md:text-[18px]">ご注意ください</h4>
+          <ul class="mt-3 text-ink text-[13px] md:text-[14px] leading-[1.85] space-y-1.5">
+            <li>・振替は <strong class="font-semibold">当月内</strong> のレッスンが対象です</li>
+            <li>・空き枠の状況により、ご希望の日時に振り替えできない場合があります</li>
+            <li>・無断キャンセルは振替対象外となります</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== 必要な環境 ============================== -->
+  <section id="environment" class="py-16 md:py-24 bg-bg-gray">
+    <div class="max-w-[920px] mx-auto px-5 md:px-10">
+      <header class="reveal mb-10 md:mb-14">
+        <p class="section-eyebrow">Environment</p>
+        <h2 class="section-title mt-1">受講に必要な環境</h2>
+        <p class="section-lead">基本的なオンライン環境があれば受講いただけます。ご不明な点は無料体験の際にご相談ください。</p>
+      </header>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="reveal bg-white rounded-[10px] p-6 shadow-soft">
+          <div class="size-12 rounded-full bg-bg-soft text-brand flex items-center justify-center mb-4">
+            <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="font-bold text-ink text-[16px] md:text-[18px]">パソコン</h3>
+          <p class="text-ink text-[13px] md:text-[14px] leading-[1.85] mt-2">
+            Windows 10 以降 / macOS 11 以降のいずれか。タブレット・スマートフォンでの受講は推奨しておりません。
+          </p>
+        </div>
+        <div class="reveal bg-white rounded-[10px] p-6 shadow-soft">
+          <div class="size-12 rounded-full bg-bg-soft text-brand flex items-center justify-center mb-4">
+            <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+          </div>
+          <h3 class="font-bold text-ink text-[16px] md:text-[18px]">インターネット</h3>
+          <p class="text-ink text-[13px] md:text-[14px] leading-[1.85] mt-2">
+            ビデオ通話が安定して行える環境（実効 10 Mbps 以上目安）。有線接続または Wi-Fi のいずれも可。
+          </p>
+        </div>
+        <div class="reveal bg-white rounded-[10px] p-6 shadow-soft">
+          <div class="size-12 rounded-full bg-bg-soft text-brand flex items-center justify-center mb-4">
+            <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+          </div>
+          <h3 class="font-bold text-ink text-[16px] md:text-[18px]">マイク・カメラ</h3>
+          <p class="text-ink text-[13px] md:text-[14px] leading-[1.85] mt-2">
+            PC 内蔵のもので問題ありません。集中できる環境のため、ヘッドセットがあるとさらに快適です。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== CTA ============================== -->
+  <section class="py-16 md:py-20 bg-bg-soft">
+    <div class="max-w-[920px] mx-auto px-5 md:px-10 text-center">
+      <h2 class="reveal section-title">まずは無料体験で雰囲気をご覧ください</h2>
+      <p class="reveal mt-5 text-ink text-[14px] md:text-[16px] leading-[1.9]">
+        実際のレッスンと同じオンライン形式で、Federico のレッスンスタイルを体験いただけます。<br />
+        ご希望の日時をお選びいただき、1 分ほどでお申し込みが完了します。
+      </p>
+      <div class="reveal mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="apply.html" class="btn btn-pink rounded-full !px-10 !py-4">無料体験お申し込み</a>
+        <a href="index.html" class="btn btn-outline-brand">トップへ戻る</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="bg-brand text-white">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10 pt-14 md:pt-20 pb-8 md:pb-10">
+    <div class="grid gap-10 lg:gap-14 lg:grid-cols-[280px_1fr]">
+
+      <!-- 左: ブランド -->
+      <div>
+        <p class="font-en text-white text-[32px] md:text-[34px] font-bold tracking-wide leading-none">Federico</p>
+        <p class="mt-2 text-white/80 text-[11px] md:text-[12px] tracking-wider">ゲームクリエイターズアカデミー</p>
+        <p class="mt-5 text-white/80 text-[12px] md:text-[13px] leading-[1.9]">
+          「好き」を「つくる力」に変える、<br />
+          子ども向けオンラインゲーム制作スクール。
+        </p>
+      </div>
+
+      <!-- 右: サイトマップ -->
+      <nav class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10" aria-label="サイトマップ">
+        <div>
+          <h2 class="font-en text-white text-[13px] font-bold tracking-[0.1em] pb-3 mb-4 border-b border-white/30">ABOUT</h2>
+          <ul class="space-y-2.5 text-[13px] md:text-[14px] text-white/85">
+            <li><a href="index.html" class="inline-block hover:opacity-70 transition-opacity">トップ</a></li>
+            <li><a href="index.html#about" class="inline-block hover:opacity-70 transition-opacity">Federicoについて</a></li>
+            <li><a href="lesson-style.html" class="inline-block hover:opacity-70 transition-opacity">レッスンスタイル</a></li>
+            <li><a href="pricing.html" class="inline-block hover:opacity-70 transition-opacity">料金</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-en text-white text-[13px] font-bold tracking-[0.1em] pb-3 mb-4 border-b border-white/30">COURSE</h2>
+          <ul class="space-y-2.5 text-[13px] md:text-[14px] text-white/85">
+            <li><a href="course-scratch.html" class="inline-block hover:opacity-70 transition-opacity">Scratchコース</a></li>
+            <li><a href="course-unity.html" class="inline-block hover:opacity-70 transition-opacity">Unityコース</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-en text-white text-[13px] font-bold tracking-[0.1em] pb-3 mb-4 border-b border-white/30">SUPPORT</h2>
+          <ul class="space-y-2.5 text-[13px] md:text-[14px] text-white/85">
+            <li><a href="faq.html" class="inline-block hover:opacity-70 transition-opacity">よくあるご質問</a></li>
+            <li><a href="news.html" class="inline-block hover:opacity-70 transition-opacity">お知らせ・キャンペーン</a></li>
+            <li><a href="apply.html" class="inline-block hover:opacity-70 transition-opacity">無料体験お申し込み</a></li>
+            <li><a href="contact.html" class="inline-block hover:opacity-70 transition-opacity">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-en text-white text-[13px] font-bold tracking-[0.1em] pb-3 mb-4 border-b border-white/30">COMPANY</h2>
+          <ul class="space-y-2.5 text-[13px] md:text-[14px] text-white/85">
+            <li><a href="privacy.html" class="inline-block hover:opacity-70 transition-opacity">プライバシーポリシー</a></li>
+            <li class="pt-3 text-white/65 text-[11px] tracking-wider">運営会社</li>
+            <li class="text-white/95 leading-snug">株式会社エス・エー・アイ</li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- 下段: コピーライト -->
+    <div class="mt-12 md:mt-16 pt-6 border-t border-white/20 text-center">
+      <p class="text-white/90 text-[11px] md:text-[12px] font-en tracking-[0.1em]">© 2026 SAI Inc. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- 申込CTA（固定） -->
+<a href="apply.html" id="trialButton" class="fixed bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:bottom-6 md:right-6 z-40 inline-flex items-center gap-2 md:gap-[13px] bg-brand text-white rounded-full pl-2 pr-2 md:pl-[13px] md:pr-3 py-2 md:py-[11px] shadow-[0px_4px_8px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 transition-transform" aria-label="無料体験お申し込みはこちら">
+  <span class="size-[52px] md:size-[67px] rounded-full bg-white flex flex-col items-center justify-center text-pink shrink-0">
+    <span class="text-[11px] md:text-[13px] font-medium leading-[1.3] tracking-[-0.04em]">カンタン</span>
+    <span class="text-[9px] md:text-[11px] font-medium leading-[1.3]">1分で完了！</span>
+  </span>
+  <span class="flex flex-col items-center text-center leading-[1.4] md:leading-[1.5]">
+    <span class="text-[9px] md:text-[12px] font-medium leading-tight whitespace-nowrap">お子さまの「やってみたい」を応援します！</span>
+    <span class="text-[14px] md:text-[20px] font-bold tracking-[0.03em] mt-0.5 md:mt-0 whitespace-nowrap">
+      <span class="text-[#FBEE50]">無料体験</span>お申し込みはこちら
+    </span>
+  </span>
+  <span class="size-[30px] md:size-[37px] rounded-full bg-white flex items-center justify-center shrink-0">
+    <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#18B293" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </span>
+</a>
+
+<script>
+  document.getElementById('menuBtn')?.addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    const menu = document.getElementById('mobileMenu');
+    menu?.classList.toggle('hidden');
+    btn.setAttribute('aria-expanded', String(!menu?.classList.contains('hidden')));
+  });
+
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>

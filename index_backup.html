@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#18B293" />
-<title>Federico | ゲームクリエイターズアカデミー（v2）</title>
+<title>Federico | ゲームクリエイターズアカデミー</title>
 <meta name="description" content="Federico（ゲームクリエイターズアカデミー）は、Scratch・Unity・Robloxを使って本物のゲームづくりを学べる子ども向けオンラインスクールです。" />
 
 <script>
@@ -41,20 +41,15 @@
           roblox: '#335FFF',
           'bg-soft': '#EEFBF8',
           'bg-gray': '#F5F5F5',
-          'hero-bg': '#FDFCFA',
         },
         fontFamily: {
-          // メインフォントを M PLUS Rounded 1c に。読み込みが終わるまでは Noto Sans JP → 既存日本語フォントへフォールバック
           sans: ['"M PLUS Rounded 1c"', '"Noto Sans JP"', '"Hiragino Kaku Gothic ProN"', '"Yu Gothic"', 'sans-serif'],
-          // 英字・数字フォントを Nunito に
           en: ['Nunito', 'Helvetica Neue', 'sans-serif'],
-          rounded: ['"M PLUS Rounded 1c"', '"Noto Sans JP"', 'sans-serif'],
         },
         boxShadow: {
           header: '0 4px 2px rgba(156, 156, 156, 0.25)',
           card: '0 4px 16px rgba(0, 0, 0, 0.06)',
           soft: '0 2px 10px rgba(20, 40, 80, 0.06)',
-          'hero-pill': '0 0 8px 0 rgba(0, 0, 0, 0.25)',
         },
       }
     }
@@ -93,7 +88,16 @@
   }
 
   @layer components {
-    /* 注意: v1 にあった全ページ薄パターン背景は HERO の純色を活かすため除外 */
+    /* ゲーム連想アイコンのライン画タイル背景
+       1行目: 剣・盾・ポーション・ハート・宝石 を 132px 間隔
+       2行目: メダル・星 を半ピッチでオフセット配置 */
+    body {
+      background-color: #ffffff;
+      background-image: url("data:image/svg+xml;utf8,<svg aria-hidden='true' focusable='false' xmlns='http://www.w3.org/2000/svg' width='660' height='232' viewBox='0 0 660 232'><g fill='none' stroke='%2318B293' stroke-opacity='0.16' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><g transform='translate(12 32)'><path d='M14.5 17.5 3 6V3h3l11.5 11.5'/><path d='m13 19 6-6'/><path d='m16 16 4 4'/><path d='m19 21 2-2'/></g><g transform='translate(144 32)'><path d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z'/></g><g transform='translate(276 32)'><path d='M14 2v6.343a1 1 0 0 0 .293 .707l5.414 5.414A2 2 0 0 1 18.293 18H5.707a2 2 0 0 1-1.414-3.536l5.414-5.414A1 1 0 0 0 10 8.343V2'/><path d='M8.5 2h7'/><path d='M7 16h10'/></g><g transform='translate(408 32)'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/></g><g transform='translate(540 32)'><path d='M6 3h12l4 6-10 13L2 9Z'/><path d='M11 3 8 9l4 13 4-13-3-6'/><path d='M2 9h20'/></g><g transform='translate(78 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g><g transform='translate(210 148)'><path d='M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294 .904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771 .56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'/></g><g transform='translate(342 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g><g transform='translate(474 148)'><path d='M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294 .904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771 .56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'/></g><g transform='translate(606 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g></g></svg>");
+      background-repeat: repeat;
+      background-attachment: fixed;
+    }
+    /* セクション側の不透明白を抜き、本文エリアにも模様をほんのり透かす */
     main, section, header, footer { position: relative; }
   }
 
@@ -113,6 +117,7 @@
     .btn {
       @apply inline-flex items-center justify-center gap-2 font-bold whitespace-nowrap cursor-pointer transition-all;
     }
+    /* Figma: px-[20px] py-[16px] text-[16px] leading-none */
     .btn-pink {
       @apply bg-pink text-white px-5 py-4 text-[14px] md:text-[16px] leading-none;
     }
@@ -131,85 +136,64 @@
       @apply text-ink text-[14px] font-medium hover:opacity-70 transition-opacity;
     }
 
-    /* ヘッダー：最上部では HERO 背景に溶け込むよう透明化 */
-    .site-header {
-      transition: background-color .25s ease, box-shadow .25s ease;
+    /* HEROのキーワードティールハイライト（Figma: 96px箱に58px文字 = 上下padding 0.32em）
+       モバイルでは小さくして横はみ出しを防止 */
+    .hero-key {
+      @apply inline-block bg-brand text-white font-bold align-middle;
+      padding: 0.30em 0.30em 0.34em;
+      line-height: 1;
+      letter-spacing: 0.06em;
+      font-size: clamp(22px, 5.6vw, 60px);
     }
-    .site-header.is-transparent {
-      background-color: transparent;
-      box-shadow: none;
+    /* タグライン「好きが未来をつくる。」用 — Figmaでは「好き」「未来」が58px、つなぎが54pxの混在 */
+    .hero-tagline {
+      @apply text-ink font-bold;
+      line-height: 1.1;
+      letter-spacing: 0.04em;
+    }
+    .hero-tagline-em {
+      font-size: clamp(26px, 5.6vw, 58px);
+      letter-spacing: 0.06em;
+    }
+    .hero-tagline-sub {
+      font-size: clamp(22px, 5.2vw, 54px);
+      letter-spacing: 0.02em;
+    }
+    /* ボックスとボックスの間のつなぎ文字（が、と、につながる。） */
+    .hero-conn {
+      @apply text-ink font-bold align-middle;
+      font-size: clamp(22px, 5.2vw, 54px);
+      letter-spacing: 0.02em;
+      line-height: 1;
     }
 
-    /* ===========================
-       HERO v2 — Figma 1448:707 を忠実再現
-       =========================== */
-    .hero-v2 {
-      background-color: #FDFCFA;
+    /* Course カード */
+    .course-card {
+      @apply relative bg-white rounded-[15px] border-2 px-6 py-7 md:px-10;
     }
-    /* h1 全体: M PLUS Rounded 1c Medium */
-    .hero-v2-h1 {
-      font-family: "M PLUS Rounded 1c", "Noto Sans JP", sans-serif;
-      font-weight: 500;
-      color: #333333;
-      line-height: 1;
-      letter-spacing: 0;
+    .course-badge {
+      @apply absolute left-1/2 -translate-x-1/2 -top-4 inline-flex items-center justify-center rounded-full px-5 py-1.5 text-white text-[14px] md:text-[15px] font-bold whitespace-nowrap;
     }
-    /* タグライン「好きが未来をつくる。」— 強調文字 58px / 助詞 40px（Figma準拠） */
-    .hero-v2-em {
-      font-size: clamp(36px, 5.5vw, 58px);
-      letter-spacing: 0.08em;
+    .course-bullet {
+      @apply inline-block size-[10px] rounded-full shrink-0;
     }
-    .hero-v2-mid {
-      font-size: clamp(26px, 3.8vw, 40px);
-      letter-spacing: 0;
+
+    /* レッスンスタイル カード */
+    .style-card {
+      @apply bg-white border border-brand rounded-[10px] px-4 pt-4 pb-7 flex flex-col items-center gap-5 text-center;
     }
-    /* ティールピル：白文字「ゲーム を つくる力」 */
-    .hero-v2-pill-brand {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: #18B293;
-      color: #ffffff;
-      border-radius: 9999px;
-      padding: 0.30em 0.95em 0.34em;
-      line-height: 1;
-      white-space: nowrap;
+
+    /* News カード */
+    .news-row {
+      @apply flex flex-col md:flex-row gap-5 md:gap-10 items-start md:items-center;
     }
-    /* ピル内は字間を詰める（外側の見出し用 tracking を上書き） */
-    .hero-v2-pill-brand .hero-v2-em,
-    .hero-v2-pill-brand .hero-v2-mid {
-      letter-spacing: 0;
-    }
-    /* 白ピル + 影：「自信」「成長」 */
-    .hero-v2-pill-white {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: #ffffff;
-      color: #18B293;
-      border-radius: 9999px;
-      padding: 0.30em 0.55em 0.34em;
-      line-height: 1;
-      white-space: nowrap;
-      box-shadow: 0 0 7.9px 0 rgba(0, 0, 0, 0.25);
-    }
-    /* 説明文：M PLUS Rounded 1c Regular 20px、行間1.8 */
-    .hero-v2-lead {
-      font-family: "M PLUS Rounded 1c", "Noto Sans JP", sans-serif;
-      font-weight: 400;
-      color: #333333;
-      font-size: clamp(15px, 1.55vw, 20px);
-      line-height: 1.8;
-    }
-    /* CTA: TrialButton（HERO内・大）— Figma 427x90px */
-    .hero-v2-cta {
-      background: #18B293;
-      filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.25));
-      border-radius: 9999px;
+    .news-thumb {
+      @apply w-full md:w-[280px] aspect-[5/3] md:h-[180px] md:aspect-auto rounded-[15px] shrink-0;
     }
 
     /* ローディング画面 — federico ロゴが左からカラーで満たされる */
     body.is-loading { overflow: hidden; }
+    /* 表示済みセッションでは即座にスキップ（フラッシュ防止） */
     html.loader-seen body.is-loading { overflow: visible; }
     html.loader-seen .loader-overlay { display: none !important; }
     .loader-overlay {
@@ -275,31 +259,8 @@
       }
     }
 
-    /* Course カード */
-    .course-card {
-      @apply relative bg-white rounded-[15px] border-2 px-6 py-7 md:px-10;
-    }
-    .course-badge {
-      @apply absolute left-1/2 -translate-x-1/2 -top-4 inline-flex items-center justify-center rounded-full px-5 py-1.5 text-white text-[14px] md:text-[15px] font-bold whitespace-nowrap;
-    }
-    .course-bullet {
-      @apply inline-block size-[10px] rounded-full shrink-0;
-    }
-
-    /* レッスンスタイル カード */
-    .style-card {
-      @apply bg-white border border-brand rounded-[10px] px-4 pt-4 pb-7 flex flex-col items-center gap-5 text-center;
-    }
-
-    /* News カード */
-    .news-row {
-      @apply flex flex-col md:flex-row gap-5 md:gap-10 items-start md:items-center;
-    }
-    .news-thumb {
-      @apply w-full md:w-[280px] aspect-[5/3] md:h-[180px] md:aspect-auto rounded-[15px] shrink-0;
-    }
-
-    /* Q&A */
+    /* Q&A — Figma: 円60px / 文字36px。
+       Noto Sans JP は Latin 字形のベースラインが下寄り設計のため、Inter（Latin専用）に切替えて中央配置を実現。 */
     .qa-icon {
       @apply size-[58px] md:size-[60px] rounded-full inline-flex items-center justify-center text-[32px] md:text-[36px] shrink-0;
       font-family: Inter, "Helvetica Neue", sans-serif;
@@ -312,9 +273,10 @@
     }
   }
 </style>
+<style id="bg-single-override">body { background-color: #FDFCFA !important; background-image: none !important; }</style>
 </head>
 
-<body class="is-loading" style="background-color: #FDFCFA;">
+<body class="bg-white is-loading">
 
 <!-- ============================== ローディング画面 ============================== -->
 <div id="loaderOverlay" class="loader-overlay" aria-label="読み込み中" role="status">
@@ -325,12 +287,14 @@
 </div>
 
 <!-- ============================== HEADER ============================== -->
-<header id="siteHeader" class="site-header sticky top-0 z-50 bg-white shadow-header is-transparent">
+<header class="sticky top-0 z-50 bg-white shadow-header">
   <div class="max-w-[1440px] mx-auto h-[72px] md:h-[82px] px-5 md:px-10 flex items-center">
+    <!-- ロゴ（Figma: ヘッダー82pxに対し画像高さ約108px、上下にはみ出し） -->
     <a href="#" class="shrink-0 flex items-center" aria-label="Federico">
       <img loading="lazy" decoding="async" src="assets/logo_new.svg" alt="Federico" class="h-[144px] md:h-[176px] w-auto" />
     </a>
 
+    <!-- ナビゲーション（右寄せ。Figma: gap-[64px]） -->
     <nav class="hidden lg:flex items-center gap-16 ml-auto">
       <a href="#about" class="nav-link">Federicoについて</a>
       <a href="#course" class="nav-link">受講コース</a>
@@ -338,16 +302,19 @@
       <a href="#qa" class="nav-link">よくあるご質問</a>
     </nav>
 
+    <!-- 右側CTA -->
     <div class="lg:ml-8 ml-auto flex items-center gap-2 md:gap-3">
       <a href="apply.html" class="btn btn-pink hidden sm:inline-flex">無料体験お申し込み</a>
       <a href="#" class="btn btn-brand hidden md:inline-flex">ログイン</a>
 
+      <!-- モバイルメニュー -->
       <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center size-10 text-ink" aria-label="メニュー" aria-controls="mobileMenu" aria-expanded="false">
         <svg aria-hidden='true' focusable='false' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </div>
 
+  <!-- モバイルメニュー展開 -->
   <div id="mobileMenu" class="lg:hidden hidden border-t border-gray-200 bg-white" style="overscroll-behavior: contain;">
     <div class="px-5 py-4 flex flex-col gap-3">
       <a href="#about" class="nav-link py-2">Federicoについて</a>
@@ -362,161 +329,67 @@
   </div>
 </header>
 
-<!-- ============================== HERO v2（Figma 1448:707 忠実再現） ============================== -->
-<!--
-  デザイン構造：
-   ・背景 #FDFCFA（ヘッダー背後まで広がる）
-   ・左上に淡い緑の波形（vector_topleft.svg・ヘッダー背後まで掛かる）
-   ・下部に淡い緑の波形（vector_bottom.svg）
-   ・右半分に女の子の写真
-   ・右上に3つの小さな円ドット（黄/ピンク/オレンジ）
-   ・右上と右下に黄色い円＋アイコン（コード/ゲームコントローラー）
+<!-- ============================== HERO ============================== -->
+<section class="relative overflow-hidden lg:min-h-[760px]">
 
-  HERO はヘッダー高さ分だけ上方向に拡張して、ヘッダー背後にも HERO の背景色と
-  装飾要素が見えるようにする。
-   ・margin-top: -72px（モバイル：ヘッダー 72px 分）／ md 以上: -82px
-   ・padding-top で内側コンテンツはヘッダー高さ分下げる
--->
-<section class="hero-v2 relative overflow-hidden -mt-[72px] pt-[72px] md:-mt-[82px] md:pt-[82px] lg:min-h-[720px]">
+  <!-- モバイル用: PCと同じ思想で写真を右寄せ配置し、左→右の白マスクで
+       テキストを読みやすくする。下部にPCと同じ系統の短い説明文も載せる。
+       boy（写真の中央〜右）が白マスクの外（透明側）に来るよう、
+       画像自体を translateX で右側にずらす。 -->
+  <div class="lg:hidden relative overflow-hidden min-h-[420px] sm:min-h-[500px]">
+    <!-- 画像: 右端を viewport 右端に揃え、aspect-ratio を保ったまま左にはみ出させる -->
+    <img loading="eager" decoding="async" fetchpriority="high" src="assets/hero_right.png" alt=""
+         class="absolute inset-y-0 right-0 h-full w-auto max-w-none object-cover object-right block translate-x-[20%] sm:translate-x-[12%]"
+         style="min-width: 100%;" />
+    <!-- 白マスク: 左半分はテキスト読みやすく不透明、右側で boy が見えるように早めに透明へ -->
+    <div class="absolute inset-0 pointer-events-none"
+         style="background: linear-gradient(to right, #ffffff 0%, #ffffff 28%, rgba(255,255,255,0.7) 42%, rgba(255,255,255,0.25) 58%, rgba(255,255,255,0) 78%);"></div>
+    <!-- テキスト: 左寄せ。キャッチコピー＋下部に小さな説明 -->
+    <div class="relative px-5 sm:px-8 pt-12 sm:pt-16 pb-10 sm:pb-12 max-w-[58%] sm:max-w-[55%]">
+      <h1 class="reveal text-ink font-bold tracking-[0.04em] leading-[1.4] text-[22px] sm:text-[28px]">
+        ゲームが<span class="text-brand">学び</span>になる時代へ。
+      </h1>
+      <p class="reveal mt-5 sm:mt-7 text-ink text-[12px] sm:text-[14px] leading-[1.9]">
+        ScratchやUnityを使って本物のゲームづくりを学べる、子ども向けオンラインスクール。<br />
+        プロのクリエイターと一緒に、つくる楽しさを思いきり体験しよう。
+      </p>
+    </div>
+  </div>
 
-  <!-- ===== モバイル用ヒーロー（PCのデザインを縮約して再現） ===== -->
-  <div class="lg:hidden relative">
-    <!-- 左上の波形装飾 -->
-    <img aria-hidden="true" loading="lazy" src="assets/hero-v2/vector_topleft.svg" alt=""
-         class="absolute left-0 top-0 w-[40%] max-w-[200px] pointer-events-none select-none opacity-90 z-0" />
-
-    <!-- テキストブロック（z-30 で最前面） -->
-    <div class="relative z-30 px-5 sm:px-8 pt-10 sm:pt-14 pb-6">
-      <h1 class="reveal hero-v2-h1 flex flex-col gap-3">
-        <span class="block whitespace-nowrap">
-          <span class="hero-v2-em">好き</span><span class="hero-v2-mid">が</span><span class="hero-v2-em">未来</span><span class="hero-v2-mid">をつくる。</span>
+  <!-- デスクトップ用: 元のキャッチコピー（テキスト左 / 画像右オーバーレイ） -->
+  <div class="hidden lg:block max-w-[1440px] mx-auto relative">
+    <div class="relative z-10 lg:pl-[60px] lg:pt-28 lg:pb-28 lg:max-w-[760px]">
+      <h1 class="reveal flex flex-col gap-7">
+        <span class="hero-tagline block whitespace-nowrap">
+          <span class="hero-tagline-em">好き</span><span class="hero-tagline-sub">が</span><span class="hero-tagline-em">未来</span><span class="hero-tagline-sub">をつくる。</span>
         </span>
-        <span class="flex flex-wrap items-center gap-x-2 gap-y-2 mt-2">
-          <span class="hero-v2-pill-brand">
-            <span class="hero-v2-em">ゲーム</span><span class="hero-v2-mid">を</span><span class="hero-v2-em">つくる力</span>
-          </span>
-          <span class="hero-v2-mid">が、</span>
+        <span class="flex items-center gap-3 whitespace-nowrap">
+          <span class="hero-key">ゲームをつくる力</span>
+          <span class="hero-conn">が、</span>
         </span>
-        <span class="flex flex-wrap items-center gap-x-2 gap-y-2">
-          <span class="hero-v2-pill-white"><span class="hero-v2-em">自信</span></span>
-          <span class="hero-v2-mid">と</span>
-          <span class="hero-v2-pill-white"><span class="hero-v2-em">成長</span></span>
-          <span class="hero-v2-mid">につながる。</span>
+        <span class="flex items-center gap-3 whitespace-nowrap">
+          <span class="hero-key">自信</span>
+          <span class="hero-conn">と</span>
+          <span class="hero-key">成長</span>
+          <span class="hero-conn">につながる。</span>
         </span>
       </h1>
-    </div>
-
-    <!-- 写真 -->
-    <div class="relative z-10">
-      <img loading="eager" decoding="async" fetchpriority="high" src="assets/hero-v2/hero_girl.png" alt=""
-           class="w-full h-auto object-contain block" />
-    </div>
-
-    <!-- 説明文（z-30 で波形より前面） -->
-    <div class="relative z-30 px-5 sm:px-8 pt-6 pb-10">
-      <p class="reveal hero-v2-lead">
-        Scratch・Unityを使って本物のゲームづくりを学べる<br />
+      <p class="reveal mt-10 text-ink text-[18px] leading-[1.9] max-w-[640px]">
+        ScratchやUnityを使って本物のゲームづくりを学べる<br />
         子ども向けオンラインスクール。<br />
         プロのクリエイターと一緒に、つくる楽しさを思いきり体験しよう。
       </p>
     </div>
-
-    <!-- 下部の波形装飾（z-0 で背面に。説明文と重なっても文字が前面に出る） -->
-    <img aria-hidden="true" loading="lazy" src="assets/hero-v2/vector_bottom.svg" alt=""
-         class="absolute left-0 bottom-0 w-full pointer-events-none select-none z-0" />
   </div>
 
-  <!-- ===== デスクトップ用（lg〜）：Figma 座標を忠実に再現 + 全幅対応 =====
-       設計方針：
-        ・写真／装飾／CTA は section 直下に absolute 配置（viewport 右端基準）
-        ・テキストは max-w-[1440px] の中央寄せコンテナに配置（中身は左寄せのまま）
-        ・これで viewport が 1440px を超えても写真の右端は常に viewport 端まで広がり、
-          装飾と CTA も写真と同じ右端基準で追従する。
-   -->
-  <div class="hidden lg:block">
-
-    <!-- 左上の波形装飾（viewport 左端からはみ出す） -->
-    <img aria-hidden="true" loading="lazy" src="assets/hero-v2/vector_topleft.svg" alt=""
-         class="absolute left-0 top-0 w-[326px] pointer-events-none select-none z-0" />
-
-    <!-- 女の子の写真（viewport 右端基準・Figma w 769 / h 627、top はヘッダー含む全体基準） -->
-    <img loading="eager" decoding="async" fetchpriority="high" src="assets/hero-v2/hero_girl.png" alt=""
-         class="absolute z-0"
-         style="right: 0; top: 127px; width: 769px; height: 627px; object-fit: cover;" />
-
-    <!-- ===== 装飾ドット（viewport 右端基準・top は Figma 全体座標） ===== -->
-    <img aria-hidden="true" loading="lazy" src="assets/hero-v2/dot_yellow.svg" alt=""
-         class="absolute pointer-events-none select-none z-10"
-         style="right: 49px; top: 160px; width: 22px; height: 22px;" />
-    <img aria-hidden="true" loading="lazy" src="assets/hero-v2/dot_pink.svg" alt=""
-         class="absolute pointer-events-none select-none z-10"
-         style="right: 28px; top: 171px; width: 13px; height: 12px;" />
-    <img aria-hidden="true" loading="lazy" src="assets/hero-v2/dot_orange.svg" alt=""
-         class="absolute pointer-events-none select-none z-10"
-         style="right: 41px; top: 191px; width: 8px; height: 7px;" />
-
-    <!-- ===== 黄色い円＋コードアイコン（右上・viewport 右端基準）
-         circle_yellow.svg は 99×99 中に影付き円が左上寄り（中心 ≈ 45,45）。
-         アイコンを円の見た目中心に揃える。 ===== -->
-    <div class="absolute pointer-events-none z-10" style="right: 49px; top: 385px;">
-      <img aria-hidden="true" loading="lazy" src="assets/hero-v2/circle_yellow.svg" alt=""
-           class="block select-none" style="width: 99px; height: 99px;" />
-      <img aria-hidden="true" loading="lazy" src="assets/hero-v2/icon_code.svg" alt=""
-           class="absolute select-none" style="left: 20px; top: 20px; width: 49px; height: 49px;" />
-    </div>
-
-    <!-- ===== 黄色い円＋ゲームコントローラー（右下・viewport 右端基準） ===== -->
-    <div class="absolute pointer-events-none z-10" style="right: 21px; top: 583px;">
-      <img aria-hidden="true" loading="lazy" src="assets/hero-v2/circle_yellow.svg" alt=""
-           class="block select-none" style="width: 99px; height: 99px;" />
-      <img aria-hidden="true" loading="lazy" src="assets/hero-v2/icon_game.svg" alt=""
-           class="absolute select-none" style="left: 18px; top: 18px; width: 54px; height: 54px;" />
-    </div>
-
-    <!-- ===== 下部の波形装飾（HERO 最下端に配置） ===== -->
-    <img aria-hidden="true" loading="lazy" src="assets/hero-v2/vector_bottom.svg" alt=""
-         class="absolute inset-x-0 bottom-0 pointer-events-none select-none z-0"
-         style="width: 100%; height: 229px;" />
-
-    <!-- HERO 内 TrialButton はフロート常設の固定 CTA（#trialButton）と重複するため非表示 -->
-  </div>
-
-  <!-- ===== テキストレイヤー：max-w-[1440px] 中央寄せコンテナ（HERO 高さ 720px に合わせる）
-       z-index は装飾(z-10)より十分上の z-30 にして、絶対に装飾より前面に。 ===== -->
-  <div class="hidden lg:block max-w-[1440px] mx-auto relative h-[720px] z-30">
-    <!-- h1 タグライン（キャッチを上に詰める：top 100） -->
-    <h1 class="hero-v2-h1 reveal absolute z-30" style="left: 65px; top: 100px; width: 754px;">
-      <!-- 1行目: 好き が 未来 をつくる。 -->
-      <div style="margin-left: 36px; line-height: 1;">
-        <span class="hero-v2-em">好き</span><span class="hero-v2-mid">が</span><span class="hero-v2-em">未来</span><span class="hero-v2-mid">をつくる。</span>
-      </div>
-      <!-- 2行目: [ゲームをつくる力] が、 -->
-      <div class="flex items-center gap-3" style="margin-top: 27px; margin-left: 34px;">
-        <span class="hero-v2-pill-brand" style="width: 518px; height: 96px;">
-          <span class="hero-v2-em">ゲーム</span><span class="hero-v2-mid">を</span><span class="hero-v2-em">つくる力</span>
-        </span>
-        <span class="hero-v2-mid">が、</span>
-      </div>
-      <!-- 3行目: [自信] と [成長] につながる。 -->
-      <div class="flex items-center gap-4" style="margin-top: 27px; margin-left: 34px;">
-        <span class="hero-v2-pill-white" style="height: 96px; min-width: 166px;">
-          <span class="hero-v2-em">自信</span>
-        </span>
-        <span class="hero-v2-mid">と</span>
-        <span class="hero-v2-pill-white" style="height: 96px; min-width: 175px;">
-          <span class="hero-v2-em">成長</span>
-        </span>
-        <span class="hero-v2-mid">につながる。</span>
-      </div>
-    </h1>
-
-    <!-- 説明文（キャッチコピーとの間に余白を持たせて下げる：top 460） -->
-    <p class="hero-v2-lead reveal absolute z-30"
-       style="left: 99px; top: 460px; width: 642px;">
-      Scratch・Unityを使って本物のゲームづくりを学べる<br />
-      子ども向けオンラインスクール。<br />
-      プロのクリエイターと一緒に、つくる楽しさを思いきり体験しよう。
-    </p>
+  <!-- デスクトップ用: 画像（viewport の右端まで absolute）
+       lg:left の calc は、max-w-[1440px] のコンテナを中央配置した時の "コンテナの左端 + 32%" 位置を算出。
+       ビューポートが 1440px を超えた場合も画像が viewport の右端まで広がる。 -->
+  <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:z-0 lg:left-[max(32%,calc(50%_-_720px_+_460.8px))]">
+    <img loading="lazy" decoding="async" src="assets/hero_right.png" alt="" class="w-full h-auto lg:h-full lg:object-cover lg:object-center" />
+    <!-- 白グラデーションオーバーレイ（左→右に白が透明へ・デスクトップのみ） -->
+    <div class="hidden lg:block absolute inset-0 pointer-events-none"
+         style="background: linear-gradient(to right, #ffffff 0%, #ffffff 18%, rgba(255,255,255,0.85) 32%, rgba(255,255,255,0.45) 48%, rgba(255,255,255,0) 70%);"></div>
   </div>
 </section>
 
@@ -679,7 +552,46 @@
           </a>
         </div>
       </article>
+
+      <!-- Roblox（Coming Soon — 後で復活させる可能性があるためコメントアウト保持） -->
+      <!--
+      <article class="course-card border-roblox reveal lg:col-span-2 lg:max-w-[560px] lg:mx-auto lg:w-full">
+        <span class="course-badge bg-roblox z-10">オリジナルゲームを公開したい方におすすめ</span>
+        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-3">
+          <div class="w-[110px] h-[110px] flex items-center justify-center shrink-0">
+            <img loading="lazy" decoding="async" src="assets/roblox.png" alt="Roblox" class="size-[84px] object-cover rounded-[10px]" />
+          </div>
+          <div class="flex-1 text-center md:text-left">
+            <h3 class="leading-[1.4]">
+              <span class="font-en font-medium text-roblox text-[28px] md:text-[32px]">Roblox</span>
+              <span class="font-bold text-ink text-[18px] md:text-[20px] ml-1">コース</span>
+            </h3>
+            <p class="mt-1 text-ink text-[13px] md:text-[14px] leading-[1.8]">
+              本格的な2D/3Dゲーム制作に挑戦。<br />
+              プロも使うUnityでスキルを磨こう！
+            </p>
+          </div>
+        </div>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-[1fr_165px] gap-4 md:gap-6 items-start">
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-ink text-[14px]"><span class="course-bullet bg-roblox"></span>使用端末 ： PC</li>
+            <li class="flex items-center gap-2 text-ink text-[14px]"><span class="course-bullet bg-roblox"></span>対象 ： 小学4年生〜（経験者）</li>
+            <li class="flex items-start gap-2 text-ink text-[14px] leading-[1.6]"><span class="course-bullet bg-roblox mt-1.5"></span><span class="flex"><span class="shrink-0">学べること ： </span><span class="block"><span class="block">プログラミングの応用</span><span class="block">公開を意識した開発</span></span></span></li>
+          </ul>
+          <div class="border border-gray-200 rounded-[5px] overflow-hidden h-[104px]">
+            <img loading="lazy" decoding="async" src="assets/scratch_img.png" alt="Roblox画面" class="w-full h-full object-cover" />
+          </div>
+        </div>
+
+        <div aria-hidden="true" class="absolute -inset-0.5 bg-[rgba(217,217,217,0.76)] rounded-[15px] pointer-events-none"></div>
+
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <span class="text-white text-[32px] md:text-[44px] font-bold tracking-[0.04em] drop-shadow-[0_2px_4px_rgba(0,0,0,0.25)] -rotate-[15deg]" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">Coming Soon…</span>
+        </div>
+      </article>
+      -->
     </div>
+
   </div>
 </section>
 
@@ -843,6 +755,7 @@
             <span class="relative inline-block font-en align-baseline">
               <span class="text-[26px] md:text-[30px]">¥</span>
               <span class="text-[32px] md:text-[38px]">17,600</span>
+              <!-- 取り消し線 2 本（ピンク強調・¥17,600 のみに重ねる） -->
               <span aria-hidden="true" class="absolute left-0 right-0 top-[42%] h-[2px] bg-pink"></span>
               <span aria-hidden="true" class="absolute left-0 right-0 top-[60%] h-[2px] bg-pink"></span>
             </span>
@@ -858,6 +771,9 @@
 
       <!-- キャンペーン価格 -->
       <div class="w-full max-w-[616px] flex flex-col relative">
+        <!-- 毎月¥4,400 OFF バッジ — カードの右上に「貼り付け」風に配置。
+             画面幅に関わらず「今なら特別価格で…」のテキストに被らないよう、
+             カード上端の外側に大部分を逃がし、ごく僅かだけ overlap させる。 -->
         <div class="absolute bottom-full right-2 -mb-2 w-[80px] md:right-4 md:w-[110px] lg:bottom-auto lg:top-1/4 lg:right-0 lg:-translate-y-1/2 lg:translate-x-1/2 lg:mb-0 lg:w-[150px] rotate-[8deg] z-10 pointer-events-none">
           <img loading="lazy" decoding="async" src="assets/badge_4400off.png" alt="毎月4400円OFF" class="w-full h-auto" />
           <div class="absolute inset-0 flex flex-col items-center justify-center text-center font-semibold leading-[1.15]">
@@ -902,6 +818,7 @@
     </header>
 
     <ul class="flex flex-col">
+      <!-- Q1 -->
       <li class="border-b border-gray-300 py-6 reveal">
         <button class="qa-toggle w-full flex items-start gap-4 text-left" id="qaBtn1" aria-controls="qaBody1" aria-expanded="true">
           <span class="qa-icon bg-brand text-white"><span>Q</span></span>
@@ -914,6 +831,7 @@
         </div>
       </li>
 
+      <!-- Q2 -->
       <li class="border-b border-gray-300 py-6 reveal">
         <button class="qa-toggle w-full flex items-start gap-4 text-left" id="qaBtn2" aria-controls="qaBody2" aria-expanded="false">
           <span class="qa-icon bg-brand text-white"><span>Q</span></span>
@@ -929,6 +847,7 @@
         </div>
       </li>
 
+      <!-- Q3 -->
       <li class="border-b border-gray-300 py-6 reveal">
         <button class="qa-toggle w-full flex items-start gap-4 text-left" id="qaBtn3" aria-controls="qaBody3" aria-expanded="false">
           <span class="qa-icon bg-brand text-white"><span>Q</span></span>
@@ -948,6 +867,8 @@
 <footer class="bg-brand text-white">
   <div class="max-w-[1180px] mx-auto px-5 md:px-10 pt-14 md:pt-20 pb-8 md:pb-10">
     <div class="grid gap-10 lg:gap-14 lg:grid-cols-[280px_1fr]">
+
+      <!-- 左: ブランド -->
       <div>
         <p class="font-en text-white text-[32px] md:text-[34px] font-bold tracking-wide leading-none">Federico</p>
         <p class="mt-2 text-white/80 text-[11px] md:text-[12px] tracking-wider">ゲームクリエイターズアカデミー</p>
@@ -956,6 +877,8 @@
           子ども向けオンラインゲーム制作スクール。
         </p>
       </div>
+
+      <!-- 右: サイトマップ -->
       <nav class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10" aria-label="サイトマップ">
         <div>
           <h2 class="font-en text-white text-[13px] font-bold tracking-[0.1em] pb-3 mb-4 border-b border-white/30">ABOUT</h2>
@@ -993,6 +916,7 @@
       </nav>
     </div>
 
+    <!-- 下段: コピーライト -->
     <div class="mt-12 md:mt-16 pt-6 border-t border-white/20 text-center">
       <p class="text-white/90 text-[11px] md:text-[12px] font-en tracking-[0.1em]">© 2026 SAI Inc. All Rights Reserved.</p>
     </div>
@@ -1001,16 +925,21 @@
 
 <!-- ============================== 無料体験 申込CTA（固定） ============================== -->
 <a href="apply.html" id="trialButton" class="fixed bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:bottom-6 md:right-6 z-40 inline-flex items-center gap-2 md:gap-[13px] bg-brand text-white rounded-full pl-2 pr-2 md:pl-[13px] md:pr-3 py-2 md:py-[11px] shadow-[0px_4px_8px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 transition-transform" aria-label="無料体験お申し込みはこちら">
+  <!-- 左: 「カンタン 1分で完了！」白丸 -->
   <span class="size-[52px] md:size-[67px] rounded-full bg-white flex flex-col items-center justify-center text-pink shrink-0">
     <span class="text-[11px] md:text-[13px] font-medium leading-[1.3] tracking-[-0.04em]">カンタン</span>
     <span class="text-[9px] md:text-[11px] font-medium leading-[1.3]">1分で完了！</span>
   </span>
+
+  <!-- 中央: テキスト -->
   <span class="flex flex-col items-center text-center leading-[1.4] md:leading-[1.5]">
     <span class="text-[9px] md:text-[12px] font-medium leading-tight whitespace-nowrap">お子さまの「やってみたい」を応援します！</span>
     <span class="text-[14px] md:text-[20px] font-bold tracking-[0.03em] mt-0.5 md:mt-0 whitespace-nowrap">
       <span class="text-[#FBEE50]">無料体験</span>お申し込みはこちら
     </span>
   </span>
+
+  <!-- 右: 矢印アイコン白丸 -->
   <span class="size-[30px] md:size-[37px] rounded-full bg-white flex items-center justify-center shrink-0">
     <svg aria-hidden='true' focusable='false' width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#18B293" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
   </span>
@@ -1023,7 +952,8 @@
 </a>
 
 <script>
-  // ローディング画面
+  // ローディング画面 — 読み込み完了 + 最低表示時間（アニメーション完了分）後に非表示
+  // セッション内で既に表示済みの場合はスキップ
   (function() {
     const SEEN_KEY = 'fedLoaderSeen';
     let alreadySeen = false;
@@ -1035,7 +965,7 @@
       return;
     }
 
-    const MIN_DISPLAY_MS = 1800;
+    const MIN_DISPLAY_MS = 1800; // アニメ 1.6s + バッファ 0.2s
     const start = Date.now();
     const hideLoader = () => {
       const elapsed = Date.now() - start;
@@ -1050,19 +980,6 @@
     };
     if (document.readyState === 'complete') hideLoader();
     else window.addEventListener('load', hideLoader);
-  })();
-
-  // ヘッダー透過制御（最上部のみ透明 → スクロールで白背景）
-  (function() {
-    const header = document.getElementById('siteHeader');
-    if (!header) return;
-    const THRESHOLD = 8;
-    const update = () => {
-      if (window.scrollY <= THRESHOLD) header.classList.add('is-transparent');
-      else header.classList.remove('is-transparent');
-    };
-    update();
-    window.addEventListener('scroll', update, { passive: true });
   })();
 
   // モバイルメニュー
@@ -1104,7 +1021,7 @@
     }
   });
 
-  // スクロール連動フェードイン
+  // スクロール連動フェードイン（IntersectionObserver）
   if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1116,6 +1033,7 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   } else {
+    // フォールバック: 古いブラウザは全て表示
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
   }
 </script>

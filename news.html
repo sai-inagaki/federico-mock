@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja" style="color-scheme: light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#18B293" />
+<title>お知らせ・キャンペーン | Federico - ゲームクリエイターズアカデミー</title>
+<meta name="description" content="Federico（ゲームクリエイターズアカデミー）からのお知らせ・キャンペーン情報の一覧です。新着情報、コースの追加、キャンペーン、メンテナンスのご案内などをまとめてご覧いただけます。" />
+
+<link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+<link href="https://fonts.bunny.net/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: '#18B293',
+          'brand-dark': '#0E8E76',
+          pink: { DEFAULT: '#FF4F7B', soft: 'rgba(255, 79, 123, 0.97)' },
+          ink: { DEFAULT: '#333333', soft: '#4D4D4D', gray: '#737373' },
+          scratch: '#FFAB19',
+          unity: '#4D4D4D',
+          roblox: '#335FFF',
+          'bg-soft': '#EEFBF8',
+          'bg-gray': '#F5F5F5',
+        },
+        fontFamily: {
+          sans: ['"M PLUS Rounded 1c"', '"Noto Sans JP"', '"Hiragino Kaku Gothic ProN"', '"Yu Gothic"', 'sans-serif'],
+          en: ['Nunito', 'Helvetica Neue', 'sans-serif'],
+        },
+        boxShadow: {
+          header: '0 4px 2px rgba(156, 156, 156, 0.25)',
+          card: '0 4px 16px rgba(0, 0, 0, 0.06)',
+          soft: '0 2px 10px rgba(20, 40, 80, 0.06)',
+        },
+      }
+    }
+  }
+</script>
+
+<style type="text/tailwindcss">
+  @layer base {
+    html { scroll-behavior: smooth; }
+    body {
+      @apply font-sans text-ink antialiased;
+      font-feature-settings: "palt" 1;
+      letter-spacing: 0.02em;
+      line-height: 1.8;
+      text-rendering: optimizeLegibility;
+    }
+    a { @apply transition-opacity; }
+    a:hover { @apply opacity-75; }
+    ul, ol { @apply list-none p-0 m-0; }
+    h1, h2, h3 { text-wrap: pretty; }
+    button, a, [role="button"], summary, input, label, select { touch-action: manipulation; }
+    *:focus { outline: none; }
+    *:focus-visible {
+      outline: 2px solid #18B293;
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+    #trialButton { bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); }
+    @media (min-width: 768px) {
+      #trialButton { bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); }
+      #topLink { bottom: calc(7.5rem + env(safe-area-inset-bottom, 0px)); }
+    }
+  }
+
+  @layer components {
+    body {
+      background-color: #ffffff;
+      background-image: url("data:image/svg+xml;utf8,<svg aria-hidden='true' focusable='false' xmlns='http://www.w3.org/2000/svg' width='660' height='232' viewBox='0 0 660 232'><g fill='none' stroke='%2318B293' stroke-opacity='0.16' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><g transform='translate(12 32)'><path d='M14.5 17.5 3 6V3h3l11.5 11.5'/><path d='m13 19 6-6'/><path d='m16 16 4 4'/><path d='m19 21 2-2'/></g><g transform='translate(144 32)'><path d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z'/></g><g transform='translate(276 32)'><path d='M14 2v6.343a1 1 0 0 0 .293 .707l5.414 5.414A2 2 0 0 1 18.293 18H5.707a2 2 0 0 1-1.414-3.536l5.414-5.414A1 1 0 0 0 10 8.343V2'/><path d='M8.5 2h7'/><path d='M7 16h10'/></g><g transform='translate(408 32)'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/></g><g transform='translate(540 32)'><path d='M6 3h12l4 6-10 13L2 9Z'/><path d='M11 3 8 9l4 13 4-13-3-6'/><path d='M2 9h20'/></g><g transform='translate(78 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g><g transform='translate(210 148)'><path d='M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294 .904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771 .56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'/></g><g transform='translate(342 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g><g transform='translate(474 148)'><path d='M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294 .904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771 .56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'/></g><g transform='translate(606 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g></g></svg>");
+      background-repeat: repeat;
+      background-attachment: fixed;
+    }
+    main, section, header, footer { position: relative; }
+
+    .section-eyebrow { @apply font-en text-brand font-bold text-[20px] tracking-wide leading-none; }
+    .section-title { @apply font-bold text-ink text-[28px] md:text-[32px] tracking-[0.05em] leading-[1.2]; }
+
+    .btn { @apply inline-flex items-center justify-center gap-2 font-bold whitespace-nowrap cursor-pointer transition-all; }
+    .btn-pink { @apply bg-pink text-white px-5 py-4 text-[14px] md:text-[16px] leading-none; }
+    .btn-pink:hover { @apply -translate-y-0.5; opacity: 0.92; }
+    .btn-brand { @apply bg-brand text-white px-5 py-4 text-[14px] md:text-[16px] leading-none; }
+    .btn-brand:hover { @apply -translate-y-0.5; opacity: 0.92; }
+    .btn-outline-brand { @apply bg-white border-2 border-brand text-brand rounded-full px-8 py-3 text-[15px] md:text-[16px]; }
+    .btn-outline-brand:hover { @apply -translate-y-0.5 bg-brand text-white; opacity: 1; }
+
+    .nav-link { @apply text-ink text-[14px] font-medium hover:opacity-70 transition-opacity; }
+
+    /* ニュース行 */
+    .news-row {
+      @apply flex flex-col md:flex-row gap-5 md:gap-8 items-start;
+    }
+    .news-thumb {
+      @apply w-full md:w-[260px] lg:w-[300px] aspect-[4/3] md:aspect-[5/3] rounded-[15px] bg-bg-soft shrink-0;
+    }
+    .news-badge {
+      @apply inline-flex items-center justify-center min-w-[88px] h-[25px] rounded-full border text-[12px];
+    }
+    .news-badge--news { @apply border-ink-gray bg-white text-ink-soft; }
+    .news-badge--cp { @apply border-pink bg-white text-pink; }
+    .news-badge--info { @apply border-brand bg-white text-brand; }
+
+    /* フィルタタブ */
+    .filter-tab {
+      @apply inline-flex items-center justify-center px-5 py-2 rounded-full border text-[13px] md:text-[14px] font-semibold transition-colors;
+    }
+    .filter-tab[aria-pressed="true"] {
+      @apply bg-brand text-white border-brand;
+    }
+    .filter-tab[aria-pressed="false"] {
+      @apply bg-white text-ink-soft border-gray-300 hover:border-brand hover:text-brand;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease-out, transform .7s ease-out;
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
+  }
+</style>
+<style id="bg-single-override">body { background-color: #FDFCFA !important; background-image: none !important; }</style>
+</head>
+
+<body class="bg-white">
+
+<!-- ============================== HEADER ============================== -->
+<header class="sticky top-0 z-50 bg-white shadow-header">
+  <div class="max-w-[1440px] mx-auto h-[72px] md:h-[82px] px-5 md:px-10 flex items-center">
+    <a href="index.html" class="shrink-0 flex items-center" aria-label="Federico">
+      <img loading="eager" decoding="async" fetchpriority="high" src="assets/logo_new.svg" alt="Federico" class="h-[144px] md:h-[176px] w-auto" />
+    </a>
+    <nav class="hidden lg:flex items-center gap-16 ml-auto">
+      <a href="index.html#about" class="nav-link">Federicoについて</a>
+      <a href="index.html#course" class="nav-link">受講コース</a>
+      <a href="lesson-style.html" class="nav-link">レッスンスタイル</a>
+      <a href="faq.html" class="nav-link">よくあるご質問</a>
+    </nav>
+    <div class="lg:ml-8 ml-auto flex items-center gap-2 md:gap-3">
+      <a href="apply.html" class="btn btn-pink hidden sm:inline-flex">無料体験お申し込み</a>
+      <a href="#" class="btn btn-brand hidden md:inline-flex">ログイン</a>
+      <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center size-10 text-ink" aria-label="メニュー" aria-controls="mobileMenu" aria-expanded="false">
+        <svg aria-hidden='true' focusable='false' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-gray-200 bg-white">
+    <div class="px-5 py-4 flex flex-col gap-3">
+      <a href="index.html#about" class="nav-link py-2">Federicoについて</a>
+      <a href="index.html#course" class="nav-link py-2">受講コース</a>
+      <a href="lesson-style.html" class="nav-link py-2">レッスンスタイル</a>
+      <a href="faq.html" class="nav-link py-2">よくあるご質問</a>
+      <div class="flex gap-2 pt-2">
+        <a href="apply.html" class="btn btn-pink flex-1 sm:hidden">無料体験お申し込み</a>
+        <a href="#" class="btn btn-brand flex-1 md:hidden">ログイン</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== ページタイトル ============================== -->
+<section class="py-14 md:py-20 bg-bg-gray">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10 text-center">
+    <p class="section-eyebrow reveal">News</p>
+    <h1 class="section-title mt-2 reveal">お知らせ・キャンペーン</h1>
+    <p class="reveal mt-5 text-ink text-[14px] md:text-[16px] leading-[1.9]">
+      Federico からの最新のお知らせ・キャンペーン情報をご覧いただけます。
+    </p>
+  </div>
+</section>
+
+<!-- ============================== 本文 ============================== -->
+<main id="main">
+  <section class="py-14 md:py-20">
+    <div class="max-w-[1080px] mx-auto px-5 md:px-10">
+
+      <!-- カテゴリフィルタ -->
+      <div class="reveal flex flex-wrap items-center gap-2 md:gap-3 mb-10 md:mb-14" role="group" aria-label="カテゴリで絞り込み">
+        <button class="filter-tab" data-filter="all" aria-pressed="true">すべて</button>
+        <button class="filter-tab" data-filter="news" aria-pressed="false">ニュース</button>
+        <button class="filter-tab" data-filter="cp" aria-pressed="false">キャンペーン</button>
+      </div>
+
+      <!-- ニュース一覧 -->
+      <ul id="newsList" class="flex flex-col gap-10 md:gap-12">
+
+        <li class="news-row reveal" data-category="cp">
+          <img loading="lazy" decoding="async" src="assets/news_campaign.png" alt="オープン記念キャンペーン" class="news-thumb object-cover" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="font-en text-ink-soft text-[14px] tracking-wider">2026.05.25</span>
+              <span class="news-badge news-badge--cp">キャンペーン</span>
+            </div>
+            <h3 class="text-ink-soft text-[18px] md:text-[24px] font-bold leading-[1.6]">オープン記念キャンペーン実施中！</h3>
+            <hr class="my-3 border-gray-200" />
+            <p class="text-ink-soft text-[14px] md:text-[16px] leading-[1.8]">
+              オープンを記念し、初月の受講料が毎月¥4,400 OFFとなるキャンペーンを実施中です！<br />
+              ぜひこの機会にオンライン無料体験に参加してみませんか？
+            </p>
+          </div>
+        </li>
+
+        <li class="news-row reveal" data-category="news">
+          <img loading="lazy" decoding="async" src="assets/news_open.png" alt="Federicoオープン" class="news-thumb object-cover" />
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="font-en text-ink-soft text-[14px] tracking-wider">2026.05.25</span>
+              <span class="news-badge news-badge--news">ニュース</span>
+            </div>
+            <h3 class="text-ink-soft text-[18px] md:text-[24px] font-bold leading-[1.6]">ゲームクリエイターズアカデミー「Federico」オープン！</h3>
+            <hr class="my-3 border-gray-200" />
+            <p class="text-ink-soft text-[14px] md:text-[16px] leading-[1.8]">
+              ゲームクリエイターズアカデミー「Federico」がオープンしました！<br />
+              Federico は、子どもたちが大好きな「ゲーム」をつくりながら、プログラミングやデザイン、企画力を楽しく学べるオンラインスクールです。
+            </p>
+          </div>
+        </li>
+
+        <!--
+          以下、お知らせ・キャンペーンが追加された際に表示する想定のサンプル記事。
+          現時点では掲載する記事が無いため非表示にしている。
+          記事が用意できたタイミングで該当する <li> のコメントを解除すること。
+
+        <li class="news-row reveal" data-category="info">
+          <div class="news-thumb flex items-center justify-center bg-bg-soft text-brand">
+            <svg aria-hidden='true' focusable='false' width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="font-en text-ink-soft text-[14px] tracking-wider">2026.05.20</span>
+              <span class="news-badge news-badge--info">運営からのお知らせ</span>
+            </div>
+            <h3 class="text-ink-soft text-[18px] md:text-[24px] font-bold leading-[1.6]">無料体験レッスンのお申し込み受付を開始しました</h3>
+            <hr class="my-3 border-gray-200" />
+            <p class="text-ink-soft text-[14px] md:text-[16px] leading-[1.8]">
+              開講に先立ち、無料体験レッスンのご予約受付を開始いたしました。<br />
+              ご希望の日時をカンタンにお選びいただけます。
+            </p>
+          </div>
+        </li>
+
+        <li class="news-row reveal" data-category="news">
+          <div class="news-thumb flex items-center justify-center bg-bg-soft text-brand">
+            <svg aria-hidden='true' focusable='false' width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="font-en text-ink-soft text-[14px] tracking-wider">2026.05.15</span>
+              <span class="news-badge news-badge--news">ニュース</span>
+            </div>
+            <h3 class="text-ink-soft text-[18px] md:text-[24px] font-bold leading-[1.6]">Unity コース（中学生〜）の開講準備が整いました</h3>
+            <hr class="my-3 border-gray-200" />
+            <p class="text-ink-soft text-[14px] md:text-[16px] leading-[1.8]">
+              本格的な 2D / 3D ゲーム制作に挑戦できる Unity コースの教材・カリキュラムの準備が整いました。<br />
+              プロが現場で使う Unity に、ステップを踏みながら無理なく挑戦できます。
+            </p>
+          </div>
+        </li>
+
+        <li class="news-row reveal" data-category="info">
+          <div class="news-thumb flex items-center justify-center bg-bg-soft text-brand">
+            <svg aria-hidden='true' focusable='false' width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="font-en text-ink-soft text-[14px] tracking-wider">2026.05.10</span>
+              <span class="news-badge news-badge--info">運営からのお知らせ</span>
+            </div>
+            <h3 class="text-ink-soft text-[18px] md:text-[24px] font-bold leading-[1.6]">システムメンテナンスのお知らせ（5月18日 深夜）</h3>
+            <hr class="my-3 border-gray-200" />
+            <p class="text-ink-soft text-[14px] md:text-[16px] leading-[1.8]">
+              下記の時間帯、サイトおよびマイページのメンテナンスを実施いたします。<br />
+              2026年5月18日（日）24:00 〜 2026年5月19日（月）3:00<br />
+              ご利用の皆さまにはご不便をおかけしますが、ご理解のほどよろしくお願いいたします。
+            </p>
+          </div>
+        </li>
+
+        <li class="news-row reveal" data-category="news">
+          <div class="news-thumb flex items-center justify-center bg-bg-soft text-brand">
+            <svg aria-hidden='true' focusable='false' width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="font-en text-ink-soft text-[14px] tracking-wider">2026.04.28</span>
+              <span class="news-badge news-badge--news">ニュース</span>
+            </div>
+            <h3 class="text-ink-soft text-[18px] md:text-[24px] font-bold leading-[1.6]">講師陣の紹介ページを準備中です</h3>
+            <hr class="my-3 border-gray-200" />
+            <p class="text-ink-soft text-[14px] md:text-[16px] leading-[1.8]">
+              ゲーム業界で活躍してきた経験豊富な講師陣のご紹介ページを準備しております。<br />
+              公開まで今しばらくお待ちください。
+            </p>
+          </div>
+        </li>
+        -->
+
+      </ul>
+
+      <!-- 「該当なし」表示 -->
+      <p id="emptyState" class="hidden text-center text-ink-gray text-[14px] md:text-[15px] mt-12">
+        該当するお知らせはありません。
+      </p>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-20 bg-bg-soft">
+    <div class="max-w-[920px] mx-auto px-5 md:px-10 text-center">
+      <h2 class="reveal section-title">気になることはお気軽にどうぞ</h2>
+      <p class="reveal mt-5 text-ink text-[14px] md:text-[16px] leading-[1.9]">
+        オンラインの無料体験で、Federico の雰囲気をご覧いただけます。<br />
+        ご質問や、コース選びのご相談にもお応えします。
+      </p>
+      <div class="reveal mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="apply.html" class="btn btn-pink rounded-full !px-10 !py-4">無料体験お申し込み</a>
+        <a href="index.html" class="btn btn-outline-brand">トップへ戻る</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="bg-brand text-white">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10 pt-14 md:pt-20 pb-8 md:pb-10">
+    <div class="grid gap-10 lg:gap-14 lg:grid-cols-[280px_1fr]">
+
+      <!-- 左: ブランド -->
+      <div>
+        <p class="font-en text-white text-[32px] md:text-[34px] font-bold tracking-wide leading-none">Federico</p>
+        <p class="mt-2 text-white/80 text-[11px] md:text-[12px] tracking-wider">ゲームクリエイターズアカデミー</p>
+        <p class="mt-5 text-white/80 text-[12px] md:text-[13px] leading-[1.9]">
+          「好き」を「つくる力」に変える、<br />
+          子ども向けオンラインゲーム制作スクール。
+        </p>
+      </div>
+
+      <!-- 右: サイトマップ -->
+      <nav class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10" aria-label="サイトマップ">
+        <div>
+          <h2 class="font-en text-white text-[13px] font-bold tracking-[0.1em] pb-3 mb-4 border-b border-white/30">ABOUT</h2>
+          <ul class="space-y-2.5 text-[13px] md:text-[14px] text-white/85">
+            <li><a href="index.html" class="inline-block hover:opacity-70 transition-opacity">トップ</a></li>
+            <li><a href="index.html#about" class="inline-block hover:opacity-70 transition-opacity">Federicoについて</a></li>
+            <li><a href="lesson-style.html" class="inline-block hover:opacity-70 transition-opacity">レッスンスタイル</a></li>
+            <li><a href="pricing.html" class="inline-block hover:opacity-70 transition-opacity">料金</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-en text-white text-[13px] font-bold tracking-[0.1em] pb-3 mb-4 border-b border-white/30">COURSE</h2>
+          <ul class="space-y-2.5 text-[13px] md:text-[14px] text-white/85">
+            <li><a href="course-scratch.html" class="inline-block hover:opacity-70 transition-opacity">Scratchコース</a></li>
+            <li><a href="course-unity.html" class="inline-block hover:opacity-70 transition-opacity">Unityコース</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-en text-white text-[13px] font-bold tracking-[0.1em] pb-3 mb-4 border-b border-white/30">SUPPORT</h2>
+          <ul class="space-y-2.5 text-[13px] md:text-[14px] text-white/85">
+            <li><a href="faq.html" class="inline-block hover:opacity-70 transition-opacity">よくあるご質問</a></li>
+            <li><a href="news.html" class="inline-block hover:opacity-70 transition-opacity">お知らせ・キャンペーン</a></li>
+            <li><a href="apply.html" class="inline-block hover:opacity-70 transition-opacity">無料体験お申し込み</a></li>
+            <li><a href="contact.html" class="inline-block hover:opacity-70 transition-opacity">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-en text-white text-[13px] font-bold tracking-[0.1em] pb-3 mb-4 border-b border-white/30">COMPANY</h2>
+          <ul class="space-y-2.5 text-[13px] md:text-[14px] text-white/85">
+            <li><a href="privacy.html" class="inline-block hover:opacity-70 transition-opacity">プライバシーポリシー</a></li>
+            <li class="pt-3 text-white/65 text-[11px] tracking-wider">運営会社</li>
+            <li class="text-white/95 leading-snug">株式会社エス・エー・アイ</li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- 下段: コピーライト -->
+    <div class="mt-12 md:mt-16 pt-6 border-t border-white/20 text-center">
+      <p class="text-white/90 text-[11px] md:text-[12px] font-en tracking-[0.1em]">© 2026 SAI Inc. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- 申込CTA（固定） -->
+<a href="apply.html" id="trialButton" class="fixed bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:bottom-6 md:right-6 z-40 inline-flex items-center gap-2 md:gap-[13px] bg-brand text-white rounded-full pl-2 pr-2 md:pl-[13px] md:pr-3 py-2 md:py-[11px] shadow-[0px_4px_8px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 transition-transform" aria-label="無料体験お申し込みはこちら">
+  <span class="size-[52px] md:size-[67px] rounded-full bg-white flex flex-col items-center justify-center text-pink shrink-0">
+    <span class="text-[11px] md:text-[13px] font-medium leading-[1.3] tracking-[-0.04em]">カンタン</span>
+    <span class="text-[9px] md:text-[11px] font-medium leading-[1.3]">1分で完了！</span>
+  </span>
+  <span class="flex flex-col items-center text-center leading-[1.4] md:leading-[1.5]">
+    <span class="text-[9px] md:text-[12px] font-medium leading-tight whitespace-nowrap">お子さまの「やってみたい」を応援します！</span>
+    <span class="text-[14px] md:text-[20px] font-bold tracking-[0.03em] mt-0.5 md:mt-0 whitespace-nowrap">
+      <span class="text-[#FBEE50]">無料体験</span>お申し込みはこちら
+    </span>
+  </span>
+  <span class="size-[30px] md:size-[37px] rounded-full bg-white flex items-center justify-center shrink-0">
+    <svg aria-hidden='true' focusable='false' width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#18B293" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </span>
+</a>
+
+<script>
+  document.getElementById('menuBtn')?.addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    const menu = document.getElementById('mobileMenu');
+    menu?.classList.toggle('hidden');
+    btn.setAttribute('aria-expanded', String(!menu?.classList.contains('hidden')));
+  });
+
+  // カテゴリフィルタ
+  const tabs = document.querySelectorAll('.filter-tab');
+  const items = document.querySelectorAll('#newsList > li');
+  const empty = document.getElementById('emptyState');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.setAttribute('aria-pressed', 'false'));
+      tab.setAttribute('aria-pressed', 'true');
+      const f = tab.dataset.filter;
+      let visibleCount = 0;
+      items.forEach(li => {
+        const cat = li.dataset.category;
+        const show = (f === 'all' || cat === f);
+        li.classList.toggle('hidden', !show);
+        if (show) visibleCount++;
+      });
+      empty.classList.toggle('hidden', visibleCount > 0);
+    });
+  });
+
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>

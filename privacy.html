@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja" style="color-scheme: light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#18B293" />
+<title>プライバシーポリシー | Federico - ゲームクリエイターズアカデミー</title>
+<meta name="description" content="Federico（運営：株式会社エス・エー・アイ）のプライバシーポリシー。お客さま、お子さまの個人情報の取得・利用・管理・開示等に関する基本方針を掲載しています。" />
+
+<link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+<link href="https://fonts.bunny.net/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: '#18B293',
+          'brand-dark': '#0E8E76',
+          pink: {
+            DEFAULT: '#FF4F7B',
+            soft: 'rgba(255, 79, 123, 0.97)',
+          },
+          ink: {
+            DEFAULT: '#333333',
+            soft: '#4D4D4D',
+            gray: '#737373',
+          },
+          scratch: '#FFAB19',
+          unity: '#4D4D4D',
+          roblox: '#335FFF',
+          'bg-soft': '#EEFBF8',
+          'bg-gray': '#F5F5F5',
+        },
+        fontFamily: {
+          sans: ['"M PLUS Rounded 1c"', '"Noto Sans JP"', '"Hiragino Kaku Gothic ProN"', '"Yu Gothic"', 'sans-serif'],
+          en: ['Nunito', 'Helvetica Neue', 'sans-serif'],
+        },
+        boxShadow: {
+          header: '0 4px 2px rgba(156, 156, 156, 0.25)',
+          card: '0 4px 16px rgba(0, 0, 0, 0.06)',
+          soft: '0 2px 10px rgba(20, 40, 80, 0.06)',
+        },
+      }
+    }
+  }
+</script>
+
+<style type="text/tailwindcss">
+  @layer base {
+    html { scroll-behavior: smooth; }
+    body {
+      @apply font-sans text-ink antialiased;
+      font-feature-settings: "palt" 1;
+      letter-spacing: 0.02em;
+      line-height: 1.8;
+      text-rendering: optimizeLegibility;
+    }
+    a { @apply transition-opacity; }
+    a:hover { @apply opacity-75; }
+    ul, ol { @apply list-none p-0 m-0; }
+
+    /* WIG: shared a11y/perf utilities */
+    h1, h2, h3 { text-wrap: pretty; }
+    button, a, [role="button"], summary, input, label, select { touch-action: manipulation; }
+    *:focus { outline: none; }
+    *:focus-visible {
+      outline: 2px solid #18B293;
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+    #trialButton { bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); }
+    @media (min-width: 768px) {
+      #trialButton { bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); }
+      #topLink { bottom: calc(7.5rem + env(safe-area-inset-bottom, 0px)); }
+    }
+  }
+
+  @layer components {
+    body {
+      background-color: #ffffff;
+      background-image: url("data:image/svg+xml;utf8,<svg aria-hidden='true' focusable='false' xmlns='http://www.w3.org/2000/svg' width='660' height='232' viewBox='0 0 660 232'><g fill='none' stroke='%2318B293' stroke-opacity='0.16' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><g transform='translate(12 32)'><path d='M14.5 17.5 3 6V3h3l11.5 11.5'/><path d='m13 19 6-6'/><path d='m16 16 4 4'/><path d='m19 21 2-2'/></g><g transform='translate(144 32)'><path d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z'/></g><g transform='translate(276 32)'><path d='M14 2v6.343a1 1 0 0 0 .293 .707l5.414 5.414A2 2 0 0 1 18.293 18H5.707a2 2 0 0 1-1.414-3.536l5.414-5.414A1 1 0 0 0 10 8.343V2'/><path d='M8.5 2h7'/><path d='M7 16h10'/></g><g transform='translate(408 32)'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/></g><g transform='translate(540 32)'><path d='M6 3h12l4 6-10 13L2 9Z'/><path d='M11 3 8 9l4 13 4-13-3-6'/><path d='M2 9h20'/></g><g transform='translate(78 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g><g transform='translate(210 148)'><path d='M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294 .904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771 .56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'/></g><g transform='translate(342 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g><g transform='translate(474 148)'><path d='M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294 .904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771 .56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'/></g><g transform='translate(606 148)'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='3'/></g></g></svg>");
+      background-repeat: repeat;
+      background-attachment: fixed;
+    }
+    main, section, header, footer { position: relative; }
+
+    .section-eyebrow { @apply font-en text-brand font-bold text-[20px] tracking-wide leading-none; }
+    .section-title { @apply font-bold text-ink text-[28px] md:text-[32px] tracking-[0.05em] leading-[1.2]; }
+
+    .btn { @apply inline-flex items-center justify-center gap-2 font-bold whitespace-nowrap cursor-pointer transition-all; }
+    .btn-pink { @apply bg-pink text-white px-5 py-4 text-[14px] md:text-[16px] leading-none; }
+    .btn-pink:hover { @apply -translate-y-0.5; opacity: 0.92; }
+    .btn-brand { @apply bg-brand text-white px-5 py-4 text-[14px] md:text-[16px] leading-none; }
+    .btn-brand:hover { @apply -translate-y-0.5; opacity: 0.92; }
+    .btn-outline-brand { @apply bg-white border-2 border-brand text-brand rounded-full px-8 py-3 text-[15px] md:text-[16px]; }
+    .btn-outline-brand:hover { @apply -translate-y-0.5 bg-brand text-white; opacity: 1; }
+
+    .nav-link { @apply text-ink text-[14px] font-medium hover:opacity-70 transition-opacity; }
+
+    /* ポリシー本文 */
+    .policy-section { @apply mb-12 md:mb-16; }
+    .policy-h2 {
+      @apply font-bold text-ink text-[18px] md:text-[22px] tracking-[0.04em] flex items-start gap-3 leading-[1.5];
+    }
+    .policy-h2::before {
+      content: "";
+      @apply inline-block w-[6px] md:w-[8px] h-[22px] md:h-[24px] bg-brand rounded-sm shrink-0 mt-1.5;
+    }
+    .policy-body { @apply mt-4 md:mt-5 text-ink text-[14px] md:text-[15px] leading-[2]; }
+    .policy-body p + p { @apply mt-3; }
+    .policy-list { @apply mt-3 pl-5 list-disc marker:text-brand space-y-1.5; }
+    .policy-list li { @apply text-ink text-[14px] md:text-[15px] leading-[1.9]; }
+
+    .policy-meta {
+      @apply bg-bg-soft border border-brand/20 rounded-md p-4 md:p-5 text-ink text-[13px] md:text-[14px] leading-[1.85];
+    }
+    .policy-meta dt { @apply font-semibold text-ink-soft; }
+    .policy-meta dd { @apply ml-0; }
+  }
+</style>
+<style id="bg-single-override">body { background-color: #FDFCFA !important; background-image: none !important; }</style>
+</head>
+
+<body class="bg-white">
+
+<!-- ============================== HEADER ============================== -->
+<header class="sticky top-0 z-50 bg-white shadow-header">
+  <div class="max-w-[1440px] mx-auto h-[72px] md:h-[82px] px-5 md:px-10 flex items-center">
+    <a href="index.html" class="shrink-0 flex items-center" aria-label="Federico">
+      <img loading="eager" decoding="async" fetchpriority="high" src="assets/logo_new.svg" alt="Federico" class="h-[144px] md:h-[176px] w-auto" />
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-16 ml-auto">
+      <a href="index.html#about" class="nav-link">Federicoについて</a>
+      <a href="index.html#course" class="nav-link">受講コース</a>
+      <a href="index.html#lesson-style" class="nav-link">レッスンスタイル</a>
+      <a href="faq.html" class="nav-link">よくあるご質問</a>
+    </nav>
+
+    <div class="lg:ml-8 ml-auto flex items-center gap-2 md:gap-3">
+      <a href="apply.html" class="btn btn-pink hidden sm:inline-flex">無料体験お申し込み</a>
+      <a href="#" class="btn btn-brand hidden md:inline-flex">ログイン</a>
+      <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center size-10 text-ink" aria-label="メニュー" aria-controls="mobileMenu" aria-expanded="false">
+        <svg aria-hidden='true' focusable='false' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-gray-200 bg-white" style="overscroll-behavior: contain;">
+    <div class="px-5 py-4 flex flex-col gap-3">
+      <a href="index.html#about" class="nav-link py-2">Federicoについて</a>
+      <a href="index.html#course" class="nav-link py-2">受講コース</a>
+      <a href="index.html#lesson-style" class="nav-link py-2">レッスンスタイル</a>
+      <a href="faq.html" class="nav-link py-2">よくあるご質問</a>
+      <div class="flex gap-2 pt-2">
+        <a href="apply.html" class="btn btn-pink flex-1 sm:hidden">無料体験お申し込み</a>
+        <a href="#" class="btn btn-brand flex-1 md:hidden">ログイン</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== ページタイトル ============================== -->
+<section class="py-14 md:py-20 bg-bg-gray">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10 text-center">
+    <p class="section-eyebrow">Privacy Policy</p>
+    <h1 class="section-title mt-2">プライバシーポリシー</h1>
+    <p class="mt-5 text-ink text-[14px] md:text-[16px] leading-[1.9]">
+      Federico（運営：株式会社エス・エー・アイ）における個人情報の<br class="hidden md:block" />
+      取得・利用・管理に関する基本方針を定めたものです。
+    </p>
+  </div>
+</section>
+
+<!-- ============================== 本文 ============================== -->
+<main id="main">
+  <section class="py-14 md:py-20">
+    <div class="max-w-[860px] mx-auto px-5 md:px-10">
+
+      <dl class="policy-meta grid grid-cols-[80px_1fr] md:grid-cols-[120px_1fr] gap-y-1 gap-x-3">
+        <dt>制定日</dt><dd>2026年6月10日</dd>
+        <dt>最終改定日</dt><dd>2026年6月10日</dd>
+        <dt>事業者名</dt><dd>株式会社エス・エー・アイ</dd>
+      </dl>
+
+      <p class="mt-8 md:mt-10 text-ink text-[14px] md:text-[15px] leading-[2]">
+        株式会社エス・エー・アイ（以下「当社」といいます）は、当社が運営するゲームクリエイターズアカデミー「Federico」（以下「本サービス」といいます）において取得する個人情報の取り扱いについて、個人情報の保護に関する法律をはじめとする関連法令およびガイドラインを遵守し、お客さまの個人情報を適切に取り扱います。
+      </p>
+
+      <div class="policy-section mt-12 md:mt-14">
+        <h2 class="policy-h2">1. 取得する個人情報</h2>
+        <div class="policy-body">
+          <p>当社は本サービスの提供にあたり、以下の個人情報を取得することがあります。</p>
+          <ul class="policy-list">
+            <li>受講者（お子さま）に関する情報：氏名、フリガナ、ニックネーム、学年、お住まいの都道府県、プログラミングのご経験</li>
+            <li>保護者の方に関する情報：氏名、メールアドレス、電話番号、ご住所</li>
+            <li>お申し込み・お問い合わせの内容、ご希望のコース、当サービスを知ったきっかけ</li>
+            <li>本サービスのご利用に伴い自動的に取得される情報：Cookie、IPアドレス、ブラウザの種類、アクセス日時、参照元URL等</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-h2">2. 個人情報の利用目的</h2>
+        <div class="policy-body">
+          <p>取得した個人情報は、以下の目的の範囲内で利用します。</p>
+          <ul class="policy-list">
+            <li>本サービスのご提供、レッスンの実施・運営および受講管理</li>
+            <li>体験レッスン、お問い合わせへのご対応・ご案内</li>
+            <li>利用料金のご請求、入金確認その他の事務処理</li>
+            <li>本サービスに関する重要なお知らせや、新しいコース・キャンペーン情報のご案内</li>
+            <li>サービス向上のためのアンケートのご依頼、統計データの作成および分析</li>
+            <li>規約違反や不正利用の防止、本人確認、お問い合わせへの対応</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-h2">3. 個人情報の第三者提供</h2>
+        <div class="policy-body">
+          <p>当社は、次に掲げる場合を除き、あらかじめご本人の同意を得ることなく個人情報を第三者に提供しません。</p>
+          <ul class="policy-list">
+            <li>法令に基づく場合</li>
+            <li>人の生命、身体または財産の保護のために必要がある場合であって、ご本人の同意を得ることが困難であるとき</li>
+            <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合</li>
+            <li>合併、会社分割、事業譲渡その他の事由によって個人情報を含む事業の承継があった場合（承継先における利用目的の範囲内）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-h2">4. 業務委託先への提供</h2>
+        <div class="policy-body">
+          <p>当社は、利用目的の達成に必要な範囲内において、業務の一部を外部に委託することがあります。委託する場合には、委託先に対して必要かつ適切な監督を行い、個人情報の安全管理が図られるよう努めます。</p>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-h2">5. 安全管理措置</h2>
+        <div class="policy-body">
+          <p>当社は、個人情報の漏えい、滅失または毀損の防止、その他の個人情報の安全管理のために、以下を含む合理的かつ適切な措置を講じます。</p>
+          <ul class="policy-list">
+            <li>組織的安全管理措置：個人情報の取扱責任者の設置、取扱状況の点検</li>
+            <li>人的安全管理措置：従業員への教育・研修、秘密保持義務の遵守</li>
+            <li>物理的安全管理措置：取扱区域の管理、機器・電子媒体等の盗難防止</li>
+            <li>技術的安全管理措置：アクセス制御、不正アクセス防止、通信の暗号化</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-h2">6. 個人情報の開示・訂正・利用停止</h2>
+        <div class="policy-body">
+          <p>ご本人またはその代理人から、保有個人データの開示、内容の訂正、追加または削除、利用の停止、消去および第三者への提供の停止（以下「開示等」といいます）のご請求があった場合、本人確認を行ったうえで、法令に従って遅滞なく対応いたします。お手続きの詳細は、本ページ末尾のお問い合わせ窓口までご連絡ください。</p>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-h2">7. お子さまの個人情報の取扱いについて</h2>
+        <div class="policy-body">
+          <p>本サービスは小学生・中学生・高校生のお子さまを主な対象としています。お子さまの個人情報を取得する際は、原則として保護者の方の同意を得たうえで行います。お子さまの個人情報については、特に慎重に取り扱い、ご家庭の安全を最優先に運用します。</p>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-h2">8. Cookie 等の利用について</h2>
+        <div class="policy-body">
+          <p>本サービスでは、サイトの利用状況の把握、サービス改善、適切なご案内を行うため、Cookie や類似の技術を使用することがあります。ブラウザの設定により Cookie の受け入れを拒否することは可能ですが、その場合一部のサービスが正しく動作しないことがあります。</p>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-h2">9. 本ポリシーの改定</h2>
+        <div class="policy-body">
+          <p>当社は、法令の改正やサービス内容の変更等に応じて、本ポリシーを改定することがあります。改定後の内容は、当ウェブサイトに掲載した時点から効力を生じるものとします。重要な変更がある場合は、本ウェブサイト上で改めてお知らせいたします。</p>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-h2">10. お問い合わせ窓口</h2>
+        <div class="policy-body">
+          <p>個人情報の取扱いに関するお問い合わせ、開示等のご請求は、以下の窓口までご連絡ください。</p>
+          <div class="mt-4 bg-bg-soft border border-brand/20 rounded-md p-4 md:p-5 text-[14px] md:text-[15px] leading-[1.9]">
+            <p class="font-semibold">株式会社エス・エー・アイ　Federico 個人情報窓口</p>
+            <p>メール：<a href="mailto:privacy@federico.example" class="text-brand underline underline-offset-2 hover:no-underline">privacy@federico.example</a></p>
+            <p>受付時間：平日10:00〜18:00（土日祝・年末年始を除く）</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-12 md:mt-16 text-right text-ink-soft text-[13px] md:text-[14px]">
+        以上
+      </p>
+
+      <div class="mt-12 md:mt-16 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="apply.html" class="btn btn-pink rounded-full !px-10 !py-4">無料体験お申し込み</a>
+        <a href="index.html" class="btn btn-outline-brand">トップへ戻る</a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="bg-brand text-white">
+  <div class="max-w-[1180px] mx-auto px-5 md:px-10 pt-14 md:pt-20 pb-8 md:pb-10">
+    <div class="grid gap-10 lg:gap-14 lg:grid-cols-[280px_1fr]">
+
+      <!-- 左: ブランド -->
+      <div>
+        <p class="font-en text-white text-[32px] md:text-[34px] font-bold tracking-wide leading-none">Federico</p>
+        <p class="mt-2 text-white/80 text-[11px] md:text-[12px] tracking-wider">ゲームクリエイターズアカデミー</p>
+        <p class="mt-5 text-white/80 text-[12px] md:text-[13px] leading-[1.9]">
+          「好き」を「つくる力」に変える、<br />
+          子ども向けオンラインゲーム制作スクール。
+        </p>
+      </div>
+
+      <!-- 右: サイトマップ -->
+      <nav class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10" aria-label="サイトマップ">
+        <div>
+          <h2 class="font-en text-white text-[13px] font-bold tracking-[0.1em] pb-3 mb-4 border-b border-white/30">ABOUT</h2>
+          <ul class="space-y-2.5 text-[13px] md:text-[14px] text-white/85">
+            <li><a href="index.html" class="inline-block hover:opacity-70 transition-opacity">トップ</a></li>
+            <li><a href="index.html#about" class="inline-block hover:opacity-70 transition-opacity">Federicoについて</a></li>
+            <li><a href="lesson-style.html" class="inline-block hover:opacity-70 transition-opacity">レッスンスタイル</a></li>
+            <li><a href="pricing.html" class="inline-block hover:opacity-70 transition-opacity">料金</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-en text-white text-[13px] font-bold tracking-[0.1em] pb-3 mb-4 border-b border-white/30">COURSE</h2>
+          <ul class="space-y-2.5 text-[13px] md:text-[14px] text-white/85">
+            <li><a href="course-scratch.html" class="inline-block hover:opacity-70 transition-opacity">Scratchコース</a></li>
+            <li><a href="course-unity.html" class="inline-block hover:opacity-70 transition-opacity">Unityコース</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-en text-white text-[13px] font-bold tracking-[0.1em] pb-3 mb-4 border-b border-white/30">SUPPORT</h2>
+          <ul class="space-y-2.5 text-[13px] md:text-[14px] text-white/85">
+            <li><a href="faq.html" class="inline-block hover:opacity-70 transition-opacity">よくあるご質問</a></li>
+            <li><a href="news.html" class="inline-block hover:opacity-70 transition-opacity">お知らせ・キャンペーン</a></li>
+            <li><a href="apply.html" class="inline-block hover:opacity-70 transition-opacity">無料体験お申し込み</a></li>
+            <li><a href="contact.html" class="inline-block hover:opacity-70 transition-opacity">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-en text-white text-[13px] font-bold tracking-[0.1em] pb-3 mb-4 border-b border-white/30">COMPANY</h2>
+          <ul class="space-y-2.5 text-[13px] md:text-[14px] text-white/85">
+            <li><a href="privacy.html" class="inline-block hover:opacity-70 transition-opacity">プライバシーポリシー</a></li>
+            <li class="pt-3 text-white/65 text-[11px] tracking-wider">運営会社</li>
+            <li class="text-white/95 leading-snug">株式会社エス・エー・アイ</li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- 下段: コピーライト -->
+    <div class="mt-12 md:mt-16 pt-6 border-t border-white/20 text-center">
+      <p class="text-white/90 text-[11px] md:text-[12px] font-en tracking-[0.1em]">© 2026 SAI Inc. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menuBtn')?.addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    const menu = document.getElementById('mobileMenu');
+    menu?.classList.toggle('hidden');
+    btn.setAttribute('aria-expanded', String(!menu?.classList.contains('hidden')));
+  });
+</script>
+
+</body>
+</html>
